@@ -82,8 +82,10 @@ h2.titulo-base {
     font-size: 24px;
 }
 
-div.botao-tema {
-    position: absolute;
+nav#navbar div.botao-tema {
+    float: right;
+    margin: 10px;
+    /* position: absolute;
     right: 10px;
-    top: 10px;
+    top: 10px; */
 }
