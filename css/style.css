@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap');
+
+body.tema-light {
+    --bg-color: rgb(245, 245, 245);
+    --text-color: rgb(10, 10, 10);
+    --div-content-bg-color: rgb(250, 250, 250);
+    --div-content-color-shadow: rgb(112, 112, 112);
+    --titulo-base-border-bottom-color: rgb(226, 226, 226);
+    --titulo-base-color: rgb(22, 22, 22);
+}
+
+body.tema-dark {
+    --bg-color: rgb(15, 15, 15);
+    --text-color: rgb(245, 245, 245);
+    --div-content-bg-color: rgb(20, 20, 20);
+    --div-content-color-shadow: rgb(2, 2, 2);
+    --titulo-base-border-bottom-color: rgb(44, 44, 44);
+    --titulo-base-color: rgb(214, 214, 214);
+}
+
+body {
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    font-size: 15px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+html, body {
+    margin: 0;
+}
+
+div#content {
+    margin: 10px auto 0 auto;
+    max-width: 1000px;
+    min-height: 500px;
+    border-radius: 10px;
+    position: relative;
+    /* border-radius: 0 0 10px 10px; */
+    background-color: var(--div-content-bg-color);
+    box-shadow: 0px 0px 10px var(--div-content-color-shadow);
+}
+
+@media only screen and (max-width: 1010px) {
+    div#content {
+        border-radius: 0;
+        box-shadow: 0;
+        margin: 0 auto;
+    }
+}
+
+div#content main {
+    padding: 20px;
+}
+
+div#content main ul {
+    list-style-type: square;
+}
+
+div#content main ul ul {
+    list-style-type: disc;
+}
+
+.titulo-base {
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    font-family: 'Roboto', sans-serif;
+    padding-bottom: 5px;
+    border-bottom-color: var(--titulo-base-border-bottom-color);
+    color: var(--titulo-base-color);
+}
+
+a {
+    color: rgb(73, 73, 206);
+}
+
+h1.titulo-base {
+    font-size: 32px;
+}
+
+h2.titulo-base {
+    font-size: 24px;
+}
+
+div.botao-tema {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
