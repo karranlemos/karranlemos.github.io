@@ -32,7 +32,7 @@ function configura_botao_tema() {
 
 function pega_tema_storage() {
     let TEMA_PADRAO = 'tema-light';
-    if (typeof Storage === 'undefined' || localStorage.getItem('tema_site') === 'undefined')
+    if (typeof Storage === 'undefined' || localStorage.getItem('tema_site') === null)
         return TEMA_PADRAO;
     return localStorage.getItem('tema_site');
 }
