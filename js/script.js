@@ -18,11 +18,27 @@ function configura_botao_tema() {
         body.classList.add(tema_novo);
     };
     let evento_mudanca = function(e) {
-        if (botao_tema.checked)
-            toggle_body_tema('tema-dark');
-        else
-            toggle_body_tema('tema-light');
+        let tema_novo = (botao_tema.checked) ? 'tema-dark' : 'tema-light';
+        toggle_body_tema(tema_novo);
+        muda_tema_storage(tema_novo);
     };
     botao_tema.onchange = evento_mudanca;
+    if (pega_tema_storage() === 'tema-light')
+        botao_tema.checked = false;
+    else
+        botao_tema.checked = true;
     evento_mudanca();
+}
+
+function pega_tema_storage() {
+    let TEMA_PADRAO = 'tema-light';
+    if (typeof Storage === 'undefined' || localStorage.getItem('tema_site') === 'undefined')
+        return TEMA_PADRAO;
+    return localStorage.getItem('tema_site');
+}
+
+function muda_tema_storage(tema_novo) {
+    if (typeof Storage === 'undefined')
+        return;
+    localStorage.setItem('tema_site', tema_novo);
 }
