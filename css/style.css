@@ -91,7 +91,7 @@ section#home-section div.home-info header h1.titulo-site {
 
 section#home-section div.home-info header div.subtitulo {
     color: var(--main-subtitle-color);
-    font-size: 36px;
+    font-size: 24px;
     display: flex;
     align-items: center;
 }
