@@ -89,6 +89,12 @@ section#home-section div.home-info header h1.titulo-site {
     margin: 10px 0;
 }
 
+@media only screen and (max-width: 520px) {
+    section#home-section div.home-info header h1.titulo-site {
+        font-size: 48px;
+    }
+}
+
 section#home-section div.home-info header div.subtitulo {
     color: var(--main-subtitle-color);
     font-size: 24px;
