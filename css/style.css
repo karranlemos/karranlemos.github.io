@@ -49,6 +49,8 @@ section#home-section div.bg-image {
     background-size: cover;
     background-position: center;
     filter: blur(1px);
+
+    transition: background-image 1s
 }
 
 section#home-section div.bg-overlay {
