@@ -27,12 +27,14 @@ h2 {
 
 div.page-section-content {
     min-height: 400px;
-    max-width: 1000px;
+    max-width: var(--pages-width);
     
     margin: 0 auto;
     padding: 50px;
     box-sizing: border-box;
+}
 
+div.page-section-content, nav#main-menu {
     font-family: 'Cairo', Tahoma, sans-serif;
     font-size: 18px;
 }
