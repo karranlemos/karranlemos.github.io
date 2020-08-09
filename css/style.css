@@ -14,6 +14,7 @@ html, body {
 
 body {
     background-color: rgb(27, 27, 27);
+    font-size: 16px;
 }
 
 a {
@@ -73,7 +74,8 @@ section#home-section div.home-info-container {
 section#home-section div.home-info {
     font-family: 'Noto Sans', 'Roboto', Tahoma, sans-serif;
     text-align: center;
-    color: white;   
+    color: white;
+    min-width: 300px;
 }
 
 section#home-section div.home-info header {
@@ -81,23 +83,19 @@ section#home-section div.home-info header {
     line-height: 1;
     font-weight: bold;
     margin: 30px;
+    
+    font-size: 1vw;
 }
 
 section#home-section div.home-info header h1.titulo-site {
     color: var(--main-title-color);
-    font-size: 72px;
+    font-size: 5.4em;
     margin: 10px 0;
-}
-
-@media only screen and (max-width: 520px) {
-    section#home-section div.home-info header h1.titulo-site {
-        font-size: 48px;
-    }
 }
 
 section#home-section div.home-info header div.subtitulo {
     color: var(--main-subtitle-color);
-    font-size: 24px;
+    font-size: 1.8em;
     display: flex;
     align-items: center;
 }
@@ -107,7 +105,7 @@ section#home-section div.home-info header div.subtitulo:after {
     content: "";
     flex: 1;
     height: 0px;
-    border-top: 3px solid var(--main-subtitle-color);
+    border-top: 0.5vh solid var(--main-subtitle-color);
 }
 
 section#home-section div.home-info header div.subtitulo span{
@@ -121,3 +119,29 @@ section#home-section div.home-info ul {
     color: white;
 }
 
+@media only screen and (max-width: 1300px) {
+    section#home-section div.home-info header {
+        font-size: initial;
+    }
+    
+    section#home-section div.home-info header h1.titulo-site {
+        font-size: 72px;
+    }
+    
+    section#home-section div.home-info header div.subtitulo {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    section#home-section div.home-info header h1.titulo-site {
+        font-size: 48px;
+    }
+}
+
+@media only screen and (max-height: 700px) {
+    section#home-section div.home-info header div.subtitulo:before,
+    section#home-section div.home-info header div.subtitulo:after {
+        border-top-width: 3px;
+    }
+}
