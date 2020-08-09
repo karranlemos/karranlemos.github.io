@@ -15,7 +15,10 @@ class MainMenu {
 
         this.homeButton = this.navbar.querySelector('.home-button')
         if (this.homeButton) {
-            this.homeButton.addEventListener('click', this.goToTopOfPage.bind(this))
+            this.homeButton.addEventListener('click', function() {
+                this.closeMobileMenu()
+                this.goToTopOfPage()
+            }.bind(this))
         }
 
         this.subpagesIds = {}
