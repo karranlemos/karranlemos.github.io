@@ -1,7 +1,7 @@
 class MainMenu {
 
     constructor() {
-        
+        this.PAGE_PARAMETER = 'page'
 
         this.navbar = document.getElementById('main-menu')
         if (!this.navbar)
@@ -15,9 +15,10 @@ class MainMenu {
 
         this.homeButton = this.navbar.querySelector('.home-button')
         if (this.homeButton) {
-            this.homeButton.addEventListener('click', this.goToTopOfPage)
+            this.homeButton.addEventListener('click', this.goToTopOfPage.bind(this))
         }
 
+        this.subpagesIds = {}
         this.subpagesButtons = this.menuOptions.getElementsByClassName('menu-button')
         for (let subpagesButton of this.subpagesButtons) {
             let sectionId = subpagesButton.getAttribute('data-section-id')
@@ -26,13 +27,18 @@ class MainMenu {
             let section = document.getElementById(sectionId)
             if (!section)
                 continue
+            this.subpagesIds[sectionId] = section
             subpagesButton.addEventListener('click', function() {
-                this.goToSection(section)
+                this.goToSection(sectionId)
             }.bind(this))
         }
         
         this.mobileButton.addEventListener('click', this.toggleMobileMenu.bind(this))
         window.addEventListener('scroll', this.checkNavbarFixed.bind(this))
+
+        this.goToSection(this.getPageParameter())
+
+        this.checkNavbarFixed()
     }
 
     toggleMobileMenu() {
@@ -49,16 +55,47 @@ class MainMenu {
 
     goToTopOfPage() {
         window.scrollTo(0, 0)
+        this.deletePageParameter()
     }
 
-    goToSection(section) {
+    goToSection(sectionId) {
         const NAVBAR_HEIGHT_PINNED = 80
-        var sectionY = section.offsetTop
+
+        if (!this.subpagesIds.hasOwnProperty(sectionId))
+            return
+
+        var sectionY = this.subpagesIds[sectionId].offsetTop
         
         var oldX = window.pageXOffset
         var newY = sectionY-NAVBAR_HEIGHT_PINNED
         
         window.scrollTo(oldX, newY)
+        this.setPageParameter(sectionId)
+    }
+
+
+
+    setPageParameter(sectionId) {
+        var queryParams = new URLSearchParams(window.location.search)
+        queryParams.set(this.PAGE_PARAMETER, sectionId)
+        history.replaceState(null, null, "?"+queryParams.toString())
+    }
+
+    deletePageParameter() {
+        var queryParams = new URLSearchParams(window.location.search)
+        queryParams.delete(this.PAGE_PARAMETER)
+        
+        if (queryParams.toString() !== '')
+            history.replaceState(null, null, queryParams.toString())
+        else
+            history.replaceState(null, null, window.location.href.split('?')[0])
+    }
+
+    getPageParameter(sectionId) {
+        var queryParams = new URLSearchParams(window.location.search);
+        if (queryParams.has(this.PAGE_PARAMETER))
+            return queryParams.get(this.PAGE_PARAMETER)
+        return ''
     }
 }
 
