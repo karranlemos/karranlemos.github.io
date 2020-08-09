@@ -108,8 +108,8 @@ section#home-section div.home-info header div.subtitulo::after {
     border-top: 0.3vw solid var(--main-subtitle-color);
 }
 
-section#home-section div.home-info header div.subtitulo span{
-    margin: 0 10px;
+section#home-section div.home-info header div.subtitulo span {
+    margin: 0 0.45em;
 }
 
 section#home-section div.home-info ul {
@@ -135,6 +135,10 @@ section#home-section div.home-info ul {
     section#home-section div.home-info header div.subtitulo::before,
     section#home-section div.home-info header div.subtitulo::after {
         border-top-width: 3px;
+    }
+
+    section#home-section div.home-info header div.subtitulo span {
+        margin: 0 10px;
     }
 }
 
