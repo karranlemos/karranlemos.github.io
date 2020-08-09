@@ -29,6 +29,7 @@ class MainMenu {
                 continue
             this.subpagesIds[sectionId] = section
             subpagesButton.addEventListener('click', function() {
+                this.closeMobileMenu()
                 this.goToSection(sectionId)
             }.bind(this))
         }
@@ -43,6 +44,10 @@ class MainMenu {
 
     toggleMobileMenu() {
         this.navbar.classList.toggle('mobile-open')
+    }
+
+    closeMobileMenu() {
+        this.navbar.classList.remove('mobile-open')
     }
 
     checkNavbarFixed() {
