@@ -16,4 +16,8 @@
 
 
     --pages-width: 1000px;
+    --navbar-height-top: 100px;
+
+    /* if changed, ust change const in MainMenu.goToSection() */
+    --navbar-height-pinned: 80px;
 }

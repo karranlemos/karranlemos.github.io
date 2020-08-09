@@ -12,7 +12,9 @@ nav#main-menu {
     font-family: 'Cairo', Tahoma, sans-serif;
     font-size: 18px;
 
-    transition: background-color 1s;
+    height: var(--navbar-height-top);
+
+    transition: background-color 1s, height 1s;
 }
 
 nav#main-menu ul {
@@ -37,7 +39,11 @@ nav#main-menu ul.menu-options {
 }
 
 nav#main-menu .menu-button {
-    padding: 30px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0px 20px;
     box-sizing: border-box;
     cursor: pointer;
 
@@ -54,6 +60,7 @@ nav#main-menu.pinned .menu-button {
 
 nav#main-menu.pinned {
     background-color: var(--navbar-bg-color);
+    height: var(--navbar-height-pinned);
 }
 
 nav#main-menu .mobile-button {
@@ -86,19 +93,20 @@ nav#main-menu .mobile-button {
     }
 
     nav#main-menu.mobile-open {
-        display: block;
         background-color: var(--navbar-bg-color);
         transition: background-color 0s;
     }
 
     nav#main-menu.mobile-open ul.menu-options {
-        display: block;
+        display: flex;
+        justify-content: start;
         background-color: var(--navbar-bg-color);
     }
 
     nav#main-menu ul.menu-options .menu-button {
         padding-top: 20px;
         padding-bottom: 20px;
+        text-align: center;
         background-color: transparent;
     }
 }
