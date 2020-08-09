@@ -97,6 +97,10 @@ nav#main-menu .mobile-button {
         transition: background-color 0s;
     }
 
+    nav#main-menu.mobile-open .mobile-button {
+        background-image: url('../images/icons/Multiplication_Sign-white.svg');
+    }
+
     nav#main-menu.mobile-open ul.menu-options {
         display: flex;
         justify-content: start;
