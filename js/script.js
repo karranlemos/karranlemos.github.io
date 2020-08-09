@@ -1,7 +1,7 @@
 class MainMenu {
 
     constructor() {
-        this.MIN_PINNED_NAVBAR = 50
+        
 
         this.navbar = document.getElementById('main-menu')
         if (!this.navbar)
@@ -15,16 +15,19 @@ class MainMenu {
         
         this.mobileButton.addEventListener('click', this.toggleMobileMenu.bind(this))
 
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > this.MIN_PINNED_NAVBAR)
-                this.navbar.classList.add('pinned')
-            else
-                this.navbar.classList.remove('pinned')
-        }.bind(this))
+        window.addEventListener('scroll', this.checkNavbarFixed.bind(this))
     }
 
-    async toggleMobileMenu() {
+    toggleMobileMenu() {
         this.navbar.classList.toggle('mobile-open')
+    }
+
+    checkNavbarFixed() {
+        const MIN_PINNED_NAVBAR = 50
+        if (window.pageYOffset > MIN_PINNED_NAVBAR)
+            this.navbar.classList.add('pinned')
+        else
+            this.navbar.classList.remove('pinned')
     }
 }
 
