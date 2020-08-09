@@ -105,7 +105,7 @@ section#home-section div.home-info header div.subtitulo::after {
     content: "";
     flex: 1;
     height: 0px;
-    border-top: 0.5vh solid var(--main-subtitle-color);
+    border-top: 0.3vw solid var(--main-subtitle-color);
 }
 
 section#home-section div.home-info header div.subtitulo span{
@@ -131,9 +131,7 @@ section#home-section div.home-info ul {
     section#home-section div.home-info header div.subtitulo {
         font-size: 24px;
     }
-}
 
-@media only screen and (max-height: 700px) {
     section#home-section div.home-info header div.subtitulo::before,
     section#home-section div.home-info header div.subtitulo::after {
         border-top-width: 3px;
