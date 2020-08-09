@@ -95,10 +95,10 @@ section#pages-section section {
     
 }
 
-section#pages-section section:nth-of-type(even) {
+section#pages-section section:nth-of-type(odd) {
     background-color: var(--page-bg-color-darker);
 }
-section#pages-section section:nth-of-type(odd) {
+section#pages-section section:nth-of-type(even) {
     background-color: var(--page-bg-color-lighter);
 }
 
