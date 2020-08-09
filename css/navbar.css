@@ -23,7 +23,7 @@ nav#main-menu ul {
     color: white;
 }
 
-nav#main-menu > ul {
+nav#main-menu div.inner-menu {
     display: flex;
     justify-content: space-between;
 
@@ -31,24 +31,74 @@ nav#main-menu > ul {
     width: 100%;
 }
 
-nav#main-menu > ul > ul {
+nav#main-menu ul.menu-options {
     display: flex;
     justify-content: center;
 }
 
-nav#main-menu ul li {
+nav#main-menu .menu-button {
     padding: 30px 20px;
     box-sizing: border-box;
     cursor: pointer;
 
     transition: padding 1s;
+
+    box-sizing: border-box;
+    min-width: 75px;
 }
 
-nav#main-menu.pinned ul li {
+nav#main-menu.pinned .menu-button {
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
 nav#main-menu.pinned {
     background-color: var(--navbar-bg-color);
+}
+
+nav#main-menu .mobile-button {
+    display: none;
+}
+
+
+
+@media only screen and (max-width: 700px) {
+    
+    nav#main-menu .mobile-button {
+        display: block;
+        background-image: url('../images/icons/Hamburger-white.svg');
+        background-size: 20px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    nav#main-menu ul.menu-options {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        z-index: 1;
+
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav#main-menu.mobile-open {
+        display: block;
+        background-color: var(--navbar-bg-color);
+        transition: background-color 0s;
+    }
+
+    nav#main-menu.mobile-open ul.menu-options {
+        display: block;
+        background-color: var(--navbar-bg-color);
+    }
+
+    nav#main-menu ul.menu-options .menu-button {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-color: transparent;
+    }
 }
