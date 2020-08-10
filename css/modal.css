@@ -90,28 +90,42 @@ div.modal div.portfolio-popup div.portfolio-footer {
     background-color: var(--page-bg-color-lighter);
 }
 
-div.modal div.portfolio-popup div.portfolio-footer .portfolio-links {
+div.modal div.portfolio-popup div.portfolio-footer .portfolio-links {    
     margin: 0 10px;
     color: white;
+
+    display: inline-flex;
+    align-items: center;
+
+    cursor: default;
+}
+
+div.modal div.portfolio-popup div.portfolio-footer a {
     text-decoration: none;
+    color: white;
 
     display: inline-flex;
     align-items: center;
 }
 
-div.modal div.portfolio-popup div.portfolio-footer .source-link {
+div.modal div.portfolio-popup div.portfolio-footer a .portfolio-links {
+    cursor: pointer;
+}
+
+div.modal div.portfolio-popup div.portfolio-footer .portfolio-links.left-icon {
     background-size: 20px;
     background-repeat: no-repeat;
     background-position: left;
-    padding-left: 25px;
+    padding-left: 28px;
 }
 
-div.modal div.portfolio-popup div.portfolio-footer .source-link.public {
+div.modal div.portfolio-popup div.portfolio-footer .portfolio-links.left-icon.public {
     background-image: url('/images/icons/eye-gray.svg');
 }
 
-div.modal div.portfolio-popup div.portfolio-footer .source-link.private {
+div.modal div.portfolio-popup div.portfolio-footer .portfolio-links.left-icon.private {
     background-image: url('/images/icons/eye-crossed-gray.svg');
+    filter: brightness(0.5);
 }
 
 @media only screen and (max-width: 700px) {
