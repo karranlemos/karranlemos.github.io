@@ -122,30 +122,21 @@ class Modal {
         for (let popupWrapperDiv of popupWrappersDivs) {
             var closeDiv = popupWrapperDiv.querySelector('div.close')
             if (closeDiv)
-                closeDiv.addEventListener('click', this.emitCloseEvent.bind(this))
-            popupWrapperDiv.addEventListener('modalClose', function() {
-                this.closePopupWrapper(popupWrapperDiv)
-            }.bind(this))
+                closeDiv.addEventListener('click', this.closeModal.bind(this))
 
             this.popupWrappers.add(popupWrapperDiv)
         }
 
         this.modal.addEventListener('click', function(e) {
             if ([this.modal, this.modalViewport].includes(e.target))
-                this.emitCloseEvent()
-        }.bind(this))
-        this.modal.addEventListener('modalClose', function() {
-            this.modal.classList.remove('show')
+                this.closeModal()
         }.bind(this))
     }
 
-    emitCloseEvent() {
-        var closeEvent = new CustomEvent('modalClose')
-        this.modal.dispatchEvent(closeEvent)
-    }
-
-    closePopupWrapper(wrapper) {
-        wrapper.classList.remove('show')
+    closeModal() {
+        this.modal.classList.remove('show')
+        for (let wrapper of this.popupWrappers)
+            wrapper.classList.remove('show')
     }
 
     openModal(wrapper) {
