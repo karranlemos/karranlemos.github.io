@@ -13,9 +13,7 @@ div.gallery-item {
 
     overflow: hidden;
     cursor: pointer;
-}
-
-div.gallery-item img {
+    
     background-color: gray;
     color: transparent;
 }
