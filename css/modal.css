@@ -22,6 +22,8 @@ div.modal div.modal-viewport {
 }
 
 div.modal div.modal-popup {
+    position:relative;
+
     max-width: 800px;
     max-height: 400px;
     width: 100%;
@@ -29,10 +31,26 @@ div.modal div.modal-popup {
     background-color: white;
 }
 
+div.modal div.modal-popup div.close {
+    position: absolute;
+    right: 0;
+    z-index: 1;
+
+    background-image: url('/images/icons/Multiplication_Sign-white.svg');
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    width: 75px;
+    height: 75px;
+
+    cursor: pointer;
+}
+
 div.modal div.portfolio-popup {
     display: grid;
     grid-template-columns: 300px 1fr;
-    grid-template-rows: 1fr 30px;
+    grid-template-rows: 1fr 50px;
 }
 
 div.modal div.portfolio-popup div.portfolio-image-container {
@@ -54,5 +72,63 @@ div.modal div.portfolio-popup div.portfolio-description {
 }
 
 div.modal div.portfolio-popup div.portfolio-footer {
+    display: flex;
+    justify-content: center;
+
     background-color: var(--page-bg-color-lighter);
+}
+
+div.modal div.portfolio-popup div.portfolio-footer .portfolio-links {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+
+    display: inline-flex;
+    align-items: center;
+}
+
+div.modal div.portfolio-popup div.portfolio-footer .source-link {
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 25px;
+}
+
+div.modal div.portfolio-popup div.portfolio-footer .source-link.public {
+    background-image: url('/images/icons/eye-gray.svg');
+}
+
+div.modal div.portfolio-popup div.portfolio-footer .source-link.private {
+    background-image: url('/images/icons/eye-crossed-gray.svg');
+}
+
+@media only screen and (max-width: 700px) {
+    div.modal div.modal-popup {
+        max-height: 100%;
+    }
+
+    div.modal div.portfolio-popup {
+        grid-template-columns: 1fr;
+        grid-template-rows: 200px 1fr 50px;
+    }
+
+    div.modal div.portfolio-popup div.portfolio-image-container {
+        grid-row: auto;
+    }
+
+    div.modal div.portfolio-popup div.portfolio-image-container img.portfolio-image {
+        max-height: none;
+        max-width: 100%;
+    }
+
+    div.modal div.modal-popup div.close {
+        background-color: rgba(0, 0, 0, .8);
+    }
+}
+
+@media only screen and (max-width: 700px) and (max-width: 400px) {
+    div.modal div.portfolio-popup {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0px 1fr 50px;
+    }
 }
