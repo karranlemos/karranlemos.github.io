@@ -94,7 +94,7 @@ class MainMenu {
         queryParams.delete(this.PAGE_PARAMETER)
         
         if (queryParams.toString() !== '')
-            history.replaceState(null, null, queryParams.toString())
+            history.replaceState(null, null, '?'+queryParams.toString())
         else
             history.replaceState(null, null, window.location.href.split('?')[0])
     }
