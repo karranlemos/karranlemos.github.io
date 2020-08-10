@@ -11,6 +11,10 @@ div.modal {
     background-color: rgba(0, 0, 0, .9);
 }
 
+div.modal.show {
+    display: block;
+}
+
 div.modal div.modal-viewport {
     display: flex;
     justify-content: center;
@@ -21,8 +25,16 @@ div.modal div.modal-viewport {
     width: 100%;
 }
 
+div.modal div.modal-popup-wrapper {
+    display: none;
+}
+
+div.modal div.modal-popup-wrapper.show {
+    display: block;
+}
+
 div.modal div.modal-popup {
-    position:relative;
+    position: relative;
 
     max-width: 800px;
     max-height: 400px;
@@ -103,13 +115,17 @@ div.modal div.portfolio-popup div.portfolio-footer .source-link.private {
 }
 
 @media only screen and (max-width: 700px) {
+    div.modal div.modal-popup-wrapper {
+        height: 100%;
+    }
+
     div.modal div.modal-popup {
         max-height: 100%;
     }
 
     div.modal div.portfolio-popup {
         grid-template-columns: 1fr;
-        grid-template-rows: 200px 1fr 50px;
+        grid-template-rows: 0px 1fr 50px;
     }
 
     div.modal div.portfolio-popup div.portfolio-image-container {
@@ -123,12 +139,5 @@ div.modal div.portfolio-popup div.portfolio-footer .source-link.private {
 
     div.modal div.modal-popup div.close {
         background-color: rgba(0, 0, 0, .8);
-    }
-}
-
-@media only screen and (max-width: 700px) and (max-width: 400px) {
-    div.modal div.portfolio-popup {
-        grid-template-columns: 1fr;
-        grid-template-rows: 0px 1fr 50px;
     }
 }
