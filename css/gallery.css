@@ -15,6 +15,11 @@ div.gallery-item {
     cursor: pointer;
 }
 
+div.gallery-item img {
+    background-color: gray;
+    color: transparent;
+}
+
 div.gallery-item div.overlay {
     position: absolute;
     top: 0;
