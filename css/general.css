@@ -34,6 +34,11 @@ h2 {
     font-size: 32px;
 }
 
+img {
+    background-color: gray;
+    color: transparent;
+}
+
 div.page-section-content {
     min-height: 400px;
     max-width: var(--pages-width);
