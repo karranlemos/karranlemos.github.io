@@ -145,3 +145,9 @@ section#portfolio-section {
         border-top-width: 0;
     }
 }
+
+@media only screen and (max-width: 650px) {
+    section#home-section div.home-info header h1.titulo-site {
+        font-size: 40px;
+    }
+}
