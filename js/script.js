@@ -108,6 +108,62 @@ class MainMenu {
 }
 
 
+class Modal {
+
+    constructor(modal) {
+        this.modal = modal
+        this.modalViewport = this.modal.querySelector('div.modal-viewport')
+        if (!this.modalViewport)
+            throw 'modal-viewport not found'
+        
+        var popupWrappersDivs = this.modal.querySelectorAll('div.modal-popup-wrapper')
+        
+        this.popupWrappers = []
+        for (let popupWrapperDiv of popupWrappersDivs) {
+            var closeDiv = popupWrapperDiv.querySelector('div.close')
+            if (closeDiv)
+                closeDiv.addEventListener('click', this.emitCloseEvent.bind(this))
+            popupWrapperDiv.addEventListener('modalClose', function() {
+                this.closePopupWrapper(popupWrapperDiv)
+            }.bind(this))
+        }
+
+        this.modal.addEventListener('click', function(e) {
+            if ([this.modal, this.modalViewport].includes(e.target))
+                this.emitCloseEvent()
+        }.bind(this))
+        this.modal.addEventListener('modalClose', function() {
+            this.modal.classList.remove('show')
+        }.bind(this))
+    }
+
+    emitCloseEvent() {
+        var closeEvent = new CustomEvent('modalClose')
+        this.modal.dispatchEvent(closeEvent)
+    }
+
+    closePopupWrapper(wrapper) {
+        wrapper.classList.remove('show')
+    }
+
+
+
+    static getAllModals() {
+        var modalDivs = document.querySelectorAll('div.modal')
+        var modals = []
+        for (let modalDiv of modalDivs) {
+            try {
+                modals.add(new Modal(modalDiv))
+            }
+            catch (e) {
+                continue
+            }
+        }
+        return modals
+    }
+}
+
+
 
 class Helpers {
     constructor() {
@@ -124,4 +180,5 @@ class Helpers {
 var scriptObjects = {}
 window.addEventListener('load', () => {
     scriptObjects.mainMenu = new MainMenu()
+    scriptObjects.modals = Modal.getAllModals()
 })
