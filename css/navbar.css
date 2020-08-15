@@ -119,10 +119,10 @@ nav#main-menu .mobile-button {
         background-color: var(--navbar-bg-color);
     }
 
-    nav#main-menu ul.menu-options .menu-button {
-        padding-top: 20px;
-        padding-bottom: 20px;
-        text-align: center;
+    nav#main-menu ul.menu-options .menu-button a {
+        justify-content: center;
         background-color: transparent;
+        width: 100%;
+        height: var(--menu-button-mobile-height);
     }
 }
