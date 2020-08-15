@@ -104,14 +104,6 @@ section#pages-section section:nth-of-type(even) {
 
 
 
-/* Portfolio page */
-
-section#portfolio-section {
-
-}
-
-
-
 @media only screen and (max-width: 1300px) {
     section#home-section div.home-info header {
         font-size: initial;

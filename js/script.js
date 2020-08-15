@@ -1,8 +1,6 @@
 class MainMenu {
 
     constructor() {
-        this.PAGE_PARAMETER = 'page'
-
         this.navbar = document.getElementById('main-menu')
         if (!this.navbar)
             throw 'Main menu not found'
@@ -14,6 +12,8 @@ class MainMenu {
             throw 'Menu options not found'
 
         this.homeButton = this.navbar.querySelector('.home-button')
+        // Uses JS to send to the top of the page so it doesn't display
+        // domain.com/#top
         if (this.homeButton) {
             this.homeButton.addEventListener('click', function() {
                 this.closeMobileMenu()
@@ -27,38 +27,17 @@ class MainMenu {
             }
         }
 
-        this.subpagesIds = {}
         this.subpagesButtons = this.menuOptions.getElementsByClassName('menu-button')
         for (let subpagesButton of this.subpagesButtons) {
-            let anchor = subpagesButton.querySelector('a')
-            if (!anchor)
-                continue
-            let sectionId = anchor.href
-            sectionId = sectionId.split('#')[1]
-            if (!sectionId)
-                continue
-            let section = document.getElementById(sectionId)
-            if (!section)
-                continue
-            this.subpagesIds[sectionId] = section
-
             subpagesButton.addEventListener('click', function() {
                 this.closeMobileMenu()
-                this.goToSection(sectionId)
             }.bind(this))
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault()
-            })
         }
         
         this.mobileButton.addEventListener('click', this.toggleMobileMenu.bind(this))
         window.addEventListener('scroll', this.checkNavbarFixed.bind(this))
-        window.addEventListener('hashchange', function(e) {
-            console.log('h')
-            this.goToSection(this.getPageParameter())
-        }.bind(this))
-
-        this.goToSection(this.getPageParameter())
+        
+        this.forceHashJump()
 
         this.checkNavbarFixed()
     }
@@ -81,39 +60,14 @@ class MainMenu {
 
     goToTopOfPage() {
         window.scrollTo(0, 0)
-        this.deletePageParameter()
-    }
-
-    goToSection(sectionId) {
-        const NAVBAR_HEIGHT_PINNED = 80
-
-        if (!this.subpagesIds.hasOwnProperty(sectionId))
-            return
-
-        var sectionY = this.subpagesIds[sectionId].offsetTop
-        
-        var oldX = window.pageXOffset
-        var newY = sectionY-NAVBAR_HEIGHT_PINNED
-        
-        window.scrollTo(oldX, newY)
-        this.setPageParameter(sectionId)
-    }
-
-
-
-    setPageParameter(sectionId) {
-        history.pushState(null,null,'#'+sectionId)
-    }
-
-    deletePageParameter() {
         history.pushState(null, null, '/')
     }
 
-    getPageParameter() {
-        var pageParameter = window.location.hash.split('#')[1]
-        if (pageParameter === undefined)
-            return ''
-        return pageParameter
+
+
+    forceHashJump() {
+        if (window.location.hash !== '')
+            window.location.hash = window.location.hash
     }
 }
 

@@ -21,6 +21,11 @@ a {
     color: var(--a-color);
 }
 
+a.anchor {
+    position: relative;
+    top: calc(-1 * var(--navbar-height-pinned));
+}
+
 h1, h2, h3, h4, h5, h6 {
     margin: 0 0 20px 0;
     font-family: 'Noto Sans', 'Roboto', Tahoma, sans-serif;
