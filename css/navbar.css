@@ -74,7 +74,7 @@ nav#main-menu.pinned {
     height: var(--navbar-height-pinned);
 }
 
-nav#main-menu .mobile-button {
+nav#main-menu .mobile-button, nav#main-menu .mobile-only {
     display: none;
 }
 
@@ -88,6 +88,10 @@ nav#main-menu .mobile-button {
         background-size: 20px;
         background-repeat: no-repeat;
         background-position: center;
+    }
+
+    nav#main-menu .mobile-only {
+        display: inherit;
     }
 
     nav#main-menu ul.menu-options {

@@ -11,15 +11,15 @@ class MainMenu {
         if (!this.menuOptions)
             throw 'Menu options not found'
 
-        this.homeButton = this.navbar.querySelector('.home-button')
+        this.homeButtons = this.navbar.querySelectorAll('.home-button')
         // Uses JS to send to the top of the page so it doesn't display
         // domain.com/#top
-        if (this.homeButton) {
-            this.homeButton.addEventListener('click', function() {
+        for (let homeButton of this.homeButtons) {
+            homeButton.addEventListener('click', function() {
                 this.closeMobileMenu()
                 this.goToTopOfPage()
             }.bind(this))
-            var anchor = this.homeButton.querySelector('a')
+            var anchor = homeButton.querySelector('a')
             if (anchor) {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault()
