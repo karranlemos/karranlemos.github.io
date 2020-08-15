@@ -43,7 +43,7 @@ nav#main-menu .menu-button {
     justify-content: center;
     align-items: center;
 
-    padding: 0px 20px;
+    /* padding: 0px 20px; */
     box-sizing: border-box;
     cursor: pointer;
 
@@ -54,8 +54,19 @@ nav#main-menu .menu-button {
 }
 
 nav#main-menu.pinned .menu-button {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    
+}
+
+nav#main-menu .menu-button a {
+    text-decoration: none;
+    color: inherit;
+
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0px 20px;
+
+    outline-width: 0;
 }
 
 nav#main-menu.pinned {

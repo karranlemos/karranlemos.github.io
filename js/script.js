@@ -19,26 +19,44 @@ class MainMenu {
                 this.closeMobileMenu()
                 this.goToTopOfPage()
             }.bind(this))
+            var anchor = this.homeButton.querySelector('a')
+            if (anchor) {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault()
+                })
+            }
         }
 
         this.subpagesIds = {}
         this.subpagesButtons = this.menuOptions.getElementsByClassName('menu-button')
         for (let subpagesButton of this.subpagesButtons) {
-            let sectionId = subpagesButton.getAttribute('data-section-id')
+            let anchor = subpagesButton.querySelector('a')
+            if (!anchor)
+                continue
+            let sectionId = anchor.href
+            sectionId = sectionId.split('#')[1]
             if (!sectionId)
                 continue
             let section = document.getElementById(sectionId)
             if (!section)
                 continue
             this.subpagesIds[sectionId] = section
+
             subpagesButton.addEventListener('click', function() {
                 this.closeMobileMenu()
                 this.goToSection(sectionId)
             }.bind(this))
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault()
+            })
         }
         
         this.mobileButton.addEventListener('click', this.toggleMobileMenu.bind(this))
         window.addEventListener('scroll', this.checkNavbarFixed.bind(this))
+        window.addEventListener('hashchange', function(e) {
+            console.log('h')
+            this.goToSection(this.getPageParameter())
+        }.bind(this))
 
         this.goToSection(this.getPageParameter())
 
@@ -84,26 +102,18 @@ class MainMenu {
 
 
     setPageParameter(sectionId) {
-        var queryParams = new URLSearchParams(window.location.search)
-        queryParams.set(this.PAGE_PARAMETER, sectionId)
-        history.replaceState(null, null, "?"+queryParams.toString())
+        history.pushState(null,null,'#'+sectionId)
     }
 
     deletePageParameter() {
-        var queryParams = new URLSearchParams(window.location.search)
-        queryParams.delete(this.PAGE_PARAMETER)
-        
-        if (queryParams.toString() !== '')
-            history.replaceState(null, null, '?'+queryParams.toString())
-        else
-            history.replaceState(null, null, window.location.href.split('?')[0])
+        history.pushState(null, null, '/')
     }
 
-    getPageParameter(sectionId) {
-        var queryParams = new URLSearchParams(window.location.search);
-        if (queryParams.has(this.PAGE_PARAMETER))
-            return queryParams.get(this.PAGE_PARAMETER)
-        return ''
+    getPageParameter() {
+        var pageParameter = window.location.hash.split('#')[1]
+        if (pageParameter === undefined)
+            return ''
+        return pageParameter
     }
 }
 
