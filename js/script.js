@@ -183,7 +183,7 @@ class Helpers {
 
 
 var scriptObjects = {}
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     scriptObjects.mainMenu = new MainMenu()
     scriptObjects.modals = Modal.getAllModals()
 })
