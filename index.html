@@ -49,15 +49,15 @@
           <div class="page-section-content">
             <h2>Portfólio</h2>
             <div class="gallery portfolio">
-              <div class="gallery-item" data-gallery-item="pel">
+              <div class="gallery-item js-modal-opener" data-modal-name="pel">
                 <img src="/images/portfolio/pel.png" alt="PEL" class="gallery-item-screenshot">
                 <div class="overlay"></span></div>
               </div>
-              <div class="gallery-item" data-gallery-item="text-converter">
+              <div class="gallery-item js-modal-opener" data-modal-name="text-converter">
                 <img src="/images/portfolio/text-converter.png" alt="Text Converter" class="gallery-item-screenshot">
                 <div class="overlay"></span></div>
               </div>
-              <div class="gallery-item" data-gallery-item="portfolio">
+              <div class="gallery-item js-modal-opener" data-modal-name="portfolio">
                 <img src="/images/portfolio/portfolio.png" alt="Portfólio" class="gallery-item-screenshot">
                 <div class="overlay"></span></div>
               </div>
@@ -94,62 +94,63 @@
 
       </section>
     </div>
+
     
-    <div class="modal">
-      <div class="modal-viewport">
-        <div class="modal-popup-wrapper" data-gallery-item="pel">
-          <div class="modal-popup portfolio-popup">
-            <div class="close"></div>
-            <div class="portfolio-image-container">
-              <img src="/images/portfolio/pel.png" alt="PEL" class="portfolio-image">
-            </div>
-            <div class="portfolio-description">
-              <h2>PEL</h2>
-              <p>Site criado para o Programa de Pós-Graduação em Engenharia Eletrônica (PEL) da Universidade do Estado do Rio de Janeiro (UERJ).</p>
-              <p>Tecnologias utilizadas: HTML, CSS, JavaScript, WordPress, PHP e MySQL.</p>
-            </div>
-            <div class="portfolio-footer">
-              <span class="portfolio-links left-icon private source-link">Código Privado</span>
-              <a target="_blank" href="https://www.pel.uerj.br/"><span class="portfolio-links left-icon public live-link">Site</span></a>
-            </div>
-          </div>
+    
+    <div class="modal js-modal" data-modal-name="pel">
+      <div class="modal-popup portfolio-popup">
+        <div class="close"></div>
+        <div class="portfolio-image-container">
+          <img src="/images/portfolio/pel.png" alt="PEL" class="portfolio-image">
         </div>
-        <div class="modal-popup-wrapper" data-gallery-item="text-converter">
-          <div class="modal-popup portfolio-popup">
-            <div class="close"></div>
-            <div class="portfolio-image-container">
-              <img src="/images/portfolio/text-converter.png" alt="PEL" class="portfolio-image">
-            </div>
-            <div class="portfolio-description">
-              <h2>Conversor de Texto</h2>
-              <p>Um aplicativo para web que converte o texto fornecido como entrada para o formato escolhido, dentre eles: caixa alta, caixa baixa, capitalizado e espaçado. Ele está disponível tanto em português quanto em inglês.</p>
-              <p>Tecnologias utilizadas: HTML, CSS, JavaScript, PHP e Apache.</p>
-            </div>
-            <div class="portfolio-footer">
-              <a target="_blank" href="https://github.com/karranlemos/TextConverter/"><span class="portfolio-links left-icon public source-link">Código Fonte</span></a>
-              <a target="_blank" href="https://k-text-converter.herokuapp.com/"><span class="portfolio-links left-icon public live-link">Site</span></a>
-            </div>
-          </div>
+        <div class="portfolio-description">
+          <h2>PEL</h2>
+          <p>Site criado para o Programa de Pós-Graduação em Engenharia Eletrônica (PEL) da Universidade do Estado do Rio de Janeiro (UERJ).</p>
+          <p>Tecnologias utilizadas: HTML, CSS, JavaScript, WordPress, PHP e MySQL.</p>
         </div>
-        <div class="modal-popup-wrapper" data-gallery-item="portfolio">
-          <div class="modal-popup portfolio-popup">
-            <div class="close"></div>
-            <div class="portfolio-image-container">
-              <img src="/images/portfolio/portfolio.png" alt="PEL" class="portfolio-image">
-            </div>
-            <div class="portfolio-description">
-              <h2>Portfólio</h2>
-              <p>O site no qual você está.</p>
-              <p>Este site foi criado para guardar meu portfólio e minhas informações de contato. Ele foi criado para ser hospedado no Github, então o projeto não possui, no momento, um backend próprio.</p>
-              <p>Tecnologias utilizadas: HTML, CSS e JavaScript.</p>
-            </div>
-            <div class="portfolio-footer">
-              <a target="_blank" href="https://github.com/karranlemos/karranlemos.github.io"><span class="portfolio-links left-icon public source-link">Código Fonte</span></a>
-              <a target="_blank" href="/"><span class="portfolio-links left-icon public live-link">Site</span></a>
-            </div>
-          </div>
+        <div class="portfolio-footer">
+          <span class="portfolio-links left-icon private source-link">Código Privado</span>
+          <a target="_blank" href="https://www.pel.uerj.br/"><span class="portfolio-links left-icon public live-link">Site</span></a>
         </div>
       </div>
     </div>
+    
+    <div class="modal js-modal" data-modal-name="text-converter">
+      <div class="modal-popup portfolio-popup">
+        <div class="close"></div>
+        <div class="portfolio-image-container">
+          <img src="/images/portfolio/text-converter.png" alt="Text Converter" class="portfolio-image">
+        </div>
+        <div class="portfolio-description">
+          <h2>Conversor de Texto</h2>
+          <p>Um aplicativo para web que converte o texto fornecido como entrada para o formato escolhido, dentre eles: caixa alta, caixa baixa, capitalizado e espaçado. Ele está disponível tanto em português quanto em inglês.</p>
+          <p>Tecnologias utilizadas: HTML, CSS, JavaScript, PHP e Apache.</p>
+        </div>
+        <div class="portfolio-footer">
+          <a target="_blank" href="https://github.com/karranlemos/TextConverter/"><span class="portfolio-links left-icon public source-link">Código Fonte</span></a>
+          <a target="_blank" href="https://k-text-converter.herokuapp.com/"><span class="portfolio-links left-icon public live-link">Site</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal js-modal" data-modal-name="portfolio">
+      <div class="modal-popup portfolio-popup">
+        <div class="close"></div>
+        <div class="portfolio-image-container">
+          <img src="/images/portfolio/portfolio.png" alt="PEL" class="portfolio-image">
+        </div>
+        <div class="portfolio-description">
+          <h2>Portfólio</h2>
+          <p>O site no qual você está.</p>
+          <p>Este site foi criado para guardar meu portfólio e minhas informações de contato. Ele foi criado para ser hospedado no Github, então o projeto não possui, no momento, um backend próprio.</p>
+          <p>Tecnologias utilizadas: HTML, CSS e JavaScript.</p>
+        </div>
+        <div class="portfolio-footer">
+          <a target="_blank" href="https://github.com/karranlemos/karranlemos.github.io"><span class="portfolio-links left-icon public source-link">Código Fonte</span></a>
+          <a target="_blank" href="/"><span class="portfolio-links left-icon public live-link">Site</span></a>
+        </div>
+      </div>
+    </div>
+    
   </body>
 </html>

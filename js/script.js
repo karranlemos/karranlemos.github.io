@@ -72,105 +72,100 @@ class MainMenu {
 }
 
 
+
+// Due to lack of support to static fields
+const _STATIC_MODAL_FIELDS = {
+    _modals: {},
+}
+
 class Modal {
 
     constructor(modal) {
         this.modal = modal
-        this.modalViewport = this.modal.querySelector('div.modal-viewport')
-        if (!this.modalViewport)
-            throw 'modal-viewport not found'
+        if (!this.modal.classList.contains('js-modal'))
+            throw 'Not JS modal'
         
-        var popupWrappersDivs = this.modal.querySelectorAll('div.modal-popup-wrapper')
-        
-        this.popupWrappers = new Set()
-        for (let popupWrapperDiv of popupWrappersDivs) {
-            var closeDiv = popupWrapperDiv.querySelector('div.close')
-            if (closeDiv)
-                closeDiv.addEventListener('click', this.closeModal.bind(this))
+        this.modalName = this.modal.getAttribute('data-modal-name')
+        if (!this.modalName)
+            throw 'No modal name found'
+        if (_STATIC_MODAL_FIELDS._modals.hasOwnProperty(this.modalName))
+            throw 'Duplicated modal name'
+            
+        this.buttonClose = this.modal.querySelector('.close')
+        if (!this.buttonClose)
+            throw 'Close button not found'
 
-            this.popupWrappers.add(popupWrapperDiv)
-        }
-
+        this.buttonClose.addEventListener('click', this.closeModal.bind(this))
         this.modal.addEventListener('click', function(e) {
-            if ([this.modal, this.modalViewport].includes(e.target))
+            if (e.target === this.modal)
                 this.closeModal()
         }.bind(this))
+
+        this.modal.tabIndex = 0
+        this.modal.addEventListener('keyup', function(e) {
+            if (e.key === 'Escape')
+                this.closeModal()
+        }.bind(this))
+
+        _STATIC_MODAL_FIELDS._modals[this.modalName] = this
     }
 
     closeModal() {
         this.modal.classList.remove('show')
-        for (let wrapper of this.popupWrappers)
-            wrapper.classList.remove('show')
     }
 
-    openModal(wrapper) {
-        if (!this.popupWrappers.has(wrapper))
-            throw 'Wrapper not in list'
-        
+    openModal() {
         this.modal.classList.add('show')
-        wrapper.classList.add('show')
+        this.modal.focus()
     }
 
 
+    
+    static closeAllModals() {
+        for (let modal of Object.values(_STATIC_MODAL_FIELDS._modals)) {
+            modal.closeModal()
+        }
+    }
+    
+    static addModalOpener(modalOpener) {
+        var modalName = modalOpener.getAttribute('data-modal-name')
+        if (!modalName)
+            return
+
+        var modal = _STATIC_MODAL_FIELDS._modals[modalName]
+        if (!modal)
+            return
+
+        modalOpener.addEventListener('click', function() {
+            modal.openModal()
+        })
+    }
 
     static getAllModals() {
-        var modalDivs = document.querySelectorAll('div.modal')
+        var modalDivs = document.querySelectorAll('div.js-modal')
         var modals = []
         for (let modalDiv of modalDivs) {
             try {
                 modals.push(new Modal(modalDiv))
             }
-            catch (e) {
+            catch {
                 continue
             }
         }
+
+        Modal._setModalOpeners()
+
         return modals
     }
-}
 
-
-class PortfolioModals {
-
-    constructor(modals=null) {
-        if (!modals)
-            modals = Modal.getAllModals()
-        if (modals.length < 1)
-            return
-        this.modals = modals
-        
-        var galleryItemsDiv = document.querySelectorAll('div.gallery.portfolio div.gallery-item')
-        if (galleryItemsDiv.length < 1)
-            return
-        
-        this.galleryItems = {}
-        for (let galleryItemDiv of galleryItemsDiv) {
-            if (!galleryItemDiv.hasAttribute('data-gallery-item'))
-                continue
-            this.galleryItems[galleryItemDiv.getAttribute('data-gallery-item')] = galleryItemDiv
-        }
-
-        this.linkedGalleryItems = new Set()
-        for (let modal of this.modals) {
-            for (let wrapper of modal.popupWrappers) {
-                if (!wrapper.hasAttribute('data-gallery-item'))
-                    continue
-                let galleryItemCode = wrapper.getAttribute('data-gallery-item')
-
-                if (this.linkedGalleryItems.has(galleryItemCode))
-                    continue
-
-                if (!this.galleryItems.hasOwnProperty(galleryItemCode))
-                    continue
-                let galleryItem = this.galleryItems[galleryItemCode]
-
-                galleryItem.addEventListener('click', function() {
-                    modal.openModal(wrapper)
-                })
-
-                this.linkedGalleryItems.add(galleryItemCode)
-            }
+    static _setModalOpeners() {
+        var modalOpeners = document.getElementsByClassName('js-modal-opener')
+        for (let modalOpener of modalOpeners) {
+            Modal.addModalOpener(modalOpener)
         }
     }
+
+
 }
 
 
@@ -191,5 +186,4 @@ var scriptObjects = {}
 window.addEventListener('load', () => {
     scriptObjects.mainMenu = new MainMenu()
     scriptObjects.modals = Modal.getAllModals()
-    scriptObjects.portfolioModals = new PortfolioModals(scriptObjects.modals)
 })
