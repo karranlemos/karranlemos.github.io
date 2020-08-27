@@ -60,6 +60,7 @@ div.modal div.portfolio-popup div.portfolio-image-container {
     position: relative;
     grid-row: 1/3;
     overflow: hidden;
+    background-color: var(--page-bg-color-lighter);
 }
 
 div.modal div.portfolio-popup div.portfolio-image-container img.portfolio-image {
