@@ -54,7 +54,8 @@ div.page-section-content, nav#main-menu {
 }
 
 div.related-links {
-    text-align: center;
+    display: flex;
+    justify-content: center;
     margin: 50px;
 }
 
