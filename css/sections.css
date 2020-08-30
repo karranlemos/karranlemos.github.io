@@ -140,7 +140,7 @@ section#pages-section section:nth-of-type(even) {
 
 @media only screen and (max-width: 650px) {
     section#home-section div.home-info header h1.titulo-site {
-        font-size: 48px;
+        font-size: 40px;
     }
 
     section#home-section div.home-info header div.subtitulo::before,
@@ -149,8 +149,8 @@ section#pages-section section:nth-of-type(even) {
     }
 }
 
-@media only screen and (max-width: 650px) {
-    section#home-section div.home-info header h1.titulo-site {
-        font-size: 40px;
+@media only screen and (max-height: 250px) {
+    section#home-section div.home-info-container .related-links {
+        display: none;
     }
 }
