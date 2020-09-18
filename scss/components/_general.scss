@@ -9,8 +9,8 @@ html {
 body {
     position: relative;
     
-    background-color: var(--bg-color);
-    color: var(--color);
+    background-color: $bg-color;
+    color: $color;
     font-size: 16px;
 
     font-family: 'Cairo', Tahoma, sans-serif;
@@ -18,12 +18,12 @@ body {
 }
 
 a {
-    color: var(--a-color);
-}
+    color: $a-color;
 
-a.anchor {
-    position: relative;
-    top: calc(-1 * var(--navbar-height-pinned));
+    &.anchor {
+        position: relative;
+        top: -1 * $navbar-height-pinned;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -41,7 +41,7 @@ h2 {
 
 div.page-section-content {
     min-height: 400px;
-    max-width: var(--pages-width);
+    max-width: $pages-width;
     
     margin: 0 auto;
     padding: 50px;
@@ -58,17 +58,13 @@ div.related-links {
     justify-content: center;
     flex-wrap: wrap;
     margin: 50px;
-}
 
-div.related-links a {
-    margin-left: 10px;
-    margin-right: 10px;
-}
+    a {
+        margin-left: 10px;
+        margin-right: 10px;
 
-div.related-links a img {
-    
-}
-
-div.related-links a img:hover {
-    filter: brightness(0.8);
+        img:hover {
+            filter: brightness(0.8);
+        }
+    }
 }
