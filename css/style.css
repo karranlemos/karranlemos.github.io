@@ -3,6 +3,78 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap");
 /* if changed, must change const in MainMenu.goToSection() */
+ul.simple-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+ul.simple-list li {
+  margin: 10px;
+}
+
+.split-blocks {
+  display: flex;
+  gap: 50px;
+  margin: 30px 20px;
+  text-align: center;
+}
+.split-blocks > div {
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+}
+.split-blocks > div h2 {
+  font-size: 22px;
+  margin: 10px 0 20px 0;
+}
+.split-blocks > div table {
+  margin: 0 auto;
+}
+.split-blocks > div li {
+  line-height: 1.4;
+}
+.split-blocks > .big {
+  flex-grow: 2;
+}
+.split-blocks .presentation-block {
+  display: inline-flex;
+  justify-content: center;
+  align-items: start;
+  text-align: center;
+  padding: 20px;
+}
+.split-blocks .presentation-block .icon {
+  width: 60px;
+  height: 60px;
+  margin: 10px 0;
+}
+.split-blocks .presentation-block h2 {
+  margin: 10px 0;
+}
+
+@media (max-width: 700px) {
+  .split-blocks {
+    gap: 20px;
+    margin: 0;
+    flex-direction: column;
+  }
+  .split-blocks > div {
+    flex: 0 0 auto;
+  }
+  .split-blocks > div + div {
+    margin-top: 15px;
+  }
+  .split-blocks .presentation-block {
+    margin: 0px;
+    height: auto;
+  }
+  .split-blocks .presentation-block:first-child {
+    margin-top: 50px;
+  }
+  .split-blocks .presentation-block:last-child {
+    margin-bottom: 50px;
+  }
+}
 html, body {
   margin: 0;
 }
