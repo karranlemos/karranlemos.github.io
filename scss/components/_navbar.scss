@@ -1,18 +1,15 @@
 nav#main-menu {
+    position: fixed;
+    z-index: 1000;
     display: flex;
     justify-content: center;
-    position: fixed;
-
-    background-color: transparent;
-
-    width: 100%;
-
-    z-index: 1000;
-
-    font-family: 'Cairo', Tahoma, sans-serif;
-    font-size: 18px;
 
     height: $navbar-height-top;
+    width: 100%;
+    
+    background-color: transparent;
+    font-family: 'Cairo', Tahoma, sans-serif;
+    font-size: 18px;
 
     transition: background-color 1s, height 1s;
 
@@ -89,27 +86,45 @@ nav#main-menu {
             background-position: center;
         }
 
+        .mobile-button, .home-button {
+            z-index: 10000;
+        }
+
         .mobile-only {
             display: inherit;
         }
 
         ul.menu-options {
-            display: none;
+            display: flex;
+            justify-content: start;
+            background-color: $navbar-bg-color;
+
             position: absolute;
-            top: 100%;
+            top: 0;
             left: 0;
             right: 0;
-            height: calc(100vh - #{$navbar-height-pinned});
-            z-index: 1;
+            height: calc(100vh);
+            z-index: 999;
+
+            padding-top: $navbar-height-pinned;
     
             flex-direction: column;
             text-align: center;
+
+            clip-path: circle(0px at calc(100% - #{$navbar-height-top/2}) #{$navbar-height-top/2});
+            transition: clip-path 500ms ease-in-out;
+
+            .menu-button a {
+                justify-content: center;
+                background-color: transparent;
+                width: 100%;
+                height: $menu-button-mobile-height;
+            }
         }
 
 
 
         &.mobile-open {
-            background-color: $navbar-bg-color;
             height: $navbar-height-pinned;
             transition: background-color 0s, height 1s;
 
@@ -118,16 +133,7 @@ nav#main-menu {
             }
 
             ul.menu-options {
-                display: flex;
-                justify-content: start;
-                background-color: $navbar-bg-color;
-
-                .menu-button a {
-                    justify-content: center;
-                    background-color: transparent;
-                    width: 100%;
-                    height: $menu-button-mobile-height;
-                }
+                clip-path: circle(100%);
             }
         }
     }
