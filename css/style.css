@@ -52,6 +52,11 @@ ul.simple-list li {
   margin: 10px 0;
 }
 
+.related-links .image-link {
+  outline: none;
+  border: none;
+}
+
 @media (max-width: 700px) {
   .split-blocks {
     gap: 20px;
