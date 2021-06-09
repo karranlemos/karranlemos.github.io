@@ -1,7 +1,9 @@
 import React from 'react';
 
-export default function MainPage() {
+import SinglePage from './SinglePage'
+
+export default function Sections() {
   return (
-    <h1>Hey</h1>
+    <SinglePage />
   );
 }
