@@ -3,7 +3,7 @@ import React from 'react';
 import Section from '../../../components/Section'
 import styles from './styles'
 
-export default function PortfolioSection({
+export default function ContactSection({
   style: externalStyle={}
 }) {
 
@@ -15,7 +15,7 @@ export default function PortfolioSection({
   return (
     <Section 
       style={finalStyle}
-      title='Portfólio'
+      title='Contato'
     >
       
     </Section>

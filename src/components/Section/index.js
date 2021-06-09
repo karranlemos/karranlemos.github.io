@@ -4,7 +4,8 @@ import styles from './styles'
 import SectionHeader from './SectionHeader'
 
 export default function Section({
-  style: externalStyle={}
+  style: externalStyle={},
+  title,
 }) {
 
   const finalStyle = {
@@ -15,7 +16,9 @@ export default function Section({
   return (
     <section style={finalStyle}>
       <div style={styles.container}>
-        <SectionHeader title='hey' />
+        <SectionHeader
+          title={title}
+        />
       </div>
     </section>
   )

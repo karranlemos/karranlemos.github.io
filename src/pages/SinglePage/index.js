@@ -2,28 +2,21 @@
  * SinglePage component for a single page site, with multiple sections.
  */
 
-import React from 'react';
+import React from 'react'
 
-import TopSection from './TopSection';
-import Section from '../../components/Section'
-import styles from './styles';
+import TopSection from './TopSection'
+import PortfolioSection from './PortfolioSection'
+import AboutSection from './AboutSection'
+import ContactSection from './ContactSection'
+import styles from './styles'
 
 export default function SinglePage() {
   return (
     <div style={styles.sections}>
       <TopSection />
-      <Section style={styles.sectionEven}>
-        
-      </Section>
-      <Section style={styles.sectionOdd}>
-        
-      </Section>
-      <Section style={styles.sectionEven}>
-        
-      </Section>
-      <Section style={styles.sectionOdd}>
-        
-      </Section>
+      <PortfolioSection style={styles.sectionOdd} />        
+      <AboutSection style={styles.sectionEven} />
+      <ContactSection style={styles.sectionOdd} />
     </div>
-  );
+  )
 }
