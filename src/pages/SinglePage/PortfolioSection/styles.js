@@ -6,7 +6,7 @@ import colors from '../../../commons/colors'
 
 const styles = {
   section: {
-    minHeight: 400,
+    minHeight: '100vh',
     backgroundColor: colors.lighterBlack,
     width: '100%',
   },

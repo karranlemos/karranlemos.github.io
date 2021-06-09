@@ -4,13 +4,24 @@
 
 import React from 'react';
 
-import Section from './Section';
+import TopSection from './TopSection';
+import Section from '../../components/Section'
 import styles from './styles';
 
 export default function SinglePage() {
   return (
     <div style={styles.sections}>
-      <Section>
+      <TopSection />
+      <Section style={styles.sectionEven}>
+        
+      </Section>
+      <Section style={styles.sectionOdd}>
+        
+      </Section>
+      <Section style={styles.sectionEven}>
+        
+      </Section>
+      <Section style={styles.sectionOdd}>
         
       </Section>
     </div>

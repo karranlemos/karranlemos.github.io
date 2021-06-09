@@ -1,14 +1,14 @@
 const colors = {
-  black:  'rgb(10, 10, 10)',
-  lightBlack:  'rgb(17, 17, 17)',
-  lighterBlack:  'rgb(27, 27, 27)',
+  black:  '#0d0d0d',
+  lightBlack:  '#151515',
+  lighterBlack:  '#1b1b1b',
   fullBlack:  '#000',
   
-  gray:  'rgb(182, 182, 182)',
+  gray:  '#b6b6b6',
   
-  white:  'rgb(223, 223, 223)',
+  white:  '#dfdfdf',
   
-  purple:  'rgb(114, 114, 221)',
+  purple:  '#7272dd',
 };
 
 export default colors;
