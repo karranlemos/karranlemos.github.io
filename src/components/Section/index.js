@@ -4,8 +4,9 @@ import styles from './styles'
 import SectionHeader from './SectionHeader'
 
 export default function Section({
+  children=null,
   style: externalStyle={},
-  title,
+  title=null,
 }) {
 
   const finalStyle = {
@@ -19,6 +20,7 @@ export default function Section({
         <SectionHeader
           title={title}
         />
+        {children}
       </div>
     </section>
   )

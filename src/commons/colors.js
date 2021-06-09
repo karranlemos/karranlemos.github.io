@@ -7,6 +7,7 @@ const colors = {
   gray:  '#b6b6b6',
   
   white:  '#dfdfdf',
+  fullWhite:  '#fff',
   
   purple:  '#7272dd',
 };

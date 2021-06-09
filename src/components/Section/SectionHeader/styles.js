@@ -2,15 +2,14 @@ import colors from '../../../commons/colors'
 
 const styles = {
   header: {
-    padding: 30,
-    paddingBottom: 20,
+    
   },
 
   text: {
-    color: colors.white,
+    color: colors.fullWhite,
     fontFamily: "'Noto Sans', 'Roboto', Tahoma, sans-serif",
-    marginTop: 10,
-    marginBottom: 20,
+    marginTop: 0,
+    marginBottom: 30,
     fontSize: 32,
   }
 }

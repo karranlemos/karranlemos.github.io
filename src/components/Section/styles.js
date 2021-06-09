@@ -14,6 +14,8 @@ const styles = {
   container: {
     maxWidth: 1200,
     margin: '0 auto',
+    padding: 50,
+    boxSizing: 'border-box',
   }
 }
 
