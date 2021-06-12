@@ -6,7 +6,7 @@ import SinglePage from './SinglePage'
 export default function Sections() {
   const homeItem = {
     text: 'Karran Lemos',
-    link: 'top'
+    link: '#top'
   }
   const pagesItems = [
     {

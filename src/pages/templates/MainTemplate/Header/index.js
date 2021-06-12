@@ -8,8 +8,6 @@ export default function Header({
 }) {
   const [pinned, setPinned] = useState(false)
 
-  console.log('hey')
-
   useEffect(() => {
     const checkNavbarFixed = () => {
       const MIN_PINNED_NAVBAR = 50
