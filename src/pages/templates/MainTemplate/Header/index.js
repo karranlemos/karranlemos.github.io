@@ -18,6 +18,7 @@ export default function Header({
         setPinned(false)
     }
 
+    checkNavbarFixed()
     window.addEventListener('scroll', checkNavbarFixed)
   }, [])
 
