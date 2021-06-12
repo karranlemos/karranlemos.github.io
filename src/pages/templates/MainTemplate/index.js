@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Header from './Header'
+import Footer from './Footer'
 
 export default function MainTemplate({
   homeItem,
@@ -16,6 +17,7 @@ export default function MainTemplate({
       <main>
         {children}
       </main>
+      <Footer />
     </>
   )
 }
