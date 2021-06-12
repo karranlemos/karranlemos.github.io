@@ -15,6 +15,7 @@ export default function Anchor({
     <a
       href={link}
       target='_blank'
+      rel='noreferrer'
       style={finalStyle}
     >{children}</a>
   )
