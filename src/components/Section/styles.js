@@ -19,6 +19,7 @@ const styles = {
   },
 
   hashAnchor: {
+    display: 'hidden',
     position: 'relative',
     top: -50,
   }

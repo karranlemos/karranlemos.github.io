@@ -17,10 +17,7 @@ export default function Section({
   
   return (
     <section style={finalStyle}>
-      <a
-        id={sectionAnchorId}
-        style={styles.hashAnchor}
-      />
+      <SectionAnchor id={sectionAnchorId} />
       <div style={styles.container}>
         <SectionHeader
           title={title}
@@ -28,5 +25,18 @@ export default function Section({
         {children}
       </div>
     </section>
+  )
+}
+
+function SectionAnchor({ id }) {
+  
+  if (!id)
+    return null
+
+  return (
+    <div
+      id={id}
+      style={styles.hashAnchor}
+    ></div>
   )
 }

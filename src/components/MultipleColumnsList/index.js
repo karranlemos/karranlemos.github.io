@@ -4,8 +4,9 @@ export default function MultipleColumnsList({ columnsInfo }) {
   return (
     <div style={styles.multipleColumnsList}>
       {
-        columnsInfo.map(columnInfo => (
+        columnsInfo.map((columnInfo, index) => (
           <ColumnList
+            key={index}
             title={columnInfo.title}
             items={columnInfo.items}
           />
@@ -21,8 +22,11 @@ function ColumnList({ title, items }) {
       <h2 style={styles.columnTitle}>{title}</h2>
       <ul style={styles.list}>
         {
-          items.map(item => (
-            <li style={styles.line}>{item}</li>
+          items.map((item, index) => (
+            <li
+              key={index}
+              style={styles.line}
+            >{item}</li>
           ))
         }
       </ul>

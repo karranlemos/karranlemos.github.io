@@ -54,8 +54,9 @@ const SideButtons = ({ sideButtons }) => {
   return (
     <div style={styles.pagesItems}>
       {
-        sideButtons.map(({ text, link }) => (
+        sideButtons.map(({ text, link }, index) => (
           <MenuLinkButton
+            key={index}
             text={text}
             link={link}
           />

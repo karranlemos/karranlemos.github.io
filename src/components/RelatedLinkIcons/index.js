@@ -6,8 +6,9 @@ export default function RelatedLinkIcons({ linkIconsInfo }) {
   return (
     <div style={styles.relatedLinkIcons}>
       {
-        linkIconsInfo.map(linkIconInfo => (
+        linkIconsInfo.map((linkIconInfo, index) => (
           <RelatedLinkIcon
+            key={index}
             image={linkIconInfo.image}
             link={linkIconInfo.link}
             title={linkIconInfo.link || ''}
