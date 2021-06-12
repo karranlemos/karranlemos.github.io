@@ -3,7 +3,11 @@ import React from 'react';
 import Section from '../../../components/Section'
 import Anchor from '../../../components/Tags/Anchor'
 import MultipleColumnsList from '../../../components/MultipleColumnsList'
+import RelatedLinkIcons from '../../../components/RelatedLinkIcons'
 import styles from './styles'
+
+import GithubLogo from '../../../resources/images/general/GithubLogo.png'
+import LinkedinLogo from '../../../resources/images/general/LinkedinLogo.png'
 
 export default function AboutSection({
   style: externalStyle={}
@@ -26,9 +30,24 @@ export default function AboutSection({
       <MultipleColumnsList columnsInfo={columnsInfo} />
 
       <p><Anchor link="/resources/files/pdfs/Currículo - Karran Lemos.pdf">Veja meu currículo</Anchor> para mais informações.</p>
+
+      <RelatedLinkIcons linkIconsInfo={linkIconsInfo} />
     </Section>
   )
 }
+
+const linkIconsInfo = [
+  {
+    title: 'Github',
+    link: 'https://github.com/karranlemos/',
+    image: GithubLogo,
+  },
+  {
+    title: 'Linkedin',
+    link: 'https://www.linkedin.com/in/karranlemos/',
+    image: LinkedinLogo,
+  }
+]
 
 const columnsInfo = [
   {
