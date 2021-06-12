@@ -17,6 +17,7 @@ export default function ContactSection({
     <Section 
       style={finalStyle}
       title='Contato'
+      sectionAnchorId='contact'
     >
       <p>Entre em contato comigo através do email: <Anchor link='mailto:karranlemos@gmail.com'>karranlemos@gmail.com</Anchor>.</p>
     </Section>

@@ -16,6 +16,7 @@ export default function PortfolioSection({
     <Section 
       style={finalStyle}
       title='Portfólio'
+      sectionAnchorId='portfolio'
     >
       
     </Section>

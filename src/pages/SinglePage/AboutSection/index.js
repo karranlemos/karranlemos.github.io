@@ -16,6 +16,7 @@ export default function AboutSection({
     <Section 
       style={finalStyle}
       title='Sobre'
+      sectionAnchorId='about'
     >
       
     </Section>

@@ -16,6 +16,11 @@ const styles = {
     margin: '0 auto',
     padding: 50,
     boxSizing: 'border-box',
+  },
+
+  hashAnchor: {
+    position: 'relative',
+    top: -50,
   }
 }
 
