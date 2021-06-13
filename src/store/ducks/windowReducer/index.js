@@ -2,10 +2,7 @@
  * Reducer responsible for storing window state and mode
  */
 
-export const types = {
-  WINDOW_SIZE_CHANGED: 'WINDOW_SIZE_CHANGED',
-  MOBILE_MODE_CHANGED: 'MOBILE_MODE_CHANGED',
-}
+import types from './types'
 
 const initialState = {
   windowSize: {
@@ -31,16 +28,3 @@ export default function reducer(state = initialState, action) {
       return state
   }
 }
-
-export const windowSizeChangedAction = (width, height) => ({
-  type: types.WINDOW_SIZE_CHANGED,
-  payload: {
-    width,
-    height,
-  }
-})
-
-export const mobileModeChangedAction = (mobileMode) => ({
-  type: types.MOBILE_MODE_CHANGED,
-  payload: mobileMode
-})
