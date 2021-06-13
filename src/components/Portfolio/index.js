@@ -16,8 +16,9 @@ export function PortfolioItem({
   title,
   links,
   children,
-  onClick=()=>{},
+  onClick: externalOnClick=()=>{},
 }) {
+  const [open, setOpen] = useState(false)
   const [hover, setHover] = useState(false)
 
   const finalItemStyle = styles.getItem(image)
@@ -34,6 +35,16 @@ export function PortfolioItem({
     setHover(false)
   }
 
+  const onClick = () => {
+    setOpen(true)
+
+    externalOnClick()
+  }
+
+  const onClose = () => {
+    setOpen(false)
+  }
+
   return (
     <>
       <div
@@ -46,10 +57,11 @@ export function PortfolioItem({
         <div style={finalOverlayStyle} />
       </div>
       <ModalPortfolio
-        open={title==='Utrack'}
+        open={open}
         title={title}
         image={image}
         links={links}
+        onClose={onClose}
       >{children}</ModalPortfolio>
     </>
   )

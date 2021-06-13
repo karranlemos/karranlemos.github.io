@@ -29,7 +29,10 @@ export default function ModalPortfolio({
           style={styles.header}
         >
           <div style={styles.headerTitle}>{title}</div>
-          <div style={styles.closeButton} />
+          <div
+            style={styles.closeButton}
+            onClick={onClose}
+          />
         </header>
         <div style={styles.content}>
           {children}
