@@ -7,18 +7,24 @@ export default function Section({
   children=null,
   style: externalStyle={},
   title=null,
-  sectionAnchorId=null
+  sectionAnchorId=null,
+  containerStyle=true
 }) {
 
   const finalStyle = {
     ...styles.section,
     ...externalStyle,
   }
+
+  const finalContainerStyle = {
+    ...styles.container,
+    ...containerStyle
+  }
   
   return (
     <section style={finalStyle}>
       <SectionAnchor id={sectionAnchorId} />
-      <div style={styles.container}>
+      <div style={finalContainerStyle}>
         <SectionHeader
           title={title}
         />
@@ -29,7 +35,6 @@ export default function Section({
 }
 
 function SectionAnchor({ id }) {
-  
   if (!id)
     return null
 
