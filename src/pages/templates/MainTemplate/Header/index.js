@@ -77,11 +77,11 @@ const MobileMenu = ({ homeItem, pagesItems, pinned }) => {
     setTimeout(() => {
       dispatch(scrollBehaviorAction('smooth'))
     }, 500)
-  }, [menuOpen])
+  }, [menuOpen, dispatch])
 
   useEffect(() => {
     return () => dispatch(scrollBehaviorAction('smooth'))
-  }, [])
+  }, [dispatch])
 
   const finalMainMenuStyle = { ...styles.mainMenu }
   if (pinned || menuOpen)

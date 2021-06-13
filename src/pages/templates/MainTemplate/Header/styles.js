@@ -90,7 +90,6 @@ const styles = {
 
     transition: 'padding 1s',
 
-    boxSizing: 'border-box',
     minWidth: '75px',
   },
 

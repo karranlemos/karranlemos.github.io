@@ -3,6 +3,8 @@
  * and auxiliary functions.
  */
 
+import { commonException } from './exceptions'
+
 const colors = {
   black:  '#0d0d0d',
   lightBlack:  '#151515',
@@ -32,9 +34,9 @@ export default colors
  */
 export const getRgbaColor = (color, percentage=1) => {
   if (utils.getTypeRGB(color) === 'none')
-    throw 'invalid-rgb-color'
+    throw commonException('invalid-rgb-color')
   if (percentage < 0 || percentage > 1)
-    throw 'percentage-not-within-range'
+    throw commonException('percentage-not-within-range')
 
   const fullHexColor = utils.convertToFullRGB(color)
   const hexBytePercentage = utils.toHexNumber(255*percentage).padStart(2, '0')
@@ -56,7 +58,9 @@ const utils = {
       case 'full':
         return rgb
       case 'none':
-        throw 'invalid-rgb-color'
+        throw commonException('invalid-rgb-color')
+      default:
+        break
     }
 
     return `#${rgb.charAt(1)}${rgb.charAt(1)}${rgb.charAt(2)}${rgb.charAt(2)}${rgb.charAt(3)}${rgb.charAt(3)}`
@@ -70,9 +74,9 @@ const utils = {
    *   - 'none' if color is not an RGB string.
    */
   getTypeRGB(color) {
-    if (/^\#[0-9a-fA-F]{6}$/.test(color))
+    if (/^#[0-9a-fA-F]{6}$/.test(color))
       return 'full'
-    if (/^\#[0-9a-fA-F]{3}$/.test(color))
+    if (/^#[0-9a-fA-F]{3}$/.test(color))
       return 'half'
     
     return 'none'
@@ -89,7 +93,7 @@ const utils = {
     const HEX_CHARACTERS = '0123456789abcdef'
     
     if (number < 0)
-      throw 'number-lesser-than-zero'
+      throw commonException('number-lesser-than-zero')
 
     if (number === 0)
       return '0'
