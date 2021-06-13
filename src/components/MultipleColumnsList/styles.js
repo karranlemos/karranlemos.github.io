@@ -1,15 +1,18 @@
 const styles = {
   multipleColumnsList: {
     display: 'flex',
+    flexWrap: 'wrap',
     gap: '50px',
 
     margin: '30px 20px',
     textAlign: 'center',
+
+    overflow: 'hidden',
   },
 
   columnList: {
     flex: '1 1 0',
-    minWidth: 0,
+    minWidth: 200,
     overflow: 'hidden',
   },
 
