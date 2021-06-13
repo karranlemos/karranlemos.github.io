@@ -1,13 +1,17 @@
 import React from 'react';
-import SinglePage from './pages'
+import { Provider } from 'react-redux'
 
+import store from './store'
+import SinglePage from './pages'
 import reactStyles from './globalStyles/reactStyles'
 
 function App() {
   return (
-    <div style={reactStyles}>
-      <SinglePage />
-    </div>
+    <Provider store={store}>
+      <div style={reactStyles}>
+        <SinglePage />
+      </div>
+    </Provider>
   );
 }
 
