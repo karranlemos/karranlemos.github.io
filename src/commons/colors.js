@@ -10,6 +10,7 @@ const colors = {
   fullBlack:  '#000',
   
   gray:  '#b6b6b6',
+  darkGray: '#454545',
   
   white:  '#dfdfdf',
   fullWhite:  '#fff',

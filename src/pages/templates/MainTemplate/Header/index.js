@@ -65,7 +65,7 @@ const DesktopMenu = ({ homeItem, pagesItems, pinned }) => {
 
 const MobileMenu = ({ homeItem, pagesItems, pinned }) => {
   const dispatch = useDispatch()
-  
+
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
@@ -73,7 +73,7 @@ const MobileMenu = ({ homeItem, pagesItems, pinned }) => {
       dispatch(scrollBehaviorAction('auto'))
       return
     }
-    
+
     setTimeout(() => {
       dispatch(scrollBehaviorAction('smooth'))
     }, 500)
@@ -110,6 +110,7 @@ const MobileMenu = ({ homeItem, pagesItems, pinned }) => {
             style={finalSideButtonsStyle}
             menuButtonStyle={styles.menuButtonMobile}
             onClick={onClickMenuButtonHandler}
+            externalStyleHover={styles.menuButtonAnchorHover}
           />
         </div>
       </nav>
@@ -134,6 +135,7 @@ const SideButtons = ({
   sideButtons,
   style: externalStyle = null,
   menuButtonStyle = null,
+  externalStyleHover = null,
   onClick = () => { },
 }) => {
   const finalPagesItemsStyle = {
@@ -150,6 +152,7 @@ const SideButtons = ({
             text={text}
             link={link}
             externalButtonStyle={menuButtonStyle}
+            externalStyleHover={externalStyleHover}
             onClick={onClick}
           />
         ))
@@ -163,8 +166,11 @@ const MenuLinkButton = ({
   link,
   externalButtonStyle = null,
   externalAnchorStyle = null,
+  externalStyleHover = null,
   onClick = () => { },
 }) => {
+  const [hover, setHover] = useState(false)
+
   const finalButtonStyle = {
     ...styles.menuButton,
     ...externalButtonStyle,
@@ -175,15 +181,28 @@ const MenuLinkButton = ({
     ...externalAnchorStyle,
   }
 
+  if (hover)
+    Object.assign(finalAnchorStyle, externalStyleHover)
+
+  const handleOnMouseEnter = () => {
+    setHover(true)
+  }
+
+  const handleOnMouseLeave = () => {
+    setHover(false)
+  }
+
   return (
-    <div
-      style={finalButtonStyle}
+    <a
+      href={link}
+      style={finalAnchorStyle}
+      onMouseEnter={handleOnMouseEnter}
+      onMouseLeave={handleOnMouseLeave}
       onClick={onClick}
     >
-      <a
-        href={link}
-        style={finalAnchorStyle}
-      >{text}</a>
-    </div>
+      <div
+        style={finalButtonStyle}
+      >{text}</div>
+    </a>
   )
 }
