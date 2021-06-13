@@ -1,10 +1,21 @@
 import React, { useState } from 'react'
 
-import styles from './styles'
+import getStyles from './styles'
 
-export default function RelatedLinkIcons({ linkIconsInfo }) {
+export default function RelatedLinkIcons({
+  linkIconsInfo = [],
+  size = 40,
+  style: externalStyle = null
+}) {
+  const styles = getStyles({})
+
+  const finalContainerStyle = {
+    ...styles.relatedLinkIcons,
+    ...externalStyle,
+  }
+
   return (
-    <div style={styles.relatedLinkIcons}>
+    <div style={finalContainerStyle}>
       {
         linkIconsInfo.map((linkIconInfo, index) => (
           <RelatedLinkIcon
@@ -12,6 +23,7 @@ export default function RelatedLinkIcons({ linkIconsInfo }) {
             image={linkIconInfo.image}
             link={linkIconInfo.link}
             title={linkIconInfo.link || ''}
+            size={size}
           />
         ))
       }
@@ -19,7 +31,9 @@ export default function RelatedLinkIcons({ linkIconsInfo }) {
   )
 }
 
-function RelatedLinkIcon({ image, link, title='' }) {
+function RelatedLinkIcon({ image, link, title = '', size = 40 }) {
+  const styles = getStyles({ imageIconsWidth: size })
+
   const [imageHover, setImageHover] = useState(false)
 
   const onMouseEnterHandler = () => {
@@ -29,6 +43,10 @@ function RelatedLinkIcon({ image, link, title='' }) {
   const onMouseLeaveHandler = () => {
     setImageHover(false)
   }
+
+  const finalImageStyle = { ...styles.imageIcons }
+  if (imageHover)
+    Object.assign(finalImageStyle, styles.imageIconsHover)
 
   return (
     <a
@@ -45,10 +63,7 @@ function RelatedLinkIcon({ image, link, title='' }) {
       <img
         src={image}
         alt={title}
-        style={imageHover
-          ? styles.imageIconsHover
-          : null
-        }
+        style={finalImageStyle}
       />
     </a>
   )

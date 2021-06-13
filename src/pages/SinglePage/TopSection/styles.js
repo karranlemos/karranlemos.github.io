@@ -16,6 +16,7 @@ const getStyles = ({windowWidth = 0, windowHeight = 0}) => {
 
   return {
     section: {
+      position: 'relative',
       backgroundColor: colors.lighterBlack,
       background: `linear-gradient(to bottom, ${blackOverlayColor}, ${blackOverlayColor}), url(${BackgroundImage}) no-repeat center`,
       backgroundSize: 'cover',
@@ -83,6 +84,12 @@ const getStyles = ({windowWidth = 0, windowHeight = 0}) => {
       maxWidth: '100%',
       maxHeight: '100%',
       minHeight: `${windowHeight}px`,
+    },
+
+    relatedIcons: {
+      position: 'absolute',
+      margin: 0,
+      bottom: 30,
     },
   }
 }

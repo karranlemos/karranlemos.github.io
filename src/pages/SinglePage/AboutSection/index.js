@@ -31,7 +31,10 @@ export default function AboutSection({
 
       <p><Anchor link="/resources/files/pdfs/Currículo - Karran Lemos.pdf">Veja meu currículo</Anchor> para mais informações.</p>
 
-      <RelatedLinkIcons linkIconsInfo={linkIconsInfo} />
+      <RelatedLinkIcons
+        linkIconsInfo={linkIconsInfo}
+        size={64}
+      />
     </Section>
   )
 }

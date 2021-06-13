@@ -1,4 +1,4 @@
-const styles = {
+const getStyles = ({ imageIconsWidth = 64, }) => ({
   relatedLinkIcons: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -14,9 +14,14 @@ const styles = {
     margin: '0 10px',
   },
 
+  imageIcons: {
+    width: 'auto',
+    height: imageIconsWidth,
+  },
+
   imageIconsHover: {
     filter: 'brightness(0.8)',
   },
-}
+})
 
-export default styles
+export default getStyles
