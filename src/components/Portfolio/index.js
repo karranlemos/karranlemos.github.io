@@ -14,8 +14,10 @@ export function PortfolioItem({ image, title, children, onClick=()=>{} }) {
   const [hover, setHover] = useState(false)
 
   const finalItemStyle = styles.getItem(image)
+  
+  const finalOverlayStyle = { ...styles.overlay }
   if (hover)
-    Object.assign(finalItemStyle, styles.getItemHover(image))
+    Object.assign(finalOverlayStyle, styles.overlayHover)
 
   const onMouseEnterhandler = () => {
     setHover(true)
@@ -32,6 +34,10 @@ export function PortfolioItem({ image, title, children, onClick=()=>{} }) {
       title={title}
       onMouseEnter={onMouseEnterhandler}
       onMouseLeave={onMouseLeavehandler}
-    ></div>
+    >
+      <div style={finalOverlayStyle}>
+
+      </div>
+    </div>
   )
 }

@@ -29,9 +29,21 @@ const styles = {
     background: `url(${backgroundImage}) no-repeat left / cover`,
   }),
 
-  getItemHover: (backgroundImage) => ({
-    background: `url(${eyeYellow}) no-repeat center / 72px, linear-gradient(${blackOverlayColor}, ${blackOverlayColor}), url(${backgroundImage}) no-repeat left / cover`,
-  })
+  overlay: {
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+
+    background: `url(${eyeYellow}) no-repeat center / 72px, linear-gradient(${blackOverlayColor}, ${blackOverlayColor})`,
+    opacity: 0,
+    transition: 'opacity 0.4s',
+  },
+
+  overlayHover: {
+    opacity: 1,
+  },
 }
 
 export default styles
