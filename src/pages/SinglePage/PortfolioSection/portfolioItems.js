@@ -8,6 +8,7 @@ import githubListerImage from '../../../resources/images/portfolio/github-lister
 import messageOfTheDayImage from '../../../resources/images/portfolio/message-of-the-day.png'
 import pelImage from '../../../resources/images/portfolio/pel.png'
 import portfolioImage from '../../../resources/images/portfolio/portfolio.png'
+import portfolioOldImage from '../../../resources/images/portfolio/portfolio-old.png'
 import salaoDaMarciaImage from '../../../resources/images/portfolio/salao-da-marcia.png'
 import securityMassNotificationImage from '../../../resources/images/portfolio/security-mass-notification.png'
 import textConverterImage from '../../../resources/images/portfolio/text-converter.png'
@@ -83,6 +84,23 @@ export default function PortfolioItems() {
       >
         <p>Site criado para o Programa de Pós-Graduação em Engenharia Eletrônica (PEL) da Universidade do Estado do Rio de Janeiro (UERJ).</p>
         <p>Tecnologias utilizadas: HTML, CSS, JavaScript, WordPress, PHP e MySQL.</p>
+      </PortfolioItem>
+      <PortfolioItem
+        title='Portfolio'
+        image={portfolioImage}
+        links={{
+          code: {
+            privateLink: false,
+            link: 'https://github.com/karranlemos/karranlemos.github.io',
+          },
+          site: {
+            privateLink: true,
+          },
+        }}
+      >
+        <p>Este mesmo site!</p>
+        <p>Site criado para guardar meu portfólio e minhas informações de contato.</p>
+        <p>Tecnologias utilizadas: React, Redux, HTML e CSS.</p>
       </PortfolioItem>
       <PortfolioItem
         title='Salão da Márcia'
@@ -190,19 +208,19 @@ export default function PortfolioItems() {
         <p>Tecnologias utilizadas: HTML, CSS, JavaScript, MySQL, Node.js, Express.js, EJS, AJAX.</p>
       </PortfolioItem>
       <PortfolioItem
-        title='Portfolio'
-        image={portfolioImage}
+        title='Portfolio antigo'
+        image={portfolioOldImage}
         links={{
           code: {
             privateLink: false,
-            link: 'https://github.com/karranlemos/karranlemos.github.io',
+            link: 'https://github.com/karranlemos/old-portfolio-basic-webstack',
           },
           site: {
-            privateLink: false,
-            link: 'https://karranlemos.github.io/',
+            privateLink: true,
           },
         }}
       >
+        <p>Antigo portfólio pessoal, feito com tecnologias web padrão.</p>
         <p>Este site foi criado para guardar meu portfólio e minhas informações de contato. Ele foi criado para ser hospedado no Github, então o projeto não possui, no momento, um backend próprio.</p>
         <p>Tecnologias utilizadas: HTML, CSS, JavaScript e Sass.</p>
       </PortfolioItem>
