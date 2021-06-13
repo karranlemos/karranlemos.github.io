@@ -3,7 +3,6 @@
  */
 
 import colors, { getRgbaColor } from '../../../commons/colors'
-import * as utils from '../../../commons/utils'
 
 import BackgroundImage from '../../../resources/images/backgrounds/home-section-bg.jpg'
 

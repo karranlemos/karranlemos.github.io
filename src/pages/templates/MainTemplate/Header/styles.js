@@ -50,10 +50,37 @@ const styles = {
     justifyContent: 'center',
   },
 
+  pagesItemsMobile: {
+    display: 'flex',
+    justifyContent: 'start',
+    backgroundColor: colors.black,
+
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    height: '100vh',
+    zIndex: 999,
+
+    paddingTop: NAVBAR_HEIGHT_PINNED,
+
+    flexDirection: 'column',
+    textAlign: 'center',
+
+    clipPath: `circle(0px at calc(100% - ${NAVBAR_HEIGHT_PINNED/2}px) ${NAVBAR_HEIGHT_PINNED/2}px`,
+    transition: 'clip-path 500ms ease-in-out',
+  },
+
+  pagesItemsMobileOpen: {
+    clipPath: 'circle(100%)'
+  },
+
   menuButton: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+
+    zIndex: 1001,
 
     color: colors.fullWhite,
 
@@ -67,6 +94,13 @@ const styles = {
     minWidth: '75px',
   },
 
+  menuButtonMobile: {
+    justifyContent: 'center',
+    backgroundColor: 'transparent',
+    width: '100%',
+    height: 73,
+  },
+
   menuButtonAnchor: {
     textDecoration: 'none',
     color: 'inherit',
@@ -77,7 +111,7 @@ const styles = {
     padding: '0px 20px',
 
     outlineWidth: 0,
-  }
+  },
 }
 
 export default styles
