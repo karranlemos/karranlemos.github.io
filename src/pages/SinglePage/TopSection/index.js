@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 
 import Section from '../../../components/Section'
-import styles from './styles'
+import getStyles from './styles'
 
 export default function TopSection({
   style: externalStyle={}
 }) {
+  const [windowSize, setWindowSize] = useState([])
+
+  useLayoutEffect(() => {
+    const resizeCallback = () => {
+      setWindowSize([window.innerWidth, window.innerHeight])
+    }
+
+    window.addEventListener('resize', resizeCallback)
+    resizeCallback()
+
+    return () => window.removeEventListener('resize', resizeCallback)
+  }, [])
+
+  const styles = getStyles(...windowSize)
 
   const finalStyle = {
     ...styles.section,
