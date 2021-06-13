@@ -99,7 +99,10 @@ const MobileMenu = ({ homeItem, pagesItems, pinned }) => {
     <header>
       <nav style={finalMainMenuStyle}>
         <div style={styles.innerMenu}>
-          <HomeButton {...homeItem} />
+          <HomeButton
+            onClick={onClickMenuButtonHandler}
+            {...homeItem}
+          />
           <MobileMenuButton
             size={20}
             style={styles.menuButton}
@@ -119,7 +122,11 @@ const MobileMenu = ({ homeItem, pagesItems, pinned }) => {
 }
 
 
-const HomeButton = ({ text, link }) => {
+const HomeButton = ({
+  text,
+  link,
+  onClick=()=>{},
+}) => {
   if (!text || !link)
     return <div></div>
 
@@ -127,6 +134,7 @@ const HomeButton = ({ text, link }) => {
     <MenuLinkButton
       text={text}
       link={link}
+      onClick={onClick}
     />
   )
 }

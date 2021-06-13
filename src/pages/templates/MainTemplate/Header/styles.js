@@ -80,6 +80,8 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
 
+    zIndex: 1001,
+
     color: colors.fullWhite,
 
     /* padding: 0px 20px, */
@@ -101,7 +103,7 @@ const styles = {
 
   menuButtonAnchor: {
     zIndex: 1001,
-    
+
     textDecoration: 'none',
     color: 'inherit',
 
