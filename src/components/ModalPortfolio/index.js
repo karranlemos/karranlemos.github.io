@@ -105,6 +105,8 @@ const RelatedIconButton = ({ link, text, privateLink }) => {
     <a
       href={link}
       style={styles.getRelatedIconButton(privateLink)}
+      rel="noreferrer"
+      target="_blank"
     >
       {icon}
       <div>{text}</div>
