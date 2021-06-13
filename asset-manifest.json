@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.f451717b.chunk.css",
-    "main.js": "/static/js/main.5d488456.chunk.js",
-    "main.js.map": "/static/js/main.5d488456.chunk.js.map",
+    "main.js": "/static/js/main.1ec4d633.chunk.js",
+    "main.js.map": "/static/js/main.1ec4d633.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.82efc8f7.js",
     "runtime-main.js.map": "/static/js/runtime-main.82efc8f7.js.map",
     "static/css/2.679831fc.chunk.css": "/static/css/2.679831fc.chunk.css",
@@ -21,7 +21,8 @@
     "static/media/home-section-bg.f4f158a2.jpg": "/static/media/home-section-bg.f4f158a2.jpg",
     "static/media/message-of-the-day.2ec42762.png": "/static/media/message-of-the-day.2ec42762.png",
     "static/media/pel.08561704.png": "/static/media/pel.08561704.png",
-    "static/media/portfolio.78846e23.png": "/static/media/portfolio.78846e23.png",
+    "static/media/portfolio-old.57a5d8a3.png": "/static/media/portfolio-old.57a5d8a3.png",
+    "static/media/portfolio.d6393415.png": "/static/media/portfolio.d6393415.png",
     "static/media/resume.cf4e7ebc.svg": "/static/media/resume.cf4e7ebc.svg",
     "static/media/salao-da-marcia.48c63b10.png": "/static/media/salao-da-marcia.48c63b10.png",
     "static/media/security-mass-notification.69851452.png": "/static/media/security-mass-notification.69851452.png",
@@ -34,6 +35,6 @@
     "static/css/2.679831fc.chunk.css",
     "static/js/2.83db32e4.chunk.js",
     "static/css/main.f451717b.chunk.css",
-    "static/js/main.5d488456.chunk.js"
+    "static/js/main.1ec4d633.chunk.js"
   ]
 }
