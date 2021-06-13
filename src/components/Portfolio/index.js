@@ -11,7 +11,13 @@ export default function Portfolio({ children }) {
   )
 }
 
-export function PortfolioItem({ image, title, children, onClick=()=>{} }) {
+export function PortfolioItem({
+  image,
+  title,
+  links,
+  children,
+  onClick=()=>{},
+}) {
   const [hover, setHover] = useState(false)
 
   const finalItemStyle = styles.getItem(image)
@@ -43,7 +49,8 @@ export function PortfolioItem({ image, title, children, onClick=()=>{} }) {
         open={title==='Utrack'}
         title={title}
         image={image}
-      />
+        links={links}
+      >{children}</ModalPortfolio>
     </>
   )
 }

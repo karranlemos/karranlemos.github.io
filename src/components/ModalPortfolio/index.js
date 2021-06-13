@@ -2,6 +2,7 @@ import React from 'react'
 
 import Modal from '../Modal'
 import styles from './styles'
+import colors from '../../commons/colors'
 
 import EyeCrossedGray from '../../resources/images/icons/EyeCrossedGray'
 import EyeGray from '../../resources/images/icons/EyeGray'
@@ -11,7 +12,8 @@ export default function ModalPortfolio({
   title,
   image,
   children,
-  onClose=()=>{}
+  links = null,
+  onClose = () => { },
 }) {
   const finalThumbnailStyle = styles.getImageThumbnail(image)
 
@@ -30,40 +32,54 @@ export default function ModalPortfolio({
           <div style={styles.closeButton} />
         </header>
         <div style={styles.content}>
-
+          {children}
         </div>
         <footer
           style={styles.footer}
         >
-          <RelatedIconButton
-            link=''
-            text='Hey'
-            privateLink
-          />
-          <RelatedIconButton
-            link=''
-            text='Hey'
-            privateLink={false}
-          />
+          <RelatedCodeButton codeData={links?.code} />
+          <RelatedSiteButton siteData={links?.site} />
         </footer>
       </div>
     </Modal>
   )
 }
 
-const RelatedIconButton = ({ link, text, privateLink }) => {
-  const finalIconStyle = {
-    ...styles.relatedIconButtonIcon,
-  }
+const RelatedCodeButton = ({ codeData }) => {
+  if (!codeData)
+    return null
 
+  return (
+    <RelatedIconButton
+      link={codeData?.link}
+      text='Código'
+      privateLink={codeData.privateLink}
+    />
+  )
+}
+
+const RelatedSiteButton = ({ siteData }) => {
+  if (!siteData)
+    return null
+
+  return (
+    <RelatedIconButton
+      link={siteData?.link}
+      text='Site'
+      privateLink={siteData.privateLink}
+    />
+  )
+}
+
+const RelatedIconButton = ({ link, text, privateLink }) => {
   const icon = privateLink
-    ? <EyeCrossedGray />
+    ? <EyeCrossedGray fill={colors.darkGray} />
     : <EyeGray />
 
   return (
     <a
       href={link}
-      style={styles.relatedIconButton}
+      style={styles.getRelatedIconButton(privateLink)}
     >
       {icon}
       <div>{text}</div>

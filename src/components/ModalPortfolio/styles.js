@@ -51,22 +51,22 @@ const styles = {
     backgroundColor: colors.lighterBlack,
   },
 
-  relatedIconButton: {
+  getRelatedIconButton: (privateLink) => ({
     display: 'flex',
     alignItems: 'center',
     gap: 10,
 
     textDecoration: 'none',
-    color: colors.white,
+    color: privateLink
+      ? colors.darkGray
+      : colors.white,
 
     padding: '20px 15px',
-  },
 
-  relatedIconButtonIcon: {
-    display: 'flex',
-    width: 20,
-    height: 20,
-  },
+    cursor: privateLink
+      ? 'default'
+      : 'pointer',
+  }),
 }
 
 export default styles

@@ -22,10 +22,11 @@ export default function PortfolioSection({
     >
       <Portfolio>
         {
-          portfolioItems.map(({ title, image }) => (
+          portfolioItems.map(({ title, image, links }) => (
             <PortfolioItem
               title={title}
               image={image}
+              links={links}
             />
           ))
         }
