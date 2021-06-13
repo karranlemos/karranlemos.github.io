@@ -29,7 +29,7 @@ export default function AboutSection({
 
       <MultipleColumnsList columnsInfo={columnsInfo} />
 
-      <p><Anchor link="/resources/files/pdfs/Currículo - Karran Lemos.pdf">Veja meu currículo</Anchor> para mais informações.</p>
+      <p><Anchor link="/files/pdfs/Currículo - Karran Lemos.pdf">Veja meu currículo</Anchor> para mais informações.</p>
 
       <RelatedLinkIcons
         linkIconsInfo={linkIconsInfo}
