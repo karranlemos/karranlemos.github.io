@@ -2,10 +2,6 @@ html, body {
     margin: 0;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     position: relative;
     

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
 import styles from './styles'
 import MobileMenuButton from '../../../../components/MobileMenuButton'
+import { scrollBehaviorAction } from '../../../../store/ducks/windowReducer/actions'
 
 export default function Header({
   homeItem = null,
@@ -63,7 +64,24 @@ const DesktopMenu = ({ homeItem, pagesItems, pinned }) => {
 }
 
 const MobileMenu = ({ homeItem, pagesItems, pinned }) => {
+  const dispatch = useDispatch()
+  
   const [menuOpen, setMenuOpen] = useState(false)
+
+  useEffect(() => {
+    if (menuOpen) {
+      dispatch(scrollBehaviorAction('auto'))
+      return
+    }
+    
+    setTimeout(() => {
+      dispatch(scrollBehaviorAction('smooth'))
+    }, 500)
+  }, [menuOpen])
+
+  useEffect(() => {
+    return () => dispatch(scrollBehaviorAction('smooth'))
+  }, [])
 
   const finalMainMenuStyle = { ...styles.mainMenu }
   if (pinned || menuOpen)

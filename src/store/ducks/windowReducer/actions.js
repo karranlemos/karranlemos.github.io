@@ -16,3 +16,8 @@ export const mobileModeChangedAction = (mobileMode) => ({
   type: types.MOBILE_MODE_CHANGED,
   payload: mobileMode
 })
+
+export const scrollBehaviorAction = (scrollBehavior) => ({
+  type: types.SCROLL_BEHAVIOR_CHANGED,
+  payload: scrollBehavior
+})

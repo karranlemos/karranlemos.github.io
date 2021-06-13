@@ -10,6 +10,7 @@ const initialState = {
     height: null,
   },
   mobileMode: false,
+  scrollBehavior: 'smooth',
 }
 
 export default function reducer(state = initialState, action) {
@@ -23,6 +24,11 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         mobileMode: action.payload,
+      }
+    case types.SCROLL_BEHAVIOR_CHANGED:
+      return {
+        ...state,
+        scrollBehavior: action.payload,
       }
     default:
       return state
