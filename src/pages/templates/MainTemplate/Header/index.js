@@ -1,20 +1,16 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 
 import styles from './styles'
 import MobileMenuButton from '../../../../components/MobileMenuButton'
-
-const MAX_MOBILE_WIDTH = 700
 
 export default function Header({
   homeItem = null,
   pagesItems = [],
 }) {
+  const mobileMode = useSelector(state => state.window.mobileMode)
+
   const [pinned, setPinned] = useState(false)
-  const [mobileMode, setMobileMode] = useState(false)
-  const [windowSize, setWindowSize] = useState({
-    width: null,
-    height: null,
-  })
 
   useEffect(() => {
     const checkNavbarFixed = () => {
@@ -29,27 +25,6 @@ export default function Header({
     checkNavbarFixed()
     window.addEventListener('scroll', checkNavbarFixed)
   }, [])
-
-  useLayoutEffect(() => {
-    const resizeCallback = () => {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      })
-    }
-
-    window.addEventListener('resize', resizeCallback)
-    resizeCallback()
-
-    return () => window.removeEventListener('resize', resizeCallback)
-  }, [])
-
-  useLayoutEffect(() => {
-    if (windowSize.width <= MAX_MOBILE_WIDTH)
-      setMobileMode(true)
-    else
-      setMobileMode(false)
-  }, [windowSize])
 
   if (mobileMode)
     return (
