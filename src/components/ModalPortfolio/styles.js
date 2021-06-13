@@ -23,7 +23,7 @@ const styles = {
   header: {
     display: 'flex',
     alignItems: 'center',
-    backgroundColor: colors.lighterBlack,
+    backgroundColor: colors.lightBlack,
     padding: 20,
   },
 

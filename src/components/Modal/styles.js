@@ -32,7 +32,7 @@ const styles = {
     maxHeight: 400,
     width: '100%',
     height: '100%',
-    backgroundColor: colors.lighterBlack,
+    backgroundColor: colors.lightBlack,
   },
 
   modalCloseButton: {
