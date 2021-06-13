@@ -8,7 +8,7 @@ import BackgroundImage from '../../../resources/images/backgrounds/home-section-
 
 const blackOverlayColor = getRgbaColor(colors.black, 0.9)
 
-const getStyles = (windowWidth = 0, windowHeight = 0) => {
+const getStyles = ({windowWidth = 0, windowHeight = 0}) => {
   const maxVwWindowWidth = (vwValue, floorFontSize) => {
     const vwFontSize = vwValue * windowWidth / 100
     return Math.max(vwFontSize, floorFontSize)

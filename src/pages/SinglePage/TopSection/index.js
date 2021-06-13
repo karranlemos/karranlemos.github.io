@@ -1,4 +1,5 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React from 'react'
+import { useSelector } from 'react-redux'
 
 import Section from '../../../components/Section'
 import getStyles from './styles'
@@ -6,20 +7,12 @@ import getStyles from './styles'
 export default function TopSection({
   style: externalStyle={}
 }) {
-  const [windowSize, setWindowSize] = useState([])
+  const windowSize = useSelector(state => state.window.windowSize)
 
-  useLayoutEffect(() => {
-    const resizeCallback = () => {
-      setWindowSize([window.innerWidth, window.innerHeight])
-    }
-
-    window.addEventListener('resize', resizeCallback)
-    resizeCallback()
-
-    return () => window.removeEventListener('resize', resizeCallback)
-  }, [])
-
-  const styles = getStyles(...windowSize)
+  const styles = getStyles({
+    windowHeight: windowSize.height,
+    windowWidth: windowSize.width,
+  })
 
   const finalStyle = {
     ...styles.section,
