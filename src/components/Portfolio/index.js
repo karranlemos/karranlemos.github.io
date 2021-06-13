@@ -1,3 +1,5 @@
+import React, { useState } from 'react'
+
 import styles from './styles'
 
 export default function Portfolio({ children }) {
@@ -9,11 +11,27 @@ export default function Portfolio({ children }) {
 }
 
 export function PortfolioItem({ image, title, children, onClick=()=>{} }) {
+  const [hover, setHover] = useState(false)
+
+  const finalItemStyle = styles.getItem(image)
+  if (hover)
+    Object.assign(finalItemStyle, styles.getItemHover(image))
+
+  const onMouseEnterhandler = () => {
+    setHover(true)
+  }
+
+  const onMouseLeavehandler = () => {
+    setHover(false)
+  }
+
   return (
     <div
-      style={styles.getItem(image)}
+      style={finalItemStyle}
       onClick={onClick}
       title={title}
+      onMouseEnter={onMouseEnterhandler}
+      onMouseLeave={onMouseLeavehandler}
     ></div>
   )
 }

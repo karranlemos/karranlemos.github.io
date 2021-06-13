@@ -1,6 +1,8 @@
 import colors, { getRgbaColor, } from '../../commons/colors'
 
-const blackOverlayColor = getRgbaColor(colors.black, 0)
+import eyeYellow from '../../resources/images/icons/eye-yellow.svg'
+
+const blackOverlayColor = getRgbaColor(colors.black, 0.8)
 
 const styles = {
   portfolio: {
@@ -24,9 +26,12 @@ const styles = {
     backgroundColor: colors.gray,
     color: 'transparent',
 
-    background: `linear-gradient(to bottom, ${blackOverlayColor}, ${blackOverlayColor}), url(${backgroundImage}) no-repeat left`,
-    backgroundSize: 'cover',
+    background: `url(${backgroundImage}) no-repeat left / cover`,
   }),
+
+  getItemHover: (backgroundImage) => ({
+    background: `url(${eyeYellow}) no-repeat center / 72px, linear-gradient(${blackOverlayColor}, ${blackOverlayColor}), url(${backgroundImage}) no-repeat left / cover`,
+  })
 }
 
 export default styles
