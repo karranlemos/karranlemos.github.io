@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 
+import ModalPortfolio from '../ModalPortfolio'
 import styles from './styles'
 
 export default function Portfolio({ children }) {
@@ -28,16 +29,21 @@ export function PortfolioItem({ image, title, children, onClick=()=>{} }) {
   }
 
   return (
-    <div
-      style={finalItemStyle}
-      onClick={onClick}
-      title={title}
-      onMouseEnter={onMouseEnterhandler}
-      onMouseLeave={onMouseLeavehandler}
-    >
-      <div style={finalOverlayStyle}>
-
+    <>
+      <div
+        style={finalItemStyle}
+        onClick={onClick}
+        title={title}
+        onMouseEnter={onMouseEnterhandler}
+        onMouseLeave={onMouseLeavehandler}
+      >
+        <div style={finalOverlayStyle} />
       </div>
-    </div>
+      <ModalPortfolio
+        open={title==='Utrack'}
+        title={title}
+        image={image}
+      />
+    </>
   )
 }
