@@ -100,7 +100,6 @@ const MobileMenu = ({ homeItem, pagesItems, pinned }) => {
       <nav style={finalMainMenuStyle}>
         <div style={styles.innerMenu}>
           <HomeButton
-            onClick={onClickMenuButtonHandler}
             {...homeItem}
           />
           <MobileMenuButton
