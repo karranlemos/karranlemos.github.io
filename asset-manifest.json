@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f451717b.chunk.css",
+    "main.js": "/static/js/main.5d488456.chunk.js",
+    "main.js.map": "/static/js/main.5d488456.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.82efc8f7.js",
+    "runtime-main.js.map": "/static/js/runtime-main.82efc8f7.js.map",
+    "static/css/2.679831fc.chunk.css": "/static/css/2.679831fc.chunk.css",
+    "static/js/2.83db32e4.chunk.js": "/static/js/2.83db32e4.chunk.js",
+    "static/js/2.83db32e4.chunk.js.map": "/static/js/2.83db32e4.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.679831fc.chunk.css.map": "/static/css/2.679831fc.chunk.css.map",
+    "static/css/main.f451717b.chunk.css.map": "/static/css/main.f451717b.chunk.css.map",
+    "static/js/2.83db32e4.chunk.js.LICENSE.txt": "/static/js/2.83db32e4.chunk.js.LICENSE.txt",
+    "static/media/Hamburger-white.ad9fafc6.svg": "/static/media/Hamburger-white.ad9fafc6.svg",
+    "static/media/Multiplication_Sign-white.738b8f86.svg": "/static/media/Multiplication_Sign-white.738b8f86.svg",
+    "static/media/confusables.1824ca43.png": "/static/media/confusables.1824ca43.png",
+    "static/media/eye-yellow.ef9ffe14.svg": "/static/media/eye-yellow.ef9ffe14.svg",
+    "static/media/fake-social-network.203283bd.png": "/static/media/fake-social-network.203283bd.png",
+    "static/media/github-lister.5f3cd183.png": "/static/media/github-lister.5f3cd183.png",
+    "static/media/home-section-bg.f4f158a2.jpg": "/static/media/home-section-bg.f4f158a2.jpg",
+    "static/media/message-of-the-day.2ec42762.png": "/static/media/message-of-the-day.2ec42762.png",
+    "static/media/pel.08561704.png": "/static/media/pel.08561704.png",
+    "static/media/portfolio.78846e23.png": "/static/media/portfolio.78846e23.png",
+    "static/media/resume.cf4e7ebc.svg": "/static/media/resume.cf4e7ebc.svg",
+    "static/media/salao-da-marcia.48c63b10.png": "/static/media/salao-da-marcia.48c63b10.png",
+    "static/media/security-mass-notification.69851452.png": "/static/media/security-mass-notification.69851452.png",
+    "static/media/text-converter.b7e479d8.png": "/static/media/text-converter.b7e479d8.png",
+    "static/media/utrack.9f87be7c.png": "/static/media/utrack.9f87be7c.png",
+    "static/media/utransfer.0eaf1b14.png": "/static/media/utransfer.0eaf1b14.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.82efc8f7.js",
+    "static/css/2.679831fc.chunk.css",
+    "static/js/2.83db32e4.chunk.js",
+    "static/css/main.f451717b.chunk.css",
+    "static/js/main.5d488456.chunk.js"
+  ]
+}

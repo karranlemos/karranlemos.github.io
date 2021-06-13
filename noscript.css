@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+noscript .container {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(to bottom, #0d0d0de5, #0d0d0de5), url('/files/images/noscript-bg.jpg') no-repeat center;
+}
+
+noscript .container .box {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    box-sizing: border-box;
+
+    background-color: #151515;
+    color: white;
+
+    width: 100%;
+    max-width: 900px;
+    min-height: 400px;
+    padding: 20px;
+
+    border-radius: 8px;
+
+    font-family: 'Cairo', Tahoma, sans-serif;
+    font-size: 18px;
+    line-height: 160%;
+}
+
+noscript .container .box .related-links {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+}
+
+noscript .container .box .related-links a {
+    text-decoration: none;
+    outline: none;
+    border: none;
+    margin: 0 5px;
+}
+
+noscript .container .box .related-links a:hover {
+    filter: brightness(0.8);
+}
+
+noscript .container .box .related-links img {
+    height: 45px;
+}
