@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 import Modal from '../Modal'
 import styles from './styles'
@@ -15,15 +16,19 @@ export default function ModalPortfolio({
   links = null,
   onClose = () => { },
 }) {
-  const finalThumbnailStyle = styles.getImageThumbnail(image)
+  const mobileMode = useSelector(state => state.window.mobileMode)
+
+  const finalContentStyle = { ...styles.modalContent }
+  if (mobileMode)
+    Object.assign(finalContentStyle, styles.modalContentMobile)
 
   return (
     <Modal
       open={open}
       onOverlayClick={onClose}
-      style={styles.modalContent}
+      style={finalContentStyle}
     >
-      <div style={finalThumbnailStyle} />
+      <ThumbnailImage image={image} show={!mobileMode} />
       <div style={styles.contentPanel}>
         <header
           style={styles.header}
@@ -34,6 +39,11 @@ export default function ModalPortfolio({
             onClick={onClose}
           />
         </header>
+        {/* <ThumbnailImage
+          image={image}
+          show={mobileMode}
+          style={styles.mobileThumbnailImage}
+        /> */}
         <div style={styles.content}>
           {children}
         </div>
@@ -46,6 +56,18 @@ export default function ModalPortfolio({
       </div>
     </Modal>
   )
+}
+
+const ThumbnailImage = ({ image, show = true, style = null }) => {
+  if (!show)
+    return null
+
+  const finalThumbnailStyle = {
+    ...styles.getImageThumbnail(image),
+    ...style
+  }
+
+  return <div style={finalThumbnailStyle} />
 }
 
 const RelatedCodeButton = ({ codeData }) => {

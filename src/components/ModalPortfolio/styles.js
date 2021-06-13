@@ -8,11 +8,20 @@ const styles = {
     alignItems: 'stretch',
   },
 
+  modalContentMobile: {
+    maxHeight: '100vh',
+  },
+
   getImageThumbnail: (backgroundImage) => ({
     position: 'relative',
     width: 300,
     background: `url(${backgroundImage}) no-repeat left / cover`,
   }),
+
+  mobileThumbnailImage: {
+    height: 200,
+    width: '100%',
+  },
 
   contentPanel: {
     flex: 1,
