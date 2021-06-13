@@ -5,12 +5,12 @@ html, body {
 body {
     position: relative;
     
+    font-family: 'Cairo', Tahoma, sans-serif;
     font-size: 16px;
 
-    font-family: 'Cairo', Tahoma, sans-serif;
-    font-size: 18px;
-
     box-sizing: border-box;
+
+    line-height: 160%;
 }
 
 h1, h2, h3, h4, h5, h6 {

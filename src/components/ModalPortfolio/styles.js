@@ -42,6 +42,9 @@ const styles = {
 
   content: {
     flex: 1,
+    boxSizing: 'border-box',
+    padding: '0px 20px',
+    overflowY: 'auto',
   },
 
   footer: {

@@ -2,8 +2,8 @@ import React from 'react';
 
 import Section from '../../../components/Section'
 import styles from './styles'
-import Portfolio, { PortfolioItem, } from '../../../components/Portfolio'
-import portfolioItems from './portfolioItems'
+import Portfolio from '../../../components/Portfolio'
+import PortfolioItems from './portfolioItems'
 
 export default function PortfolioSection({
   style: externalStyle={}
@@ -21,15 +21,7 @@ export default function PortfolioSection({
       sectionAnchorId='portfolio'
     >
       <Portfolio>
-        {
-          portfolioItems.map(({ title, image, links }) => (
-            <PortfolioItem
-              title={title}
-              image={image}
-              links={links}
-            />
-          ))
-        }
+        <PortfolioItems />
       </Portfolio>
     </Section>
   )
