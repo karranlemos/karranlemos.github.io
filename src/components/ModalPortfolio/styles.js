@@ -1,4 +1,5 @@
 import colors from '../../commons/colors'
+import { commonException } from '../../commons/exceptions'
 
 import closeButton from '../../resources/images/icons/Multiplication_Sign-white.svg'
 
@@ -15,6 +16,13 @@ const styles = {
   getImageThumbnail: (backgroundImage, alignImageModal = null) => {
     if (alignImageModal === null)
       alignImageModal = 'left'
+
+    if (!utils.validateBackgroundPosition(alignImageModal))
+      throw commonException(
+        'invalid-align-image-modal',
+        `'${alignImageModal}' is not a valid value.`
+      )
+
     return {
       position: 'relative',
       width: 300,
@@ -23,7 +31,7 @@ const styles = {
   },
 
   mobileThumbnailImage: {
-    height: 200,
+    height: 160,
     width: '100%',
   },
 
@@ -83,6 +91,32 @@ const styles = {
       ? 'default'
       : 'pointer',
   }),
+}
+
+const utils = {
+  validateBackgroundPosition(backgroundPosition) {
+    const possibleValues = [
+      'left',
+      'right',
+      'top',
+      'bottom',
+      'center',
+      'left top',
+      'left center',
+      'left bottom',
+      'right top',
+      'right center',
+      'right bottom',
+      'center top',
+      'center center',
+      'center bottom',
+    ]
+
+    if (possibleValues.includes(backgroundPosition))
+      return true
+    else
+      return false
+  }
 }
 
 export default styles

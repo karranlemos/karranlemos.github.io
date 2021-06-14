@@ -15,6 +15,7 @@ export default function ModalPortfolio({
   children,
   links = null,
   alignImageModal = null,
+  alignImageModalMobile = null,
   onClose = () => { },
 }) {
   const mobileMode = useSelector(state => state.window.mobileMode)
@@ -44,11 +45,12 @@ export default function ModalPortfolio({
             onClick={onClose}
           />
         </header>
-        {/* <ThumbnailImage
+        <ThumbnailImage
           image={image}
           show={mobileMode}
           style={styles.mobileThumbnailImage}
-        /> */}
+          alignImageModal={alignImageModalMobile}
+        />
         <div style={styles.content}>
           {children}
         </div>
@@ -63,7 +65,12 @@ export default function ModalPortfolio({
   )
 }
 
-const ThumbnailImage = ({ image, show = true, style = null, alignImageModal = 'left' }) => {
+const ThumbnailImage = ({
+  image,
+  show = true,
+  style = null,
+  alignImageModal = 'left',
+}) => {
   if (!show)
     return null
 

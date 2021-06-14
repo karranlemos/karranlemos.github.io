@@ -84,6 +84,7 @@ export default function PortfolioItems() {
             link: 'https://www.pel.uerj.br/',
           },
         }}
+        alignImageModalMobile='left top'
       >
         <p>Site criado para o Programa de Pós-Graduação em Engenharia Eletrônica (PEL) da Universidade do Estado do Rio de Janeiro (UERJ).</p>
         <p>Tecnologias utilizadas: HTML, CSS, JavaScript, WordPress, PHP e MySQL.</p>
@@ -118,6 +119,7 @@ export default function PortfolioItems() {
             link: 'https://k-salao-da-marcia.herokuapp.com/',
           },
         }}
+        alignImageModalMobile='left top'
       >
         <p>Um website para o salão de beleza fictício Salão da Márcia.</p>
         <p>Tecnologias utilizadas: HTML, Sass, CSS, JavaScript, JQuery, Bootstrap, Node.js, Express.js, EJS, AJAX.</p>
@@ -152,6 +154,7 @@ export default function PortfolioItems() {
             link: 'https://k-text-converter.herokuapp.com/',
           },
         }}
+        alignImageModalMobile='left top'
       >
         <p>Um aplicativo para web que converte o texto fornecido como entrada para o formato escolhido, dentre eles: caixa alta, caixa baixa, capitalizado e espaçado. Ele está disponível tanto em português quanto em inglês.</p>
         <p>Tecnologias utilizadas: HTML, CSS, JavaScript, PHP e Apache.</p>
@@ -169,6 +172,7 @@ export default function PortfolioItems() {
             link: 'https://k-confusables.herokuapp.com/',
           },
         }}
+        alignImageModalMobile='left top'
       >
         <p>Um web app que substitui caracteres como letras, dígitos e pontuações em caracteres que se parecem com eles, mas têm códigos unicode diferentes.</p>
         <p>Neste projeto, foi usado o Webpack para converter os arquivos TypeScript em um único arquivo JavaScript.</p>
