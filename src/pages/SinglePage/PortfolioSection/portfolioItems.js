@@ -30,6 +30,7 @@ export default function PortfolioItems() {
             link: 'https://play.google.com/store/apps/details?id=br.com.grupounicad.utrack',
           },
         }}
+        alignImageModal='center'
       >
         <p>Desenvolvimento de aplicativo mobile para rastreamento de veículos em React Native, alertando o motorista e operadores de desvios feitos na rota que deveria seguir ou de entrada em áreas perigosas, e mostrando ao motorista o caminho que deve seguir.</p>
         <p>Tecnologias utilizadas: React Native, React Native Paper, Redux, Node.js, Express, PostgreSQL e Flespi.</p>
@@ -47,6 +48,7 @@ export default function PortfolioItems() {
             link: 'https://utransfer-v2.grupounicad.com.br/',
           },
         }}
+        alignImageModal='center'
       >
         <p>Manutenção e desenvolvimento de aplicativo web para criar trajetos e monitorar se veículos estão em suas rotas pré-definidas, perto de incidentes como desastres naturais, assaltos, etc, e permitir que o operador lide com esses alertas.</p>
         <p>Tecnologias utilizadas: React, Redux, Redux Saga, Node.js, Express.js, PostgreSQL e Flespi.</p>
@@ -64,6 +66,7 @@ export default function PortfolioItems() {
             link: 'https://play.google.com/store/apps/details?id=br.com.grupounicad.umessenger',
           },
         }}
+        alignImageModal='center'
       >
         <p>Manutenção de aplicativo de recebimento de alertas e mensagens para manter o usuário em segurança, informando-o se está em uma área perigosa, de desastres naturais. Também permite envio de mensagens diretas ou em massa.</p>
         <p>Tecnologias utilizadas: React Native, Redux, Node.js, Express.js e PostgreSQL.</p>
@@ -219,6 +222,7 @@ export default function PortfolioItems() {
             privateLink: true,
           },
         }}
+        alignImageModal='center'
       >
         <p>Antigo portfólio pessoal, feito com tecnologias web padrão.</p>
         <p>Este site foi criado para guardar meu portfólio e minhas informações de contato. Ele foi criado para ser hospedado no Github, então o projeto não possui, no momento, um backend próprio.</p>

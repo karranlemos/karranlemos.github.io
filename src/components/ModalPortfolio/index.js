@@ -14,6 +14,7 @@ export default function ModalPortfolio({
   image,
   children,
   links = null,
+  alignImageModal = null,
   onClose = () => { },
 }) {
   const mobileMode = useSelector(state => state.window.mobileMode)
@@ -28,7 +29,11 @@ export default function ModalPortfolio({
       onOverlayClick={onClose}
       style={finalContentStyle}
     >
-      <ThumbnailImage image={image} show={!mobileMode} />
+      <ThumbnailImage
+        image={image}
+        show={!mobileMode}
+        alignImageModal={alignImageModal}
+      />
       <div style={styles.contentPanel}>
         <header
           style={styles.header}
@@ -58,12 +63,12 @@ export default function ModalPortfolio({
   )
 }
 
-const ThumbnailImage = ({ image, show = true, style = null }) => {
+const ThumbnailImage = ({ image, show = true, style = null, alignImageModal = 'left' }) => {
   if (!show)
     return null
 
   const finalThumbnailStyle = {
-    ...styles.getImageThumbnail(image),
+    ...styles.getImageThumbnail(image, alignImageModal),
     ...style
   }
 

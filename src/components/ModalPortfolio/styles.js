@@ -12,11 +12,15 @@ const styles = {
     maxHeight: '100vh',
   },
 
-  getImageThumbnail: (backgroundImage) => ({
-    position: 'relative',
-    width: 300,
-    background: `url(${backgroundImage}) no-repeat left / cover`,
-  }),
+  getImageThumbnail: (backgroundImage, alignImageModal = null) => {
+    if (alignImageModal === null)
+      alignImageModal = 'left'
+    return {
+      position: 'relative',
+      width: 300,
+      background: `url(${backgroundImage}) no-repeat ${alignImageModal} / cover`,
+    }
+  },
 
   mobileThumbnailImage: {
     height: 200,

@@ -16,6 +16,7 @@ export function PortfolioItem({
   title,
   links,
   children,
+  alignImageModal = null,
   onClick: externalOnClick=()=>{},
 }) {
   const [open, setOpen] = useState(false)
@@ -62,6 +63,7 @@ export function PortfolioItem({
         image={image}
         links={links}
         onClose={onClose}
+        alignImageModal={alignImageModal}
       >{children}</ModalPortfolio>
     </>
   )
