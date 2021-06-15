@@ -1,5 +1,6 @@
 import colors from '../../commons/colors'
 import { commonException } from '../../commons/exceptions'
+import { forbidSelection } from '../../commons/reusableStyles'
 
 const styles = {
   modalContent: {
@@ -82,22 +83,29 @@ const styles = {
     backgroundColor: colors.lighterBlack,
   },
 
-  getRelatedIconButton: (privateLink) => ({
-    display: 'flex',
-    alignItems: 'center',
-    gap: 10,
+  getRelatedIconButton: (privateLink) => {
+    const finalRelatedIconButton = {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 10,
+  
+      textDecoration: 'none',
+      color: privateLink
+        ? colors.darkGray
+        : colors.white,
+  
+      padding: '20px 15px',
+  
+      cursor: privateLink
+        ? 'default'
+        : 'pointer',
+    }
 
-    textDecoration: 'none',
-    color: privateLink
-      ? colors.darkGray
-      : colors.white,
+    if (privateLink)
+      Object.assign(finalRelatedIconButton, forbidSelection)
 
-    padding: '20px 15px',
-
-    cursor: privateLink
-      ? 'default'
-      : 'pointer',
-  }),
+    return finalRelatedIconButton
+  }
 }
 
 const utils = {
