@@ -17,8 +17,8 @@ export default function MultiplicationSign({
     >
       <path
         stroke={fill}
-        stroke-width={strokeWidth}
-        stroke-linecap="round"
+        strokeWidth={strokeWidth}
+        strokeLinecap="round"
         d="M14,14 L106,106 M106,14 L14,106"
       />
     </svg>
