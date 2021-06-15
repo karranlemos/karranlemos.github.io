@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 
 import Modal from '../Modal'
@@ -7,6 +7,7 @@ import colors from '../../commons/colors'
 
 import EyeCrossedGray from '../../resources/images/icons/EyeCrossedGray'
 import EyeGray from '../../resources/images/icons/EyeGray'
+import MultiplicationSign from '../../resources/images/icons/MultiplicationSign'
 
 export default function ModalPortfolio({
   open,
@@ -40,8 +41,7 @@ export default function ModalPortfolio({
           style={styles.header}
         >
           <div style={styles.headerTitle}>{title}</div>
-          <div
-            style={styles.closeButton}
+          <CloseButton
             onClick={onClose}
           />
         </header>
@@ -62,6 +62,37 @@ export default function ModalPortfolio({
         </footer>
       </div>
     </Modal>
+  )
+}
+
+const CloseButton = ({
+  onClick=()=>{}
+}) => {
+  const [hover, setHover] = useState(false)
+
+  const finalCloseButtonStyle = { ...styles.closeButton }
+  if (hover)
+    Object.assign(finalCloseButtonStyle, styles.closeButtonHover)
+
+  const onMouseEnterHandler = () => {
+    setHover(true)
+  }
+
+  const onMouseLeaveHandler = () => {
+    setHover(false)
+  }
+
+  return (
+    <div
+      style={finalCloseButtonStyle}
+      onClick={onClick}
+      onMouseEnter={onMouseEnterHandler}
+      onMouseLeave={onMouseLeaveHandler}
+    >
+      <MultiplicationSign
+        size={18}
+      />
+    </div>
   )
 }
 

@@ -55,10 +55,18 @@ const styles = {
   },
 
   closeButton: {
-    background: `url(${closeButton}) no-repeat center / 20px`,
     width: 40,
     height: 40,
     cursor: 'pointer',
+
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  closeButtonHover: {
+    // transform: 'rotate(25deg)',
+    
   },
 
   content: {
