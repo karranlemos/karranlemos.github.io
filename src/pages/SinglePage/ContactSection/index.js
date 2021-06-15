@@ -19,7 +19,7 @@ export default function ContactSection({
       title='Contato'
       sectionAnchorId='contact'
     >
-      <p>Entre em contato comigo através do email: <Anchor link='mailto:karranlemos@gmail.com'>karranlemos@gmail.com</Anchor>.</p>
+      <p>Entre em contato comigo através do email: <Anchor link='mailto:karranlemos@gmail.com'>karranlemos@gmail.com</Anchor> ou pelo <Anchor link='https://www.linkedin.com/in/karranlemos/'>Linkedin</Anchor>.</p>
     </Section>
   )
 }

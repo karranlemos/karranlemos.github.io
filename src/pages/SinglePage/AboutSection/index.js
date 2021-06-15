@@ -24,7 +24,8 @@ export default function AboutSection({
       title='Sobre'
       sectionAnchorId='about'
     >
-      <p>Meu nome é Karran Lemos. Eu sou um desenvolvedor fullstack e estudante de ciência da computação.</p>
+      <p>Meu nome é Karran Lemos. Eu sou um desenvolvedor fullstack, atualmente trabalhando principalmente com Node.js, React.js e React Native.</p>
+      <p>Eu adoro programar e gosto ainda mais de trabalhar em algo que será útil para alguém.</p>
       <p>As tecnologias e metodologias que conheço incluem:</p>
 
       <MultipleColumnsList columnsInfo={columnsInfo} />
