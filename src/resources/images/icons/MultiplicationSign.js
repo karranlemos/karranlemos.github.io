@@ -2,7 +2,11 @@ import React from 'react'
 
 import colors from '../../../commons/colors'
 
-export default function MultiplicationSign({ size = 20, fill = colors.white }) {
+export default function MultiplicationSign({
+  size = 20,
+  fill = colors.white,
+  strokeWidth = 12
+}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -13,7 +17,7 @@ export default function MultiplicationSign({ size = 20, fill = colors.white }) {
     >
       <path
         stroke={fill}
-        stroke-width="8.3"
+        stroke-width={strokeWidth}
         stroke-linecap="round"
         d="M14,14 L106,106 M106,14 L14,106"
       />

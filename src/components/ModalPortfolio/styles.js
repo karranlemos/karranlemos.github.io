@@ -55,6 +55,8 @@ const styles = {
   closeButton: {
     width: 40,
     height: 40,
+    
+    borderRadius: '50%',
     cursor: 'pointer',
 
     display: 'flex',
@@ -63,8 +65,7 @@ const styles = {
   },
 
   closeButtonHover: {
-    // transform: 'rotate(25deg)',
-    
+    outline: `2px solid ${colors.white}`,
   },
 
   content: {
