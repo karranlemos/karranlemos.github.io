@@ -1,8 +1,6 @@
 import colors from '../../commons/colors'
 import { commonException } from '../../commons/exceptions'
 
-import closeButton from '../../resources/images/icons/Multiplication_Sign-white.svg'
-
 const styles = {
   modalContent: {
     display: 'flex',

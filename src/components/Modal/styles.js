@@ -1,7 +1,5 @@
 import colors, { getRgbaColor } from '../../commons/colors'
 
-import closeIcon from '../../resources/images/icons/Multiplication_Sign-white.svg'
-
 const blackOverlay = getRgbaColor(colors.black, 0.9)
 
 const styles = {
@@ -33,22 +31,6 @@ const styles = {
     width: '100%',
     height: '100%',
     backgroundColor: colors.lightBlack,
-  },
-
-  modalCloseButton: {
-    position: 'absolute',
-    right: 0,
-    zIndex: 1,
-
-    backgroundImage: `url(${closeIcon}`,
-    backgroundSize: 20,
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-
-    width: 75,
-    height: 75,
-
-    cursor: 'pointer',
   },
 }
 
