@@ -66,7 +66,8 @@ const styles = {
   },
 
   closeButtonHover: {
-    outline: `2px solid ${colors.white}`,
+    backgroundColor: colors.lightestBlack,
+    // outline: `2px solid ${colors.white}`,
   },
 
   content: {

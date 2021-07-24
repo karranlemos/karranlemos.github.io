@@ -9,10 +9,11 @@ const colors = {
   black:  '#0d0d0d',
   lightBlack:  '#151515',
   lighterBlack:  '#1b1b1b',
+  lightestBlack:  '#262626',
   fullBlack:  '#000',
   
   gray:  '#b6b6b6',
-  darkGray: '#555555',
+  darkGray: '#555',
   
   white:  '#dfdfdf',
   fullWhite:  '#fff',
