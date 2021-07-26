@@ -75,6 +75,7 @@ const columnsInfo = [
       'Node.js',
       'Express.js',
       'PostgreSQL',
+      'TypeScript',
       'MySQL',
       'PHP',
       'Apache',

@@ -33,7 +33,7 @@ export default function PortfolioItems() {
         alignImageModal='center'
       >
         <p>Desenvolvimento de aplicativo mobile para rastreamento de veículos em React Native, alertando o motorista e operadores de desvios feitos na rota que deveria seguir ou de entrada em áreas perigosas, e mostrando ao motorista o caminho que deve seguir.</p>
-        <p>Tecnologias utilizadas: React Native, React Native Paper, Redux, Node.js, Express, PostgreSQL e Flespi.</p>
+        <p>Tecnologias utilizadas: React Native, React Native Paper, Redux, Node.js, Express.js, TypeScript, PostgreSQL e Flespi.</p>
         <p>*Imagem meramente ilustrativa.</p>
       </PortfolioItem>
       <PortfolioItem
