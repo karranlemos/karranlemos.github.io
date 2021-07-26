@@ -56,7 +56,7 @@ const linkIconsInfo = [
   },
   {
     title: 'Currículo',
-    link: '/files/pdfs/Currículo - Karran Lemos.pdf',
+    link: '/files/pdfs/CV - Karran Lemos.pdf',
     image: ResumeIcon,
   },
 ]
