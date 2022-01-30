@@ -5,7 +5,12 @@ import store from './store'
 import SinglePage from './pages'
 import reactStyles from './globalStyles/reactStyles'
 
+import { useTranslation } from 'react-i18next';
+
 function App() {
+  const { t } = useTranslation()
+
+  console.log(t('basics.hello'))
   return (
     <Provider store={store}>
       <div style={reactStyles}>
