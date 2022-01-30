@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Section from '../../../components/Section'
@@ -64,7 +64,7 @@ export const useColumnsInfo = () => {
 
   useEffect(() => {
     setOthersTitle(() => t('aboutSection.otherTechnologies'))
-  }, [i18n.language])
+  }, [i18n.language, t])
 
   return [
     {
