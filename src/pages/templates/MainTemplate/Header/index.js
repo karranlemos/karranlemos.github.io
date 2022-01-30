@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import styles from './styles'
 import MobileMenuButton from '../../../../components/MobileMenuButton'
 import { scrollBehaviorAction } from '../../../../store/ducks/windowReducer/actions'
-import { useTranslation } from 'react-i18next'
+import { LanguageButton } from './LanguageButton'
 
 export default function Header({
   homeItem = null,
@@ -213,37 +213,5 @@ const MenuLinkButton = ({
         style={finalButtonStyle}
       >{text}</div>
     </a>
-  )
-}
-
-export const LanguageButton = ({
-  externalButtonStyle = null,
-}) => {
-  const { i18n } = useTranslation()
-
-  const finalButtonStyle = {
-    ...styles.menuButton,
-    ...externalButtonStyle,
-    minWidth: 'auto',
-  }
-
-  const finalAnchorStyle = styles.menuButtonAnchor
-
-  const toggleLanguage = () => {
-    if (i18n.language === 'pt')
-      i18n.changeLanguage('en')
-    else
-      i18n.changeLanguage('pt')
-  }
-
-  return (
-    <div style={finalAnchorStyle}>
-      <div
-        style={finalButtonStyle}
-        onClick={toggleLanguage}
-      >
-        {i18n.language}
-      </div>
-    </div>
   )
 }
