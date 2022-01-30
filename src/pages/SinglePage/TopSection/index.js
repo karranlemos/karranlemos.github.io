@@ -8,10 +8,12 @@ import RelatedLinkIcons from '../../../components/RelatedLinkIcons'
 import GithubLogo from '../../../resources/images/general/GithubLogo.png'
 import LinkedinLogo from '../../../resources/images/general/LinkedinLogo.png'
 import ResumeIcon from '../../../resources/images/general/resume.svg'
+import { useTranslation } from 'react-i18next'
 
 export default function TopSection({
   style: externalStyle={}
 }) {
+  const { t } = useTranslation()
   const windowSize = useSelector(state => state.window.windowSize)
 
   const styles = getStyles({
@@ -30,7 +32,7 @@ export default function TopSection({
         <h1 style={styles.title}>Karran Lemos</h1>
         <div style={styles.subtitleContainer}>
           <span style={styles.subtitleLines} />
-          <span style={styles.subtitle}>desenvolvedor fullstack</span>
+          <span style={styles.subtitle}>{t('homeSection.fullstackDeveloper')}</span>
           <span style={styles.subtitleLines} />
         </div>
       </header>

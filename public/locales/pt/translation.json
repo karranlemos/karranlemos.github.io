@@ -1,7 +1,19 @@
 {
   "general": {
-    "other-technologies": "Outras",
     "code": "Código",
-    "site": "Site"
+    "site": "Site",
+    "allRightsReserved": "Todos os direitos reservados."
+  },
+  "pages": {
+    "contact": "Contato",
+    "about": "Sobre",
+    "portfolio": "Portfólio",
+    "home": "Home"
+  },
+  "homeSection": {
+    "fullstackDeveloper": "desenvolvedor fullstack"
+  },
+  "aboutSection": {
+    "otherTechnologies": "Outras"
   }
 }

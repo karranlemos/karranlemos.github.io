@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Section from '../../../components/Section'
 import Anchor from '../../../components/Tags/Anchor'
@@ -8,20 +9,24 @@ import styles from './styles'
 
 import GithubLogo from '../../../resources/images/general/GithubLogo.png'
 import LinkedinLogo from '../../../resources/images/general/LinkedinLogo.png'
+import { useEffect } from 'react';
 
 export default function AboutSection({
   style: externalStyle={}
 }) {
+  const { t } = useTranslation()
 
   const finalStyle = {
     ...styles.section,
     ...externalStyle,
   }
+
+  const columnsInfo = useColumnsInfo()
   
   return (
     <Section 
       style={finalStyle}
-      title='Sobre'
+      title={t('pages.about')}
       sectionAnchorId='about'
     >
       <p>Meu nome é Karran Lemos. Eu sou um desenvolvedor fullstack, atualmente trabalhando principalmente com Node.js, React.js e React Native.</p>
@@ -52,54 +57,64 @@ const linkIconsInfo = [
   }
 ]
 
-const columnsInfo = [
-  {
-    title: 'Frontend',
-    items: [
-      'HTML',
-      'CSS',
-      'Sass',
-      'JavaScript',
-      'React',
-      'React Native',
-      'React Native Paper',
-      'TypeScript',
-      'Bootstrap',
-      'JQuery',
-      'AJAX',
-    ],
-  },
-  {
-    title:'Backend',
-    items: [
-      'Node.js',
-      'Express.js',
-      'PostgreSQL',
-      'TypeScript',
-      'MySQL',
-      'PHP',
-      'Apache',
-      'Laravel',
-      'WordPress',
-      'Python',
-    ],
-  },
-  {
-    title: 'Outras',
-    items: [
-      'Git / Git Flow',
-      'Docker',
-      'Swagger',
-      'Linux',
-      'MQTT',
-      'PM2',
-      'Flespi',
-      'Google Maps',
-      'NPM / Yarn',
-      'WebSocket / Socket.io',
-      'Redux / Redux Saga',
-      'Scrum / Kanban',
-      'SSH / SFTP',
-    ],
-  },
-]
+export const useColumnsInfo = () => {
+  const { t, i18n } = useTranslation()
+
+  const [othersTitle, setOthersTitle] = useState(() => t('aboutSection.otherTechnologies'))
+
+  useEffect(() => {
+    setOthersTitle(() => t('aboutSection.otherTechnologies'))
+  }, [i18n.language])
+
+  return [
+    {
+      title: 'Frontend',
+      items: [
+        'HTML',
+        'CSS',
+        'Sass',
+        'JavaScript',
+        'React',
+        'React Native',
+        'React Native Paper',
+        'TypeScript',
+        'Bootstrap',
+        'JQuery',
+        'AJAX',
+      ],
+    },
+    {
+      title:'Backend',
+      items: [
+        'Node.js',
+        'Express.js',
+        'PostgreSQL',
+        'TypeScript',
+        'MySQL',
+        'PHP',
+        'Apache',
+        'Laravel',
+        'WordPress',
+        'Python',
+      ],
+    },
+    {
+      title: othersTitle,
+      items: [
+        'Git / Git Flow',
+        'Docker',
+        'Swagger',
+        'Linux',
+        'MQTT',
+        'PM2',
+        'Flespi',
+        'Google Maps',
+        'NPM / Yarn',
+        'WebSocket / Socket.io',
+        'Redux / Redux Saga',
+        'Scrum / Kanban',
+        'SSH / SFTP',
+      ],
+    },
+  ]
+}
