@@ -5,10 +5,18 @@
     "allRightsReserved": "Todos os direitos reservados."
   },
   "pages": {
-    "contact": "Contato",
-    "about": "Sobre",
-    "portfolio": "Portfólio",
-    "home": "Home"
+    "contact": {
+      "title": "Contato"
+    },
+    "about": {
+      "title": "Sobre"
+    },
+    "portfolio": {
+      "title": "Portfólio"
+    },
+    "home": {
+      "title": "Home"
+    }
   },
   "homeSection": {
     "fullstackDeveloper": "desenvolvedor fullstack"

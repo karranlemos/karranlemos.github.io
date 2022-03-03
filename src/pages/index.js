@@ -13,15 +13,15 @@ export default function Sections() {
   }
   const pagesItems = [
     {
-      text: t('pages.portfolio'),
+      text: t('pages.portfolio.title'),
       link: '#portfolio'
     },
     {
-      text: t('pages.about'),
+      text: t('pages.about.title'),
       link: '#about'
     },
     {
-      text: t('pages.contact'),
+      text: t('pages.contact.title'),
       link: '#contact'
     },
   ]

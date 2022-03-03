@@ -19,7 +19,7 @@ export default function PortfolioSection({
   return (
     <Section 
       style={finalStyle}
-      title={t('pages.portfolio')}
+      title={t('pages.portfolio.title')}
       sectionAnchorId='portfolio'
     >
       <Portfolio>

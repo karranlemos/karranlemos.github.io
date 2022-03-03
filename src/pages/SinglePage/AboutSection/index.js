@@ -26,7 +26,7 @@ export default function AboutSection({
   return (
     <Section 
       style={finalStyle}
-      title={t('pages.about')}
+      title={t('pages.about.title')}
       sectionAnchorId='about'
     >
       <p>Meu nome é Karran Lemos. Eu sou um desenvolvedor fullstack, atualmente trabalhando principalmente com Node.js, React.js e React Native.</p>

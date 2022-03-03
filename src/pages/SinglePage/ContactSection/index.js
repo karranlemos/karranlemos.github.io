@@ -18,7 +18,7 @@ export default function ContactSection({
   return (
     <Section 
       style={finalStyle}
-      title={t('pages.contact')}
+      title={t('pages.contact.title')}
       sectionAnchorId='contact'
     >
       <p>Entre em contato comigo através do email <Anchor link='mailto:karranlemos@gmail.com'>karranlemos@gmail.com</Anchor> ou pelo meu <Anchor link='https://www.linkedin.com/in/karranlemos/'>Linkedin</Anchor>.</p>
