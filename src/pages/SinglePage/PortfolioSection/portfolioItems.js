@@ -14,8 +14,17 @@ import securityMassNotificationImage from '../../../resources/images/portfolio/s
 import textConverterImage from '../../../resources/images/portfolio/text-converter.png'
 import utrackImage from '../../../resources/images/portfolio/utrack.png'
 import utransferImage from '../../../resources/images/portfolio/utransfer.png'
+import { useTranslation } from 'react-i18next'
 
-export default function PortfolioItems() {
+export const PortfolioItems = () => {
+  const { t } = useTranslation()
+
+  const getTranslatedParagraphs = (translationKey) => (
+    t(translationKey)?.map((paragraph) => (
+      <p>{paragraph}</p>
+    )) ?? null
+  )
+
   return (
     <>
       <PortfolioItem
@@ -32,9 +41,7 @@ export default function PortfolioItems() {
         }}
         alignImageModal='center'
       >
-        <p>Desenvolvimento de aplicativo mobile para rastreamento de veículos em React Native, alertando o motorista e operadores de desvios feitos na rota que deveria seguir ou de entrada em áreas perigosas, e mostrando ao motorista o caminho que deve seguir.</p>
-        <p>Tecnologias utilizadas: React Native, React Native Paper, Redux, Node.js, Express.js, TypeScript, PostgreSQL e Flespi.</p>
-        <p>*Imagem meramente ilustrativa.</p>
+        {getTranslatedParagraphs('pages.portfolio.items.utrack')}
       </PortfolioItem>
       <PortfolioItem
         title='Utransfer'

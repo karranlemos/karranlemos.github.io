@@ -19,6 +19,17 @@ pages:
     otherTechnologies: Others
   portfolio:
     title: Portfolio
+    items:
+      utrack:
+        - >
+          Development of a React Native mobile application for tracking vehicles, alerting
+          the driver and operators when leaving the traces route or entering a dangerous
+          area, showing the driver which way they must go.
+        - >
+          Used technologies: React Native, React Native Paper, Redux, Node.js, Express.js,
+          TypeScript, PostgreSQL and Flespi.
+        - >
+          *The image is merely illustrative.
   home:
     title: Home
     fullstackDeveloper: fullstack developer

@@ -19,6 +19,17 @@ pages:
     otherTechnologies: Outras
   portfolio:
     title: Portfólio
+    items:
+      utrack:
+        - >
+          Desenvolvimento de aplicativo mobile para rastreamento de veículos em React Native,
+          alertando o motorista e operadores de desvios feitos na rota que deveria seguir ou
+          de entrada em áreas perigosas, e mostrando ao motorista o caminho que deve seguir.
+        - >
+          Tecnologias utilizadas: React Native, React Native Paper, Redux, Node.js, Express.js,
+          TypeScript, PostgreSQL e Flespi.
+        - >
+          *Imagem meramente ilustrativa.
   home:
     title: Home
     fullstackDeveloper: desenvolvedor fullstack
