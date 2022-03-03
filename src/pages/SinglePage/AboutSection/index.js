@@ -24,7 +24,7 @@ export default function AboutSection({
   const columnsInfo = useColumnsInfo()
 
   const paragraphsStart = useMemo(() => {
-    const paragraphsArray = t('pages.contact.contentStartArray', { returnObjects: true })
+    const paragraphsArray = t('pages.about.contentStartArray', { returnObjects: true })
     const paragraphs = paragraphsArray?.map((paragraph, index) => (
       <p key={index}>{paragraph}</p>
     ))
@@ -35,7 +35,7 @@ export default function AboutSection({
   const paragraphsEnd = useMemo(() => {
     return (
       <Trans
-        i18nKey='pages.contact.contentEnd'
+        i18nKey='pages.about.contentEnd'
         t={t}
         components={[
           <Anchor link="/files/pdfs/CV - Karran Lemos.pdf" />

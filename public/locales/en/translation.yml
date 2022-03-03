@@ -5,14 +5,14 @@ general:
 pages:
   contact:
     title: Contact
+  about:
+    title: About
     contentStartArray:
       - >
         My name is Karran Lemos. I am a fullstack developer currently working with React
         and .NET Core, having previously worked with Node.js and React Native.
       - "The technologies and methodologies I'm experienced include:"
     contentEnd: <0>Check my CV</0> for more details.
-  about:
-    title: About
   portfolio:
     title: Portfolio
   home:
