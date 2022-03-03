@@ -5,6 +5,9 @@ general:
 pages:
   contact:
     title: Contact
+    content: >
+      Contact me through the email <emailLink>karranlemos@gmail.com</emailLink>
+      or through my <linkedinLink>Linkedin</linkedinLink>.
   about:
     title: About
     contentStartArray:

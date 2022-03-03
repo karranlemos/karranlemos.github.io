@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 
 import Section from '../../../components/Section'
 import Anchor from '../../../components/Tags/Anchor'
@@ -21,7 +21,14 @@ export default function ContactSection({
       title={t('pages.contact.title')}
       sectionAnchorId='contact'
     >
-      <p>Entre em contato comigo através do email <Anchor link='mailto:karranlemos@gmail.com'>karranlemos@gmail.com</Anchor> ou pelo meu <Anchor link='https://www.linkedin.com/in/karranlemos/'>Linkedin</Anchor>.</p>
+      <Trans
+        i18nKey='pages.contact.content'
+        t={t}
+        components={{
+          emailLink: <Anchor link='mailto:karranlemos@gmail.com' />,
+          linkedinLink: <Anchor link='https://www.linkedin.com/in/karranlemos/' />
+        }}
+      />
     </Section>
   )
 }
