@@ -1,0 +1,17 @@
+general:
+  code: Código
+  site: Site
+  allRightsReserved: Todos os direitos reservados.
+pages:
+  contact:
+    title: Contato
+  about:
+    title: Sobre
+  portfolio:
+    title: Portfólio
+  home:
+    title: Home
+homeSection:
+  fullstackDeveloper: desenvolvedor fullstack
+aboutSection:
+  otherTechnologies: Outras
