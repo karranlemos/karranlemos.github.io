@@ -12,6 +12,7 @@ export default i18n
   .use(Backend)
   .init({
     fallbackLng: defaultLanguage,
+    returnObjects: true,
     interpolation: {
       escapeValue: false
     },

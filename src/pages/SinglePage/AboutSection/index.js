@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import React, { useMemo, useState } from 'react';
+import { Trans, useTranslation } from 'react-i18next';
 
 import Section from '../../../components/Section'
 import Anchor from '../../../components/Tags/Anchor'
@@ -14,7 +14,7 @@ import { useEffect } from 'react';
 export default function AboutSection({
   style: externalStyle={}
 }) {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
 
   const finalStyle = {
     ...styles.section,
@@ -22,6 +22,27 @@ export default function AboutSection({
   }
 
   const columnsInfo = useColumnsInfo()
+
+  const paragraphsStart = useMemo(() => {
+    const paragraphsArray = t('pages.contact.contentStartArray', { returnObjects: true })
+    const paragraphs = paragraphsArray?.map((paragraph, index) => (
+      <p key={index}>{paragraph}</p>
+    ))
+
+    return paragraphs ?? null
+  }, [i18n.language])
+
+  const paragraphsEnd = useMemo(() => {
+    return (
+      <Trans
+        i18nKey='pages.contact.contentEnd'
+        t={t}
+        components={[
+          <Anchor link="/files/pdfs/CV - Karran Lemos.pdf" />
+        ]}
+      />
+    )
+  }, [i18n.language])
   
   return (
     <Section 
@@ -29,12 +50,11 @@ export default function AboutSection({
       title={t('pages.about.title')}
       sectionAnchorId='about'
     >
-      <p>Meu nome é Karran Lemos. Eu sou um desenvolvedor fullstack, atualmente trabalhando principalmente com Node.js, React.js e React Native.</p>
-      <p>As tecnologias e metodologias que conheço incluem:</p>
+      {paragraphsStart}
 
       <MultipleColumnsList columnsInfo={columnsInfo} />
 
-      <p><Anchor link="/files/pdfs/CV - Karran Lemos.pdf">Veja meu currículo</Anchor> para mais informações.</p>
+      {paragraphsEnd}
 
       <RelatedLinkIcons
         linkIconsInfo={linkIconsInfo}
