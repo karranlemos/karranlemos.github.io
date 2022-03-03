@@ -16,11 +16,9 @@ pages:
         and .NET Core, having previously worked with Node.js and React Native.
       - "The technologies and methodologies I'm experienced include:"
     contentEnd: <0>Check my CV</0> for more details.
+    otherTechnologies: Others
   portfolio:
     title: Portfolio
   home:
     title: Home
-homeSection:
-  fullstackDeveloper: fullstack developer
-aboutSection:
-  otherTechnologies: Others
+    fullstackDeveloper: fullstack developer

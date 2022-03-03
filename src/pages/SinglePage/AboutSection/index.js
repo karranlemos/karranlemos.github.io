@@ -80,10 +80,10 @@ const linkIconsInfo = [
 export const useColumnsInfo = () => {
   const { t, i18n } = useTranslation()
 
-  const [othersTitle, setOthersTitle] = useState(() => t('aboutSection.otherTechnologies'))
+  const [othersTitle, setOthersTitle] = useState(() => t('pages.about.otherTechnologies'))
 
   useEffect(() => {
-    setOthersTitle(() => t('aboutSection.otherTechnologies'))
+    setOthersTitle(() => t('pages.about.otherTechnologies'))
   }, [i18n.language, t])
 
   return [
