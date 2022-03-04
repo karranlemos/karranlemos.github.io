@@ -1,18 +1,15 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
 import config from './config'
 import App from './App';
-import { Fallback } from './components/Fallback';
 import './globalStyles/';
 
 config()
 
 ReactDOM.render(
   <React.StrictMode>
-    <Suspense fallback={<Fallback />}>
-      <App />
-    </Suspense>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
