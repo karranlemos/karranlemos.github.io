@@ -21,68 +21,78 @@ pages:
     title: Portfolio
     items:
       utrack:
-        - >
-          Development of a React Native mobile application for tracking vehicles, alerting
-          the driver and operators when leaving the traces route or entering a dangerous
-          area, showing the driver which way they must go.
-        - >
-          Used technologies: React Native, React Native Paper, Redux, Node.js, Express.js,
-          TypeScript, PostgreSQL and Flespi.
-        - '*Merely illustrative image.'
+        body:
+          - >
+            Development of a React Native mobile application for tracking vehicles, alerting
+            the driver and operators when leaving the traces route or entering a dangerous
+            area, showing the driver which way they must go.
+          - >
+            Used technologies: React Native, React Native Paper, Redux, Node.js, Express.js,
+            TypeScript, PostgreSQL and Flespi.
+          - '*Merely illustrative image.'
       utransfer:
-        - >
-          Maintenance and development of web application for creating routes and monitoring
-          vehicles, checking if they are following their assigned routes, are close to
-          dangerous incidents like natural disasters, robberies, etc, and allowing the
-          operator to deal with these occurrences.
-        - >
-          Used technologies: React, Redux, Redux Saga, Node.js, Express.js, PostgreSQL and Flespi.
-        - '*Merely illustrative image.'
+        body:
+          - >
+            Maintenance and development of web application for creating routes and monitoring
+            vehicles, checking if they are following their assigned routes, are close to
+            dangerous incidents like natural disasters, robberies, etc, and allowing the
+            operator to deal with these occurrences.
+          - >
+            Used technologies: React, Redux, Redux Saga, Node.js, Express.js, PostgreSQL and Flespi.
+          - '*Merely illustrative image.'
       smn:
-        - >
-          Maintenance of application for receiving alerts and messages so that the user can informed
-          if he's near a dangerous area, such as the place of a robbery or a natural disaster.
-          It also can receive custom direct or general messages.
-        - >
-          Used technologies: React Native, Redux, Node.js, Express.js and PostgreSQL.
-        - '*Merely illustrative image.'
+        body:
+          - >
+            Maintenance of application for receiving alerts and messages so that the user can informed
+            if he's near a dangerous area, such as the place of a robbery or a natural disaster.
+            It also can receive custom direct or general messages.
+          - >
+            Used technologies: React Native, Redux, Node.js, Express.js and PostgreSQL.
+          - '*Merely illustrative image.'
       pel:
-        - >
-          Site created for the Eletronic Engineering Graduate Program (PEL) of the
-          State University of Rio de Janeiro (UERJ).
-        - >
-          Used by users to enroll into the program and by the program's staff to manage
-          student applications.
-        - >
-          Used technologies: HTML, CSS, JavaScript, WordPress, PHP and MySQL.
+        body:
+          - >
+            Site created for the Eletronic Engineering Graduate Program (PEL) of the
+            State University of Rio de Janeiro (UERJ).
+          - >
+            Used by users to enroll into the program and by the program's staff to manage
+            student applications.
+          - >
+            Used technologies: HTML, CSS, JavaScript, WordPress, PHP and MySQL.
       portfolio:
-        - This very site!
-        - It was created for storing my portfolio and my contact information.
-        - 'Used technologies: React, Redux, HTML, CSS and i18n.'
+        body:
+          - This very site!
+          - It was created for storing my portfolio and my contact information.
+          - 'Used technologies: React, Redux, HTML, CSS and i18n.'
       marciasSaloon:
-        - A website for the fictional beauty saloon "Márcia's Saloon".
-        - >
-          Used technologies: HTML, Sass, CSS, JavaScript, JQuery, Bootstrap, Node.js,
-          Express.js and EJS.
+        body:
+          - A website for the fictional beauty saloon "Márcia's Saloon".
+          - >
+            Used technologies: HTML, Sass, CSS, JavaScript, JQuery, Bootstrap, Node.js,
+            Express.js and EJS.
       githubLister:
-        - An application that lists the account information and repositories of a GitHub user.
-        - >
-          Used technologies: CSS, JavaScript, Node.js, React and Express.js.
+        body:
+          - An application that lists the account information and repositories of a GitHub user.
+          - >
+            Used technologies: CSS, JavaScript, Node.js, React and Express.js.
       fakebook:
-        - A social network prototype.
-        - >
-          Used technologies: HTML, CSS, JavaScript, PHP and MySQL.
+        body:
+          - A social network prototype.
+          - >
+            Used technologies: HTML, CSS, JavaScript, PHP and MySQL.
       textConverter:
-        - A web app for converting text into the desired format.
-        - >
-          Used technologies: HTML, CSS, JavaScript and PHP.
+        body:
+          - A web app for converting text into the desired format.
+          - >
+            Used technologies: HTML, CSS, JavaScript and PHP.
       confusables:
-        - >
-          A web app for replacing normal characters such as letters, digits and
-          punctuations for similar looking characters but of different unicodes.
-        - >
-          Used technologis: HTML, Sass, CSS, TypeScript, JavaScript, Node.js,
-          Express.js and EJS.
+        body:
+          - >
+            A web app for replacing normal characters such as letters, digits and
+            punctuations for similar looking characters but of different unicodes.
+          - >
+            Used technologis: HTML, Sass, CSS, TypeScript, JavaScript, Node.js,
+            Express.js and EJS.
   home:
     title: Home
     fullstackDeveloper: fullstack developer

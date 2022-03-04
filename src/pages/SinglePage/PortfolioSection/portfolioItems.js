@@ -41,7 +41,7 @@ export const PortfolioItems = () => {
         }}
         alignImageModal='center'
       >
-        {getTranslatedParagraphs('pages.portfolio.items.utrack')}
+        {getTranslatedParagraphs('pages.portfolio.items.utrack.body')}
       </PortfolioItem>
       <PortfolioItem
         title='Utransfer'
@@ -57,7 +57,7 @@ export const PortfolioItems = () => {
         }}
         alignImageModal='center'
       >
-        {getTranslatedParagraphs('pages.portfolio.items.utransfer')}
+        {getTranslatedParagraphs('pages.portfolio.items.utransfer.body')}
       </PortfolioItem>
       <PortfolioItem
         title='Security Mass Notification'
@@ -73,7 +73,7 @@ export const PortfolioItems = () => {
         }}
         alignImageModal='center'
       >
-        {getTranslatedParagraphs('pages.portfolio.items.smn')}
+        {getTranslatedParagraphs('pages.portfolio.items.smn.body')}
       </PortfolioItem>
       <PortfolioItem
         title='PEL'
@@ -89,7 +89,7 @@ export const PortfolioItems = () => {
         }}
         alignImageModalMobile='left top'
       >
-        {getTranslatedParagraphs('pages.portfolio.items.pel')}
+        {getTranslatedParagraphs('pages.portfolio.items.pel.body')}
       </PortfolioItem>
       <PortfolioItem
         title='Portfolio'
@@ -104,7 +104,7 @@ export const PortfolioItems = () => {
           },
         }}
       >
-        {getTranslatedParagraphs('pages.portfolio.items.portfolio')}
+        {getTranslatedParagraphs('pages.portfolio.items.portfolio.body')}
       </PortfolioItem>
       <PortfolioItem
         title='Salão da Márcia'
@@ -121,7 +121,7 @@ export const PortfolioItems = () => {
         }}
         alignImageModalMobile='left top'
       >
-        {getTranslatedParagraphs('pages.portfolio.items.marciasSaloon')}
+        {getTranslatedParagraphs('pages.portfolio.items.marciasSaloon.body')}
       </PortfolioItem>
       <PortfolioItem
         title='Github Lister'
@@ -137,7 +137,7 @@ export const PortfolioItems = () => {
           },
         }}
       >
-        {getTranslatedParagraphs('pages.portfolio.items.githubLister')}
+        {getTranslatedParagraphs('pages.portfolio.items.githubLister.body')}
       </PortfolioItem>
       <PortfolioItem
         title='Text Converter'
@@ -154,7 +154,7 @@ export const PortfolioItems = () => {
         }}
         alignImageModalMobile='left top'
       >
-        {getTranslatedParagraphs('pages.portfolio.items.textConverter')}
+        {getTranslatedParagraphs('pages.portfolio.items.textConverter.body')}
       </PortfolioItem>
       <PortfolioItem
         title='Confusables'
@@ -171,7 +171,7 @@ export const PortfolioItems = () => {
         }}
         alignImageModalMobile='left top'
       >
-        {getTranslatedParagraphs('pages.portfolio.items.confusables')}
+        {getTranslatedParagraphs('pages.portfolio.items.confusables.body')}
       </PortfolioItem>
       <PortfolioItem
         title='Fake Social Network'
@@ -187,7 +187,7 @@ export const PortfolioItems = () => {
           },
         }}
       >
-        {getTranslatedParagraphs('pages.portfolio.items.fakebook')}
+        {getTranslatedParagraphs('pages.portfolio.items.fakebook.body')}
       </PortfolioItem>
     </>
   )
