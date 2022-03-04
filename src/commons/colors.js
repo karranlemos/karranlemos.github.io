@@ -1,8 +1,3 @@
-/**
- * Module responsible for providing the colors to be used in the app
- * and auxiliary functions.
- */
-
 import { commonException } from './exceptions'
 
 const colors = {
@@ -23,16 +18,6 @@ const colors = {
 
 export default colors
 
-
-/**
- * Generates an RGBA string out of an RGB string.
- * @param {string} color RGB string.
- * @param {number} percentage Percentage ranging from 0 to 1. Default=1
- * @returns {string} RGBA string value.
- * @throws {string}
- *   - 'invalid-rgb-color': When color is not a valid RGB color.
- *   - 'percentage-not-within-range': When percentage is not within 0 and 1.
- */
 export const getRgbaColor = (color, percentage=1) => {
   if (utils.getTypeRGB(color) === 'none')
     throw commonException('invalid-rgb-color')
@@ -47,13 +32,6 @@ export const getRgbaColor = (color, percentage=1) => {
 
 
 const utils = {
-  /**
-   * Converts a half-sized hex string into a full-sized hex string.
-   * @param {string} rgb RGB hex string.
-   * @returns {string} Full RGB hex string.
-   * @throws {string}
-   *   - 'invalid-rgb-color': When color is not a valid RGB color.
-   */
   convertToFullRGB(rgb) {
     switch (utils.getTypeRGB(rgb)) {
       case 'full':
@@ -64,16 +42,9 @@ const utils = {
         break
     }
 
-    return `#${rgb.charAt(1)}${rgb.charAt(1)}${rgb.charAt(2)}${rgb.charAt(2)}${rgb.charAt(3)}${rgb.charAt(3)}`
+    return '#' + rgb.split('').map(hex => hex+hex).join('')
   },
 
-  /**
-   * @param {string} color String to be tested.
-   * @returns {'full'|'half'|'none'}
-   *   - 'full' if color is a full RGB string (i.e. #123456).
-   *   - 'half' if color is a half-sized RGB string (i.e. #123).
-   *   - 'none' if color is not an RGB string.
-   */
   getTypeRGB(color) {
     if (/^#[0-9a-fA-F]{6}$/.test(color))
       return 'full'
@@ -83,13 +54,6 @@ const utils = {
     return 'none'
   },
 
-  /**
-   * Converts a number into an hex value.
-   * @param {number} number Number to be converted. Must be non-negative.
-   * @returns {string} Hex string.
-   * @throws {string}
-   *   - 'number-lesser-than-zero': When number is less than zero.
-   */
   toHexNumber(number) {
     const HEX_CHARACTERS = '0123456789abcdef'
     
