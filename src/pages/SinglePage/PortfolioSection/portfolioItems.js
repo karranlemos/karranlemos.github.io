@@ -57,9 +57,7 @@ export const PortfolioItems = () => {
         }}
         alignImageModal='center'
       >
-        <p>Manutenção e desenvolvimento de aplicativo web para criar trajetos e monitorar se veículos estão em suas rotas pré-definidas, perto de incidentes como desastres naturais, assaltos, etc, e permitir que o operador lide com esses alertas.</p>
-        <p>Tecnologias utilizadas: React, Redux, Redux Saga, Node.js, Express.js, PostgreSQL e Flespi.</p>
-        <p>*Imagem meramente ilustrativa.</p>
+        {getTranslatedParagraphs('pages.portfolio.items.utransfer')}
       </PortfolioItem>
       <PortfolioItem
         title='Security Mass Notification'
@@ -75,9 +73,7 @@ export const PortfolioItems = () => {
         }}
         alignImageModal='center'
       >
-        <p>Manutenção de aplicativo de recebimento de alertas e mensagens para manter o usuário em segurança, informando-o se está em uma área perigosa, de desastres naturais. Também permite envio de mensagens diretas ou em massa.</p>
-        <p>Tecnologias utilizadas: React Native, Redux, Node.js, Express.js e PostgreSQL.</p>
-        <p>*Imagem meramente ilustrativa.</p>
+        {getTranslatedParagraphs('pages.portfolio.items.smn')}
       </PortfolioItem>
       <PortfolioItem
         title='PEL'

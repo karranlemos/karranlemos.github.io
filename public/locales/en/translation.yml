@@ -28,8 +28,24 @@ pages:
         - >
           Used technologies: React Native, React Native Paper, Redux, Node.js, Express.js,
           TypeScript, PostgreSQL and Flespi.
+        - '*Merely illustrative image.'
+      utransfer:
         - >
-          *The image is merely illustrative.
+          Maintenance and development of web application for creating routes and monitoring
+          vehicles, checking if they are following their assigned routes, are close to
+          dangerous incidents like natural disasters, robberies, etc, and allowing the
+          operator to deal with these occurrences.
+        - >
+          Used technologies: React, Redux, Redux Saga, Node.js, Express.js, PostgreSQL e Flespi.
+        - '*Merely illustrative image.'
+      smn:
+        - >
+          Maintenance of application for receiving alerts and messages so that the user can informed
+          if he's near a dangerous area, such as the place of a robbery or a natural disaster.
+          It also can receive custom direct or general messages.
+        - >
+          Used technologies: React Native, Redux, Node.js, Express.js and PostgreSQL.
+        - '*Merely illustrative image.'
   home:
     title: Home
     fullstackDeveloper: fullstack developer
