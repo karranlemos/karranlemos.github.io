@@ -25,7 +25,7 @@ export default function AboutSection({
 
   const paragraphsStart = useMemo(() => {
     const paragraphsArray = t('pages.about.contentStartArray', { returnObjects: true })
-    const paragraphs = paragraphsArray?.map((paragraph, index) => (
+    const paragraphs = paragraphsArray?.map?.((paragraph, index) => (
       <p key={index}>{paragraph}</p>
     ))
 
