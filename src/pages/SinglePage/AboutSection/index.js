@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
+import { Trans, useTranslation } from 'react-i18next';
 
 import Section from '../../../components/Section'
 import Anchor from '../../../components/Tags/Anchor'
@@ -8,28 +9,52 @@ import styles from './styles'
 
 import GithubLogo from '../../../resources/images/general/GithubLogo.png'
 import LinkedinLogo from '../../../resources/images/general/LinkedinLogo.png'
+import { useEffect } from 'react';
 
 export default function AboutSection({
   style: externalStyle={}
 }) {
+  const { t, i18n } = useTranslation()
 
   const finalStyle = {
     ...styles.section,
     ...externalStyle,
   }
+
+  const columnsInfo = useColumnsInfo()
+
+  const paragraphsStart = useMemo(() => {
+    const paragraphsArray = t('pages.about.contentStartArray', { returnObjects: true })
+    const paragraphs = paragraphsArray?.map?.((paragraph, index) => (
+      <p key={index}>{paragraph}</p>
+    ))
+
+    return paragraphs ?? null
+  }, [i18n.language])
+
+  const paragraphsEnd = useMemo(() => {
+    return (
+      <Trans
+        i18nKey='pages.about.contentEnd'
+        t={t}
+        components={[
+          <Anchor link="/files/pdfs/CV - Karran Lemos.pdf" />
+        ]}
+      />
+    )
+  }, [i18n.language])
   
   return (
     <Section 
       style={finalStyle}
-      title='Sobre'
+      title={t('pages.about.title')}
       sectionAnchorId='about'
     >
-      <p>Meu nome é Karran Lemos. Eu sou um desenvolvedor fullstack, atualmente trabalhando principalmente com Node.js, React.js e React Native.</p>
-      <p>As tecnologias e metodologias que conheço incluem:</p>
+      {paragraphsStart}
 
       <MultipleColumnsList columnsInfo={columnsInfo} />
 
-      <p><Anchor link="/files/pdfs/CV - Karran Lemos.pdf">Veja meu currículo</Anchor> para mais informações.</p>
+      {paragraphsEnd}
 
       <RelatedLinkIcons
         linkIconsInfo={linkIconsInfo}
@@ -52,54 +77,64 @@ const linkIconsInfo = [
   }
 ]
 
-const columnsInfo = [
-  {
-    title: 'Frontend',
-    items: [
-      'HTML',
-      'CSS',
-      'Sass',
-      'JavaScript',
-      'React',
-      'React Native',
-      'React Native Paper',
-      'TypeScript',
-      'Bootstrap',
-      'JQuery',
-      'AJAX',
-    ],
-  },
-  {
-    title:'Backend',
-    items: [
-      'Node.js',
-      'Express.js',
-      'PostgreSQL',
-      'TypeScript',
-      'MySQL',
-      'PHP',
-      'Apache',
-      'Laravel',
-      'WordPress',
-      'Python',
-    ],
-  },
-  {
-    title: 'Outras',
-    items: [
-      'Git / Git Flow',
-      'Docker',
-      'Swagger',
-      'Linux',
-      'MQTT',
-      'PM2',
-      'Flespi',
-      'Google Maps',
-      'NPM / Yarn',
-      'WebSocket / Socket.io',
-      'Redux / Redux Saga',
-      'Scrum / Kanban',
-      'SSH / SFTP',
-    ],
-  },
-]
+export const useColumnsInfo = () => {
+  const { t, i18n } = useTranslation()
+
+  const [othersTitle, setOthersTitle] = useState(() => t('pages.about.otherTechnologies'))
+
+  useEffect(() => {
+    setOthersTitle(() => t('pages.about.otherTechnologies'))
+  }, [i18n.language, t])
+
+  return [
+    {
+      title: 'Frontend',
+      items: [
+        'HTML',
+        'CSS',
+        'Sass',
+        'JavaScript',
+        'React',
+        'React Native',
+        'React Native Paper',
+        'TypeScript',
+        'Bootstrap',
+        'JQuery',
+        'AJAX',
+      ],
+    },
+    {
+      title:'Backend',
+      items: [
+        'Node.js',
+        'Express.js',
+        'PostgreSQL',
+        'TypeScript',
+        'MySQL',
+        'PHP',
+        'Apache',
+        'Laravel',
+        'WordPress',
+        'Python',
+      ],
+    },
+    {
+      title: othersTitle,
+      items: [
+        'Git / Git Flow',
+        'Docker',
+        'Swagger',
+        'Linux',
+        'MQTT',
+        'PM2',
+        'Flespi',
+        'Google Maps',
+        'NPM / Yarn',
+        'WebSocket / Socket.io',
+        'Redux / Redux Saga',
+        'Scrum / Kanban',
+        'SSH / SFTP',
+      ],
+    },
+  ]
+}

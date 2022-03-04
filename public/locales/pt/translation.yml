@@ -1,0 +1,110 @@
+general:
+  sourceCode: Código Fonte
+  site: Site
+  allRightsReserved: Todos os direitos reservados.
+pages:
+  contact:
+    title: Contato
+    content: >
+      Entre em contato comigo através do email <emailLink>karranlemos@gmail.com</emailLink>
+      ou pelo meu <linkedinLink>Linkedin</linkedinLink>.
+  about:
+    title: Sobre
+    contentStartArray:
+      - >
+        Meu nome é Karran Lemos. Eu sou um desenvolvedor fullstack, atualmente trabalhando
+        com React e .NET Core, tendo trabalhado anteriormente com Node.js e React Native.
+      - 'As tecnologias e metodologias que conheço incluem:'
+    contentEnd: <0>Veja meu currículo</0> para mais informações.
+    otherTechnologies: Outras
+  portfolio:
+    title: Projetos
+    merelyIllustrativeImage: '*Imagem meramente ilustrativa.'
+    items:
+      utrack:
+        title: Utrack
+        body:
+          - >
+            Desenvolvimento de aplicativo mobile para rastreamento de veículos em React Native,
+            alertando o motorista e operadores de desvios feitos na rota que deveria seguir ou
+            de entrada em áreas perigosas, e mostrando ao motorista o caminho que deve seguir.
+          - >
+            Tecnologias utilizadas: React Native, React Native Paper, Redux, Node.js, Express.js,
+            TypeScript, PostgreSQL e Flespi.
+          - >
+            *Imagem meramente ilustrativa.
+      utransfer:
+        title: Utransfer
+        body:
+          - >
+            Manutenção e desenvolvimento de aplicativo web para criar trajetos e monitorar se
+            veículos estão em suas rotas pré-definidas, perto de incidentes como desastres naturais,
+            assaltos, etc, e permitir que o operador lide com esses alertas.
+          - >
+            Tecnologias utilizadas: React, Redux, Redux Saga, Node.js, Express.js, PostgreSQL e Flespi.
+          - >
+            *Imagem meramente ilustrativa.
+      smn:
+        title: Security Mass Notification
+        body:
+          - >
+            Manutenção de aplicativo de recebimento de alertas e mensagens para manter o usuário em
+            segurança, informando-o se está em uma área perigosa, de desastres naturais. Também permite
+            envio de mensagens diretas ou em massa.
+          - >
+            Tecnologias utilizadas: React Native, Redux, Node.js, Express.js e PostgreSQL.
+          - >
+            *Imagem meramente ilustrativa.
+      pel:
+        title: PEL
+        body:
+          - >
+            Site criado para o Programa de Pós-Graduação em Engenharia Eletrônica (PEL) da Universidade
+            do Estado do Rio de Janeiro (UERJ).
+          - >
+            Tecnologias utilizadas: HTML, CSS, JavaScript, WordPress, PHP e MySQL.
+      portfolio:
+        title: Project
+        body:
+          - Este mesmo site!
+          - Site criado para guardar meus projetos e minhas informações de contato.
+          - 'Tecnologias utilizadas: React, Redux, HTML, CSS e i18n.'
+      marciasSalon:
+        title: Salão da Márcia
+        body:
+          - Um website para o salão de beleza fictício "Salão da Márcia".
+          - >
+            Tecnologias utilizadas: HTML, Sass, CSS, JavaScript, JQuery, Bootstrap, Node.js,
+            Express.js e EJS.
+      githubLister:
+        title: Github Lister
+        body:
+          - Um aplicativo que lista os dados de um usuário do GitHub e de seus repositórios.
+          - >
+            Tecnologias utilizadas: CSS, JavaScript, Node.js, React e Express.js.
+      fakebook:
+        title: Fakebook
+        body:
+          - Um protótipo de rede social.
+          - >
+            Tecnologias utilizadas: HTML, CSS, JavaScript, PHP e MySQL.
+      textConverter:
+        title: Conversor de Texto
+        body:
+          - >
+            Um aplicativo para web que converte o texto fornecido como entrada para o formato
+            escolhido.
+          - >
+            Tecnologias utilizadas: HTML, CSS, JavaScript e PHP.
+      confusables:
+        title: Confusables
+        body:
+          - >
+            Um web app que substitui caracteres como letras, dígitos e pontuações em
+            caracteres que se parecem com eles, mas têm códigos unicode diferentes.
+          - >
+            Tecnologias utilizadas: HTML, Sass, CSS, TypeScript, JavaScript, Node.js,
+            Express.js e EJS.
+  home:
+    title: Home
+    fullstackDeveloper: desenvolvedor fullstack

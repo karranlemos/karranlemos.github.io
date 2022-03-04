@@ -3,11 +3,13 @@ import React from 'react';
 import Section from '../../../components/Section'
 import styles from './styles'
 import Portfolio from '../../../components/Portfolio'
-import PortfolioItems from './portfolioItems'
+import { PortfolioItems } from './portfolioItems'
+import { useTranslation } from 'react-i18next';
 
 export default function PortfolioSection({
   style: externalStyle={}
 }) {
+  const { t } = useTranslation()
 
   const finalStyle = {
     ...styles.section,
@@ -17,8 +19,8 @@ export default function PortfolioSection({
   return (
     <Section 
       style={finalStyle}
-      title='Portfólio'
-      sectionAnchorId='portfolio'
+      title={t('pages.portfolio.title')}
+      sectionAnchorId='projects'
     >
       <Portfolio>
         <PortfolioItems />

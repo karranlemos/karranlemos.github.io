@@ -66,7 +66,9 @@ export function PortfolioItem({
         onClose={onClose}
         alignImageModal={alignImageModal}
         alignImageModalMobile={alignImageModalMobile}
-      >{children}</ModalPortfolio>
+      >
+        {children}
+      </ModalPortfolio>
     </>
   )
 }

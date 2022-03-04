@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import styles from './styles'
 import MobileMenuButton from '../../../../components/MobileMenuButton'
 import { scrollBehaviorAction } from '../../../../store/ducks/windowReducer/actions'
+import { LanguageButton } from './LanguageButton'
 
 export default function Header({
   homeItem = null,
@@ -164,6 +165,7 @@ const SideButtons = ({
           />
         ))
       }
+      <LanguageButton externalButtonStyle={menuButtonStyle}/>
     </div>
   )
 }

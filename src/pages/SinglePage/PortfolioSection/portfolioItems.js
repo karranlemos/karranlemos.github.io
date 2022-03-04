@@ -5,21 +5,28 @@ import { PortfolioItem } from '../../../components/Portfolio'
 import confusablesImage from '../../../resources/images/portfolio/confusables.png'
 import fakeSocialNetworkImage from '../../../resources/images/portfolio/fake-social-network.png'
 import githubListerImage from '../../../resources/images/portfolio/github-lister.png'
-import messageOfTheDayImage from '../../../resources/images/portfolio/message-of-the-day.png'
 import pelImage from '../../../resources/images/portfolio/pel.png'
 import portfolioImage from '../../../resources/images/portfolio/portfolio.png'
-import portfolioOldImage from '../../../resources/images/portfolio/portfolio-old.png'
 import salaoDaMarciaImage from '../../../resources/images/portfolio/salao-da-marcia.png'
 import securityMassNotificationImage from '../../../resources/images/portfolio/security-mass-notification.png'
 import textConverterImage from '../../../resources/images/portfolio/text-converter.png'
 import utrackImage from '../../../resources/images/portfolio/utrack.png'
 import utransferImage from '../../../resources/images/portfolio/utransfer.png'
+import { useTranslation } from 'react-i18next'
 
-export default function PortfolioItems() {
+export const PortfolioItems = () => {
+  const { t } = useTranslation()
+
+  const getTranslatedParagraphs = (translationKey) => (
+    t(translationKey)?.map?.((paragraph, index) => (
+      <p key={index}>{paragraph}</p>
+    )) ?? null
+  )
+
   return (
     <>
       <PortfolioItem
-        title='Utrack'
+        title={t('pages.portfolio.items.utrack.title')}
         image={utrackImage}
         links={{
           code: {
@@ -32,12 +39,10 @@ export default function PortfolioItems() {
         }}
         alignImageModal='center'
       >
-        <p>Desenvolvimento de aplicativo mobile para rastreamento de veículos em React Native, alertando o motorista e operadores de desvios feitos na rota que deveria seguir ou de entrada em áreas perigosas, e mostrando ao motorista o caminho que deve seguir.</p>
-        <p>Tecnologias utilizadas: React Native, React Native Paper, Redux, Node.js, Express.js, TypeScript, PostgreSQL e Flespi.</p>
-        <p>*Imagem meramente ilustrativa.</p>
+        {getTranslatedParagraphs('pages.portfolio.items.utrack.body')}
       </PortfolioItem>
       <PortfolioItem
-        title='Utransfer'
+        title={t('pages.portfolio.items.utransfer.title')}
         image={utransferImage}
         links={{
           code: {
@@ -50,12 +55,10 @@ export default function PortfolioItems() {
         }}
         alignImageModal='center'
       >
-        <p>Manutenção e desenvolvimento de aplicativo web para criar trajetos e monitorar se veículos estão em suas rotas pré-definidas, perto de incidentes como desastres naturais, assaltos, etc, e permitir que o operador lide com esses alertas.</p>
-        <p>Tecnologias utilizadas: React, Redux, Redux Saga, Node.js, Express.js, PostgreSQL e Flespi.</p>
-        <p>*Imagem meramente ilustrativa.</p>
+        {getTranslatedParagraphs('pages.portfolio.items.utransfer.body')}
       </PortfolioItem>
       <PortfolioItem
-        title='Security Mass Notification'
+        title={t('pages.portfolio.items.smn.title')}
         image={securityMassNotificationImage}
         links={{
           code: {
@@ -68,12 +71,10 @@ export default function PortfolioItems() {
         }}
         alignImageModal='center'
       >
-        <p>Manutenção de aplicativo de recebimento de alertas e mensagens para manter o usuário em segurança, informando-o se está em uma área perigosa, de desastres naturais. Também permite envio de mensagens diretas ou em massa.</p>
-        <p>Tecnologias utilizadas: React Native, Redux, Node.js, Express.js e PostgreSQL.</p>
-        <p>*Imagem meramente ilustrativa.</p>
+        {getTranslatedParagraphs('pages.portfolio.items.smn.body')}
       </PortfolioItem>
       <PortfolioItem
-        title='PEL'
+        title={t('pages.portfolio.items.pel.title')}
         image={pelImage}
         links={{
           code: {
@@ -86,11 +87,10 @@ export default function PortfolioItems() {
         }}
         alignImageModalMobile='left top'
       >
-        <p>Site criado para o Programa de Pós-Graduação em Engenharia Eletrônica (PEL) da Universidade do Estado do Rio de Janeiro (UERJ).</p>
-        <p>Tecnologias utilizadas: HTML, CSS, JavaScript, WordPress, PHP e MySQL.</p>
+        {getTranslatedParagraphs('pages.portfolio.items.pel.body')}
       </PortfolioItem>
       <PortfolioItem
-        title='Portfolio'
+        title={t('pages.portfolio.items.portfolio.title')}
         image={portfolioImage}
         links={{
           code: {
@@ -102,12 +102,10 @@ export default function PortfolioItems() {
           },
         }}
       >
-        <p>Este mesmo site!</p>
-        <p>Site criado para guardar meu portfólio e minhas informações de contato.</p>
-        <p>Tecnologias utilizadas: React, Redux, HTML e CSS.</p>
+        {getTranslatedParagraphs('pages.portfolio.items.portfolio.body')}
       </PortfolioItem>
       <PortfolioItem
-        title='Salão da Márcia'
+        title={t('pages.portfolio.items.marciasSalon.title')}
         image={salaoDaMarciaImage}
         links={{
           code: {
@@ -121,11 +119,10 @@ export default function PortfolioItems() {
         }}
         alignImageModalMobile='left top'
       >
-        <p>Um website para o salão de beleza fictício Salão da Márcia.</p>
-        <p>Tecnologias utilizadas: HTML, Sass, CSS, JavaScript, JQuery, Bootstrap, Node.js, Express.js, EJS, AJAX.</p>
+        {getTranslatedParagraphs('pages.portfolio.items.marciasSalon.body')}
       </PortfolioItem>
       <PortfolioItem
-        title='Github Lister'
+        title={t('pages.portfolio.items.githubLister.title')}
         image={githubListerImage}
         links={{
           code: {
@@ -138,11 +135,10 @@ export default function PortfolioItems() {
           },
         }}
       >
-        <p>Um aplicativo que lista os dados de um usuário do GitHub e de seus repositórios.</p>
-        <p>Tecnologias utilizadas: CSS, JavaScript, Node.js, React, Express.js, AJAX.</p>
+        {getTranslatedParagraphs('pages.portfolio.items.githubLister.body')}
       </PortfolioItem>
       <PortfolioItem
-        title='Text Converter'
+        title={t('pages.portfolio.items.textConverter.title')}
         image={textConverterImage}
         links={{
           code: {
@@ -156,11 +152,10 @@ export default function PortfolioItems() {
         }}
         alignImageModalMobile='left top'
       >
-        <p>Um aplicativo para web que converte o texto fornecido como entrada para o formato escolhido, dentre eles: caixa alta, caixa baixa, capitalizado e espaçado. Ele está disponível tanto em português quanto em inglês.</p>
-        <p>Tecnologias utilizadas: HTML, CSS, JavaScript, PHP e Apache.</p>
+        {getTranslatedParagraphs('pages.portfolio.items.textConverter.body')}
       </PortfolioItem>
       <PortfolioItem
-        title='Confusables'
+        title={t('pages.portfolio.items.confusables.title')}
         image={confusablesImage}
         links={{
           code: {
@@ -174,12 +169,10 @@ export default function PortfolioItems() {
         }}
         alignImageModalMobile='left top'
       >
-        <p>Um web app que substitui caracteres como letras, dígitos e pontuações em caracteres que se parecem com eles, mas têm códigos unicode diferentes.</p>
-        <p>Neste projeto, foi usado o Webpack para converter os arquivos TypeScript em um único arquivo JavaScript.</p>
-        <p>Tecnologias utilizadas: HTML, Sass, CSS, TypeScript, JavaScript, Webpack, Node.js, Express.js, EJS.</p>
+        {getTranslatedParagraphs('pages.portfolio.items.confusables.body')}
       </PortfolioItem>
       <PortfolioItem
-        title='Fake Social Network'
+        title={t('pages.portfolio.items.fakebook.title')}
         image={fakeSocialNetworkImage}
         links={{
           code: {
@@ -192,45 +185,7 @@ export default function PortfolioItems() {
           },
         }}
       >
-        <p>Um protótipo de rede social.</p>
-        <p>As postagens são carregadas em um "scroll infinito" e eles podem ser vistos em suas próprias páginas.</p>
-        <p>Todos os formulários se comunicam de forma assíncrona com o servidor, que responde com um JSON contendo as informações relevantes. A senha do usuário é criptografada com o algoritmo BCrypt e ele pode se manter logado entre sessões por um hash salvo nos cookies do navegador.</p>
-        <p>Tecnologias utilizadas: HTML, CSS, JavaScript, PHP, AJAX, Apache e MySQL.</p>
-      </PortfolioItem>
-      <PortfolioItem
-        title='Message of the Day'
-        image={messageOfTheDayImage}
-        links={{
-          code: {
-            privateLink: false,
-            link: 'https://github.com/karranlemos/message-of-the-day',
-          },
-          site: {
-            privateLink: false,
-            link: 'https://k-message-of-the-day.herokuapp.com/',
-          },
-        }}
-      >
-        <p>Um aplicativo que guarda uma mensagem personalizada do usuário. Perfeita para deixar na nova aba para se lembrar do objetivo do dia.</p>
-        <p>Tecnologias utilizadas: HTML, CSS, JavaScript, MySQL, Node.js, Express.js, EJS, AJAX.</p>
-      </PortfolioItem>
-      <PortfolioItem
-        title='Portfolio antigo'
-        image={portfolioOldImage}
-        links={{
-          code: {
-            privateLink: false,
-            link: 'https://github.com/karranlemos/old-portfolio-basic-webstack',
-          },
-          site: {
-            privateLink: true,
-          },
-        }}
-        alignImageModal='center'
-      >
-        <p>Antigo portfólio pessoal, feito com tecnologias web padrão.</p>
-        <p>Este site foi criado para guardar meu portfólio e minhas informações de contato. Ele foi criado para ser hospedado no Github, então o projeto não possui, no momento, um backend próprio.</p>
-        <p>Tecnologias utilizadas: HTML, CSS, JavaScript e Sass.</p>
+        {getTranslatedParagraphs('pages.portfolio.items.fakebook.body')}
       </PortfolioItem>
     </>
   )
