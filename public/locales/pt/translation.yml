@@ -49,6 +49,21 @@ pages:
           Tecnologias utilizadas: React Native, Redux, Node.js, Express.js e PostgreSQL.
         - >
           *Imagem meramente ilustrativa.
+      pel:
+        - >
+          Site criado para o Programa de Pós-Graduação em Engenharia Eletrônica (PEL) da Universidade
+          do Estado do Rio de Janeiro (UERJ).
+        - >
+          Tecnologias utilizadas: HTML, CSS, JavaScript, WordPress, PHP e MySQL.
+      portfolio:
+        - Este mesmo site!
+        - Site criado para guardar meu portfólio e minhas informações de contato.
+        - 'Tecnologias utilizadas: React, Redux, HTML, CSS e i18n.'
+      marciasSaloon:
+        - Um website para o salão de beleza fictício "Salão da Márcia".
+        - >
+          Tecnologias utilizadas: HTML, Sass, CSS, JavaScript, JQuery, Bootstrap, Node.js,
+          Express.js e EJS.
   home:
     title: Home
     fullstackDeveloper: desenvolvedor fullstack

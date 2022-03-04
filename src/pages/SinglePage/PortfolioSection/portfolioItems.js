@@ -20,7 +20,7 @@ export const PortfolioItems = () => {
   const { t } = useTranslation()
 
   const getTranslatedParagraphs = (translationKey) => (
-    t(translationKey)?.map((paragraph) => (
+    t(translationKey)?.map?.((paragraph) => (
       <p>{paragraph}</p>
     )) ?? null
   )
@@ -89,8 +89,7 @@ export const PortfolioItems = () => {
         }}
         alignImageModalMobile='left top'
       >
-        <p>Site criado para o Programa de Pós-Graduação em Engenharia Eletrônica (PEL) da Universidade do Estado do Rio de Janeiro (UERJ).</p>
-        <p>Tecnologias utilizadas: HTML, CSS, JavaScript, WordPress, PHP e MySQL.</p>
+        {getTranslatedParagraphs('pages.portfolio.items.pel')}
       </PortfolioItem>
       <PortfolioItem
         title='Portfolio'
@@ -105,9 +104,7 @@ export const PortfolioItems = () => {
           },
         }}
       >
-        <p>Este mesmo site!</p>
-        <p>Site criado para guardar meu portfólio e minhas informações de contato.</p>
-        <p>Tecnologias utilizadas: React, Redux, HTML e CSS.</p>
+        {getTranslatedParagraphs('pages.portfolio.items.portfolio')}
       </PortfolioItem>
       <PortfolioItem
         title='Salão da Márcia'
@@ -124,8 +121,7 @@ export const PortfolioItems = () => {
         }}
         alignImageModalMobile='left top'
       >
-        <p>Um website para o salão de beleza fictício Salão da Márcia.</p>
-        <p>Tecnologias utilizadas: HTML, Sass, CSS, JavaScript, JQuery, Bootstrap, Node.js, Express.js, EJS, AJAX.</p>
+        {getTranslatedParagraphs('pages.portfolio.items.marciasSaloon')}
       </PortfolioItem>
       <PortfolioItem
         title='Github Lister'
