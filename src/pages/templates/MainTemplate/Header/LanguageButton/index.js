@@ -7,6 +7,7 @@ import {
 
 import { styles } from "./styles";
 import parentStyles from '../styles'
+import * as storedLanguageProvider from "../../../../../providers/localStorage/storedLanguageProvider";
 
 export const LanguageButton = ({
   externalButtonStyle = null,
@@ -22,10 +23,10 @@ export const LanguageButton = ({
   const finalAnchorStyle = parentStyles.menuButtonAnchor
 
   const toggleLanguage = () => {
-    if (i18n.language === 'pt')
-      i18n.changeLanguage('en')
-    else
-      i18n.changeLanguage('pt')
+    const newLanguage = i18n.language === 'pt' ? 'en' : 'pt'
+
+    i18n.changeLanguage(newLanguage)
+    storedLanguageProvider.updateCurrentLanguage(newLanguage)
   }
 
   const currentLanguageIcon = useMemo(() => {
