@@ -137,8 +137,7 @@ export const PortfolioItems = () => {
           },
         }}
       >
-        <p>Um aplicativo que lista os dados de um usuário do GitHub e de seus repositórios.</p>
-        <p>Tecnologias utilizadas: CSS, JavaScript, Node.js, React, Express.js, AJAX.</p>
+        {getTranslatedParagraphs('pages.portfolio.items.githubLister')}
       </PortfolioItem>
       <PortfolioItem
         title='Text Converter'
@@ -155,8 +154,7 @@ export const PortfolioItems = () => {
         }}
         alignImageModalMobile='left top'
       >
-        <p>Um aplicativo para web que converte o texto fornecido como entrada para o formato escolhido, dentre eles: caixa alta, caixa baixa, capitalizado e espaçado. Ele está disponível tanto em português quanto em inglês.</p>
-        <p>Tecnologias utilizadas: HTML, CSS, JavaScript, PHP e Apache.</p>
+        {getTranslatedParagraphs('pages.portfolio.items.textConverter')}
       </PortfolioItem>
       <PortfolioItem
         title='Confusables'
@@ -173,9 +171,7 @@ export const PortfolioItems = () => {
         }}
         alignImageModalMobile='left top'
       >
-        <p>Um web app que substitui caracteres como letras, dígitos e pontuações em caracteres que se parecem com eles, mas têm códigos unicode diferentes.</p>
-        <p>Neste projeto, foi usado o Webpack para converter os arquivos TypeScript em um único arquivo JavaScript.</p>
-        <p>Tecnologias utilizadas: HTML, Sass, CSS, TypeScript, JavaScript, Webpack, Node.js, Express.js, EJS.</p>
+        {getTranslatedParagraphs('pages.portfolio.items.confusables')}
       </PortfolioItem>
       <PortfolioItem
         title='Fake Social Network'
@@ -191,45 +187,7 @@ export const PortfolioItems = () => {
           },
         }}
       >
-        <p>Um protótipo de rede social.</p>
-        <p>As postagens são carregadas em um "scroll infinito" e eles podem ser vistos em suas próprias páginas.</p>
-        <p>Todos os formulários se comunicam de forma assíncrona com o servidor, que responde com um JSON contendo as informações relevantes. A senha do usuário é criptografada com o algoritmo BCrypt e ele pode se manter logado entre sessões por um hash salvo nos cookies do navegador.</p>
-        <p>Tecnologias utilizadas: HTML, CSS, JavaScript, PHP, AJAX, Apache e MySQL.</p>
-      </PortfolioItem>
-      <PortfolioItem
-        title='Message of the Day'
-        image={messageOfTheDayImage}
-        links={{
-          code: {
-            privateLink: false,
-            link: 'https://github.com/karranlemos/message-of-the-day',
-          },
-          site: {
-            privateLink: false,
-            link: 'https://k-message-of-the-day.herokuapp.com/',
-          },
-        }}
-      >
-        <p>Um aplicativo que guarda uma mensagem personalizada do usuário. Perfeita para deixar na nova aba para se lembrar do objetivo do dia.</p>
-        <p>Tecnologias utilizadas: HTML, CSS, JavaScript, MySQL, Node.js, Express.js, EJS, AJAX.</p>
-      </PortfolioItem>
-      <PortfolioItem
-        title='Portfolio antigo'
-        image={portfolioOldImage}
-        links={{
-          code: {
-            privateLink: false,
-            link: 'https://github.com/karranlemos/old-portfolio-basic-webstack',
-          },
-          site: {
-            privateLink: true,
-          },
-        }}
-        alignImageModal='center'
-      >
-        <p>Antigo portfólio pessoal, feito com tecnologias web padrão.</p>
-        <p>Este site foi criado para guardar meu portfólio e minhas informações de contato. Ele foi criado para ser hospedado no Github, então o projeto não possui, no momento, um backend próprio.</p>
-        <p>Tecnologias utilizadas: HTML, CSS, JavaScript e Sass.</p>
+        {getTranslatedParagraphs('pages.portfolio.items.fakebook')}
       </PortfolioItem>
     </>
   )
