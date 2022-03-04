@@ -8,6 +8,7 @@ import colors from '../../commons/colors'
 import EyeCrossedGray from '../../resources/images/icons/EyeCrossedGray'
 import EyeGray from '../../resources/images/icons/EyeGray'
 import MultiplicationSign from '../../resources/images/icons/MultiplicationSign'
+import { useTranslation } from 'react-i18next'
 
 export default function ModalPortfolio({
   open,
@@ -114,26 +115,30 @@ const ThumbnailImage = ({
 }
 
 const RelatedCodeButton = ({ codeData }) => {
+  const { t } = useTranslation()
+  
   if (!codeData)
     return null
 
   return (
     <RelatedIconButton
       link={codeData?.link}
-      text='Código'
+      text={t('general.sourceCode')}
       privateLink={codeData.privateLink}
     />
   )
 }
 
 const RelatedSiteButton = ({ siteData }) => {
+  const { t } = useTranslation()
+
   if (!siteData)
     return null
 
   return (
     <RelatedIconButton
       link={siteData?.link}
-      text='Site'
+      text={t('general.site')}
       privateLink={siteData.privateLink}
     />
   )
