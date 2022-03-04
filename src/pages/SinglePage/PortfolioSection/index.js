@@ -20,7 +20,7 @@ export default function PortfolioSection({
     <Section 
       style={finalStyle}
       title={t('pages.portfolio.title')}
-      sectionAnchorId='portfolio'
+      sectionAnchorId='projects'
     >
       <Portfolio>
         <PortfolioItems />

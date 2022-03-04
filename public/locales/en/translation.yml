@@ -18,7 +18,7 @@ pages:
     contentEnd: <0>Check my CV</0> for more details.
     otherTechnologies: Others
   portfolio:
-    title: Portfolio
+    title: Projects
     items:
       utrack:
         title: Utrack
@@ -64,10 +64,10 @@ pages:
           - >
             Used technologies: HTML, CSS, JavaScript, WordPress, PHP and MySQL.
       portfolio:
-        title: Portfolio
+        title: Projects
         body:
-          - This very site!
-          - It was created for storing my portfolio and my contact information.
+          - This very website!
+          - It was created for storing my projects and my contact information.
           - 'Used technologies: React, Redux, HTML, CSS and i18n.'
       marciasSalon:
         title: Márcia's Salon

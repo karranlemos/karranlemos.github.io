@@ -18,7 +18,7 @@ pages:
     contentEnd: <0>Veja meu currículo</0> para mais informações.
     otherTechnologies: Outras
   portfolio:
-    title: Portfólio
+    title: Projetos
     merelyIllustrativeImage: '*Imagem meramente ilustrativa.'
     items:
       utrack:
@@ -64,10 +64,10 @@ pages:
           - >
             Tecnologias utilizadas: HTML, CSS, JavaScript, WordPress, PHP e MySQL.
       portfolio:
-        title: Portfólio
+        title: Project
         body:
           - Este mesmo site!
-          - Site criado para guardar meu portfólio e minhas informações de contato.
+          - Site criado para guardar meus projetos e minhas informações de contato.
           - 'Tecnologias utilizadas: React, Redux, HTML, CSS e i18n.'
       marciasSalon:
         title: Salão da Márcia

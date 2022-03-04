@@ -14,7 +14,7 @@ export default function Sections() {
   const pagesItems = [
     {
       text: t('pages.portfolio.title'),
-      link: '#portfolio'
+      link: '#projects'
     },
     {
       text: t('pages.about.title'),
