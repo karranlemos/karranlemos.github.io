@@ -21,6 +21,7 @@ pages:
     title: Portfolio
     items:
       utrack:
+        title: Utrack
         body:
           - >
             Development of a React Native mobile application for tracking vehicles, alerting
@@ -31,6 +32,7 @@ pages:
             TypeScript, PostgreSQL and Flespi.
           - '*Merely illustrative image.'
       utransfer:
+        title: Utransfer
         body:
           - >
             Maintenance and development of web application for creating routes and monitoring
@@ -41,6 +43,7 @@ pages:
             Used technologies: React, Redux, Redux Saga, Node.js, Express.js, PostgreSQL and Flespi.
           - '*Merely illustrative image.'
       smn:
+        title: Security Mass Notification
         body:
           - >
             Maintenance of application for receiving alerts and messages so that the user can informed
@@ -50,6 +53,7 @@ pages:
             Used technologies: React Native, Redux, Node.js, Express.js and PostgreSQL.
           - '*Merely illustrative image.'
       pel:
+        title: PEL
         body:
           - >
             Site created for the Eletronic Engineering Graduate Program (PEL) of the
@@ -60,32 +64,38 @@ pages:
           - >
             Used technologies: HTML, CSS, JavaScript, WordPress, PHP and MySQL.
       portfolio:
+        title: Portfolio
         body:
           - This very site!
           - It was created for storing my portfolio and my contact information.
           - 'Used technologies: React, Redux, HTML, CSS and i18n.'
-      marciasSaloon:
+      marciasSalon:
+        title: Márcia's Salon
         body:
-          - A website for the fictional beauty saloon "Márcia's Saloon".
+          - A website for the fictional beauty salon "Márcia's Salon".
           - >
             Used technologies: HTML, Sass, CSS, JavaScript, JQuery, Bootstrap, Node.js,
             Express.js and EJS.
       githubLister:
+        title: Github Lister
         body:
           - An application that lists the account information and repositories of a GitHub user.
           - >
             Used technologies: CSS, JavaScript, Node.js, React and Express.js.
       fakebook:
+        title: Fakebook
         body:
           - A social network prototype.
           - >
             Used technologies: HTML, CSS, JavaScript, PHP and MySQL.
       textConverter:
+        title: Text Converter
         body:
           - A web app for converting text into the desired format.
           - >
             Used technologies: HTML, CSS, JavaScript and PHP.
       confusables:
+        title: Confusables
         body:
           - >
             A web app for replacing normal characters such as letters, digits and

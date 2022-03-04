@@ -28,7 +28,7 @@ export const PortfolioItems = () => {
   return (
     <>
       <PortfolioItem
-        title='Utrack'
+        title={t('pages.portfolio.items.utrack.title')}
         image={utrackImage}
         links={{
           code: {
@@ -44,7 +44,7 @@ export const PortfolioItems = () => {
         {getTranslatedParagraphs('pages.portfolio.items.utrack.body')}
       </PortfolioItem>
       <PortfolioItem
-        title='Utransfer'
+        title={t('pages.portfolio.items.utransfer.title')}
         image={utransferImage}
         links={{
           code: {
@@ -60,7 +60,7 @@ export const PortfolioItems = () => {
         {getTranslatedParagraphs('pages.portfolio.items.utransfer.body')}
       </PortfolioItem>
       <PortfolioItem
-        title='Security Mass Notification'
+        title={t('pages.portfolio.items.smn.title')}
         image={securityMassNotificationImage}
         links={{
           code: {
@@ -76,7 +76,7 @@ export const PortfolioItems = () => {
         {getTranslatedParagraphs('pages.portfolio.items.smn.body')}
       </PortfolioItem>
       <PortfolioItem
-        title='PEL'
+        title={t('pages.portfolio.items.pel.title')}
         image={pelImage}
         links={{
           code: {
@@ -92,7 +92,7 @@ export const PortfolioItems = () => {
         {getTranslatedParagraphs('pages.portfolio.items.pel.body')}
       </PortfolioItem>
       <PortfolioItem
-        title='Portfolio'
+        title={t('pages.portfolio.items.portfolio.title')}
         image={portfolioImage}
         links={{
           code: {
@@ -107,7 +107,7 @@ export const PortfolioItems = () => {
         {getTranslatedParagraphs('pages.portfolio.items.portfolio.body')}
       </PortfolioItem>
       <PortfolioItem
-        title='Salão da Márcia'
+        title={t('pages.portfolio.items.marciasSalon.title')}
         image={salaoDaMarciaImage}
         links={{
           code: {
@@ -121,10 +121,10 @@ export const PortfolioItems = () => {
         }}
         alignImageModalMobile='left top'
       >
-        {getTranslatedParagraphs('pages.portfolio.items.marciasSaloon.body')}
+        {getTranslatedParagraphs('pages.portfolio.items.marciasSalon.body')}
       </PortfolioItem>
       <PortfolioItem
-        title='Github Lister'
+        title={t('pages.portfolio.items.githubLister.title')}
         image={githubListerImage}
         links={{
           code: {
@@ -140,7 +140,7 @@ export const PortfolioItems = () => {
         {getTranslatedParagraphs('pages.portfolio.items.githubLister.body')}
       </PortfolioItem>
       <PortfolioItem
-        title='Text Converter'
+        title={t('pages.portfolio.items.textConverter.title')}
         image={textConverterImage}
         links={{
           code: {
@@ -157,7 +157,7 @@ export const PortfolioItems = () => {
         {getTranslatedParagraphs('pages.portfolio.items.textConverter.body')}
       </PortfolioItem>
       <PortfolioItem
-        title='Confusables'
+        title={t('pages.portfolio.items.confusables.title')}
         image={confusablesImage}
         links={{
           code: {
@@ -174,7 +174,7 @@ export const PortfolioItems = () => {
         {getTranslatedParagraphs('pages.portfolio.items.confusables.body')}
       </PortfolioItem>
       <PortfolioItem
-        title='Fake Social Network'
+        title={t('pages.portfolio.items.fakebook.title')}
         image={fakeSocialNetworkImage}
         links={{
           code: {
