@@ -18,8 +18,8 @@ export const PortfolioItems = () => {
   const { t } = useTranslation()
 
   const getTranslatedParagraphs = (translationKey) => (
-    t(translationKey)?.map?.((paragraph) => (
-      <p>{paragraph}</p>
+    t(translationKey)?.map?.((paragraph, index) => (
+      <p key={index}>{paragraph}</p>
     )) ?? null
   )
 
