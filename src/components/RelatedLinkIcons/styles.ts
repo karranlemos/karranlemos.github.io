@@ -1,4 +1,10 @@
-const getStyles = ({ imageIconsWidth = 64, }) => ({
+import { IStyle } from "../../commons/interfaces"
+
+type TypeGetStyles = (options?: {
+  imageIconsWidth?: number
+}) => IStyle
+
+export const getStyles: TypeGetStyles = ({ imageIconsWidth = 64, } = {}) => ({
   relatedLinkIcons: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -23,5 +29,3 @@ const getStyles = ({ imageIconsWidth = 64, }) => ({
     filter: 'brightness(0.8)',
   },
 })
-
-export default getStyles

@@ -1,15 +1,26 @@
-import React from 'react'
+import { styles } from './styles'
+import { SectionHeader } from './SectionHeader'
+import { CSSProperties, ReactNode } from 'react'
 
-import styles from './styles'
-import SectionHeader from './SectionHeader'
+interface IOwnProps {
+  children?: ReactNode | null
+  style?: CSSProperties
+  title?: string | null
+  sectionAnchorId?: string | null
+  containerStyle?: CSSProperties | null
+}
+
+interface ISectionAnchorProps {
+  id: string | null
+}
 
 export default function Section({
   children=null,
   style: externalStyle={},
   title=null,
   sectionAnchorId=null,
-  containerStyle=true
-}) {
+  containerStyle=null
+}: IOwnProps) {
 
   const finalStyle = {
     ...styles.section,
@@ -26,7 +37,7 @@ export default function Section({
       <SectionAnchor id={sectionAnchorId} />
       <div style={finalContainerStyle}>
         <SectionHeader
-          title={title}
+          title={title ?? ''}
         />
         {children}
       </div>
@@ -34,7 +45,9 @@ export default function Section({
   )
 }
 
-function SectionAnchor({ id }) {
+function SectionAnchor({
+  id
+}: ISectionAnchorProps) {
   if (!id)
     return null
 
@@ -42,6 +55,6 @@ function SectionAnchor({ id }) {
     <div
       id={id}
       style={styles.hashAnchor}
-    ></div>
+    />
   )
 }

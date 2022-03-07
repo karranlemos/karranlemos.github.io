@@ -1,6 +1,7 @@
+import { IStyle } from '../../../commons/interfaces'
 import colors from '../../../commons/colors'
 
-const styles = {
+export const styles: IStyle = {
   header: {
     
   },
@@ -13,5 +14,3 @@ const styles = {
     fontSize: 32,
   }
 }
-
-export default styles

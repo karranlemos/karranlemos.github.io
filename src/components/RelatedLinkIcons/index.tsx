@@ -1,13 +1,30 @@
-import React, { useState } from 'react'
+import { CSSProperties, useState } from 'react'
 
-import getStyles from './styles'
+import { getStyles } from './styles'
 
-export default function RelatedLinkIcons({
+interface IRelatedLinkIcons {
+  linkIconsInfo: {
+    title: string
+    link: string
+    image: string
+  }[]
+  size?: number
+  style?: CSSProperties | null
+}
+
+interface IRelatedLinkIcon {
+  link: string
+  image: string
+  title: string
+  size?: number
+}
+
+export const RelatedLinkIcons = ({
   linkIconsInfo = [],
   size = 40,
   style: externalStyle = null
-}) {
-  const styles = getStyles({})
+}: IRelatedLinkIcons) => {
+  const styles = getStyles()
 
   const finalContainerStyle = {
     ...styles.relatedLinkIcons,
@@ -22,7 +39,7 @@ export default function RelatedLinkIcons({
             key={index}
             image={linkIconInfo.image}
             link={linkIconInfo.link}
-            title={linkIconInfo.link || ''}
+            title={linkIconInfo.link}
             size={size}
           />
         ))
@@ -31,18 +48,18 @@ export default function RelatedLinkIcons({
   )
 }
 
-function RelatedLinkIcon({ image, link, title = '', size = 40 }) {
+const RelatedLinkIcon = ({
+  image,
+  link,
+  title,
+  size = 40
+}: IRelatedLinkIcon) => {
   const styles = getStyles({ imageIconsWidth: size })
 
   const [imageHover, setImageHover] = useState(false)
 
-  const onMouseEnterHandler = () => {
-    setImageHover(true)
-  }
-
-  const onMouseLeaveHandler = () => {
-    setImageHover(false)
-  }
+  const onMouseEnterHandler = () => setImageHover(true)
+  const onMouseLeaveHandler = () => setImageHover(false)
 
   const finalImageStyle = { ...styles.imageIcons }
   if (imageHover)

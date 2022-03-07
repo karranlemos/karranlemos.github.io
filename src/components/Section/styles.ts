@@ -1,10 +1,7 @@
-/**
- * Styles for Section.
- */
-
+import { IStyle } from '../../commons/interfaces'
 import colors from '../../commons/colors'
 
-const styles = {
+export const styles: IStyle = {
   section: {
     minHeight: 400,
     backgroundColor: colors.lighterBlack,
@@ -24,5 +21,3 @@ const styles = {
     top: -80,
   }
 }
-
-export default styles

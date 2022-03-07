@@ -1,6 +1,12 @@
-import styles from './styles'
+import { styles } from './styles'
 
-export default function SectionHeader({ title }) {
+interface IOwnProps {
+  title: string
+}
+
+export const SectionHeader = ({
+  title
+}: IOwnProps) => {
   if (!title)
     return null
   

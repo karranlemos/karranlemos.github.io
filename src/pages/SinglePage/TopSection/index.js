@@ -1,6 +1,6 @@
 import Section from '../../../components/Section'
 import getStyles from './styles'
-import RelatedLinkIcons from '../../../components/RelatedLinkIcons'
+import { RelatedLinkIcons } from '../../../components/RelatedLinkIcons'
 
 import GithubLogo from '../../../resources/images/general/GithubLogo.png'
 import LinkedinLogo from '../../../resources/images/general/LinkedinLogo.png'

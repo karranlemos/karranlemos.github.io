@@ -1,4 +1,6 @@
-const styles = {
+import { IStyle } from "../../commons/interfaces"
+
+export const styles: IStyle = {
   multipleColumnsList: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -32,5 +34,3 @@ const styles = {
     lineHeight: 1.4,
   },
 }
-
-export default styles

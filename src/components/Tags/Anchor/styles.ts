@@ -1,9 +1,9 @@
+import { IStyle } from '../../../commons/interfaces'
+
 import colors from '../../../commons/colors'
 
-const styles = {
+export const styles: IStyle = {
   anchor: {
     color: colors.purple,
   },
 }
-
-export default styles
