@@ -47,7 +47,7 @@ export default function TopSection({
 }
 
 const useLinkIconsInfo = () => {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
 
   return [
     {
