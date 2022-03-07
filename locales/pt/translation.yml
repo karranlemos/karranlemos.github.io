@@ -2,6 +2,9 @@ general:
   sourceCode: Código Fonte
   site: Site
   allRightsReserved: Todos os direitos reservados.
+  curriculum: Currículo
+files:
+  curriculum: "/files/pdfs/CV Karran Lemos PT.pdf"
 pages:
   contact:
     title: Contato
