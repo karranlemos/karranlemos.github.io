@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Provider } from 'react-redux'
 
 import { store } from './store'
-import SinglePage from './pages'
+import { Sections } from './pages'
 import reactStyles from './globalStyles/reactStyles'
 import { useTranslation } from 'react-i18next';
 import { Fallback } from './components/Fallback';
@@ -23,7 +23,7 @@ function App() {
   return (
     <Provider store={store}>
       <div style={reactStyles}>
-        <SinglePage />
+        <Sections />
       </div>
     </Provider>
   )

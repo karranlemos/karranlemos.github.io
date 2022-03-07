@@ -1,10 +1,7 @@
-/**
- * Styles for SinglePage.
- */
-
+import { IStyle } from '../../commons/interfaces';
 import colors from '../../commons/colors'
 
-const styles = {
+export const styles: IStyle = {
   sections: {
     width: '100%',
     display: 'flex',
@@ -19,5 +16,3 @@ const styles = {
     backgroundColor: colors.lightBlack,
   },
 };
-
-export default styles;

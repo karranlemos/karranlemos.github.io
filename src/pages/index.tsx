@@ -1,10 +1,8 @@
-import React from 'react';
-
 import MainTemplate from './templates/MainTemplate'
-import SinglePage from './SinglePage'
+import { SinglePage } from './SinglePage'
 import { useTranslation } from 'react-i18next';
 
-export default function Sections() {
+export const Sections = () => {
   const { t } = useTranslation()
 
   const homeItem = {

@@ -4,9 +4,9 @@ import Modal from '../Modal'
 import styles from './styles'
 import colors from '../../commons/colors'
 
-import EyeCrossedGray from '../../resources/images/icons/EyeCrossedGray'
-import EyeGray from '../../resources/images/icons/EyeGray'
-import MultiplicationSign from '../../resources/images/icons/MultiplicationSign'
+import { EyeCrossedGray } from '../../resources/images/icons/EyeCrossedGray'
+import { EyeGray } from '../../resources/images/icons/EyeGray'
+import { MultiplicationSign } from '../../resources/images/icons/MultiplicationSign'
 import { useTranslation } from 'react-i18next'
 import { useAppSelector } from '../../store/hooks'
 
