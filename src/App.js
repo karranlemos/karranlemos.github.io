@@ -9,15 +9,15 @@ import { Fallback } from './components/Fallback';
 
 function App() {
   const { i18n } = useTranslation()
-  const [isFallbackDelayOn, setIsFallbackDelayOn] = useState(true)
+  const [shouldShowLoading, setShouldShowLoading] = useState(false)
 
   useEffect(() => {
-    setTimeout(() => setIsFallbackDelayOn(false), 500)
+    setTimeout(() => setShouldShowLoading(true), 600)
   }, [])
 
-  if (!i18n.resolvedLanguage || isFallbackDelayOn)
+  if (!i18n.resolvedLanguage)
     return (
-      <Fallback />
+      <Fallback showLoading={shouldShowLoading} />
     )
 
   return (
