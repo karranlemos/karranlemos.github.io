@@ -1,6 +1,3 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
-
 import Section from '../../../components/Section'
 import getStyles from './styles'
 import RelatedLinkIcons from '../../../components/RelatedLinkIcons'
@@ -9,12 +6,13 @@ import GithubLogo from '../../../resources/images/general/GithubLogo.png'
 import LinkedinLogo from '../../../resources/images/general/LinkedinLogo.png'
 import ResumeIcon from '../../../resources/images/general/resume.svg'
 import { useTranslation } from 'react-i18next'
+import { useAppSelector } from '../../../store/hooks'
 
 export default function TopSection({
   style: externalStyle={}
 }) {
   const { t } = useTranslation()
-  const windowSize = useSelector(state => state.window.windowSize)
+  const windowSize = useAppSelector(state => state.window.windowSize)
   const linkIconsInfo = useLinkIconsInfo()
 
   const styles = getStyles({

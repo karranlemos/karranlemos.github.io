@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useState } from 'react'
 
 import Modal from '../Modal'
 import styles from './styles'
@@ -9,6 +8,7 @@ import EyeCrossedGray from '../../resources/images/icons/EyeCrossedGray'
 import EyeGray from '../../resources/images/icons/EyeGray'
 import MultiplicationSign from '../../resources/images/icons/MultiplicationSign'
 import { useTranslation } from 'react-i18next'
+import { useAppSelector } from '../../store/hooks'
 
 export default function ModalPortfolio({
   open,
@@ -20,7 +20,7 @@ export default function ModalPortfolio({
   alignImageModalMobile = null,
   onClose = () => { },
 }) {
-  const mobileMode = useSelector(state => state.window.mobileMode)
+  const mobileMode = useAppSelector(state => state.window.mobileMode)
 
   const finalContentStyle = { ...styles.modalContent }
   if (mobileMode)

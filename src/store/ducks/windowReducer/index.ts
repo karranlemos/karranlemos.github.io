@@ -1,10 +1,15 @@
-/**
- * Reducer responsible for storing window state and mode
- */
+import { types } from './types'
 
-import types from './types'
+interface IReducerState {
+  windowSize: {
+    width: number | null,
+    height: number | null,
+  }
+  mobileMode: boolean
+  scrollBehavior: 'auto' | 'smooth',
+}
 
-const initialState = {
+const initialState: IReducerState = {
   windowSize: {
     width: null,
     height: null,
@@ -13,7 +18,7 @@ const initialState = {
   scrollBehavior: 'smooth',
 }
 
-export default function reducer(state = initialState, action) {
+export default function reducer(state = initialState, action: any): IReducerState {
   switch (action.type) {
     case types.WINDOW_SIZE_CHANGED:
       return {

@@ -2,8 +2,6 @@ import { combineReducers } from 'redux'
 
 import windowReducer from './windowReducer'
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
   window: windowReducer,
 })
-
-export default rootReducer

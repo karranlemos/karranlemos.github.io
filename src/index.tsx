@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import config from './config'
 import App from './App';
-import './globalStyles/';
+import './globalStyles';
 
 config()
 

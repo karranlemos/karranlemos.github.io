@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Provider } from 'react-redux'
 
-import store from './store'
+import { store } from './store'
 import SinglePage from './pages'
 import reactStyles from './globalStyles/reactStyles'
 import { useTranslation } from 'react-i18next';
@@ -26,7 +26,7 @@ function App() {
         <SinglePage />
       </div>
     </Provider>
-  );
+  )
 }
 
-export default App;
+export default App

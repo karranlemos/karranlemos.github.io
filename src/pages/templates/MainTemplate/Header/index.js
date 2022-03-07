@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 
 import styles from './styles'
 import MobileMenuButton from '../../../../components/MobileMenuButton'
 import { scrollBehaviorAction } from '../../../../store/ducks/windowReducer/actions'
 import { LanguageButton } from './LanguageButton'
+import { useAppDispatch } from '../../../../store/hooks'
 
 export default function Header({
   homeItem = null,
@@ -65,7 +66,7 @@ const DesktopMenu = ({ homeItem, pagesItems, pinned }) => {
 }
 
 const MobileMenu = ({ homeItem, pagesItems, pinned }) => {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
   const [menuOpen, setMenuOpen] = useState(false)
 
