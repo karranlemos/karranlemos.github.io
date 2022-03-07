@@ -15,6 +15,7 @@ export default function TopSection({
 }) {
   const { t } = useTranslation()
   const windowSize = useSelector(state => state.window.windowSize)
+  const linkIconsInfo = useLinkIconsInfo()
 
   const styles = getStyles({
     windowHeight: windowSize.height,
@@ -45,20 +46,24 @@ export default function TopSection({
   )
 }
 
-const linkIconsInfo = [
-  {
-    title: 'Github',
-    link: 'https://github.com/karranlemos/',
-    image: GithubLogo,
-  },
-  {
-    title: 'Linkedin',
-    link: 'https://www.linkedin.com/in/karranlemos/',
-    image: LinkedinLogo,
-  },
-  {
-    title: 'Currículo',
-    link: '/files/pdfs/CV - Karran Lemos.pdf',
-    image: ResumeIcon,
-  },
-]
+const useLinkIconsInfo = () => {
+  const { t, i18n } = useTranslation()
+
+  return [
+    {
+      title: 'Github',
+      link: 'https://github.com/karranlemos/',
+      image: GithubLogo,
+    },
+    {
+      title: 'Linkedin',
+      link: 'https://www.linkedin.com/in/karranlemos/',
+      image: LinkedinLogo,
+    },
+    {
+      title: t('general.curriculum'),
+      link: t('files.curriculum'),
+      image: ResumeIcon,
+    },
+  ]
+}

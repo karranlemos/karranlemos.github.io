@@ -38,7 +38,7 @@ export default function AboutSection({
         i18nKey='pages.about.contentEnd'
         t={t}
         components={[
-          <Anchor link="/files/pdfs/CV - Karran Lemos.pdf" />
+          <Anchor link={t('files.curriculum')} />
         ]}
       />
     )
