@@ -1,14 +1,9 @@
-/**
- * Styles for Section.
- */
-
+import { IStyle } from '../../../commons/interfaces';
 import colors from '../../../commons/colors'
 
-const styles = {
+export const styles: IStyle = {
   section: {
     backgroundColor: colors.lighterBlack,
     width: '100%',
   },
 };
-
-export default styles;

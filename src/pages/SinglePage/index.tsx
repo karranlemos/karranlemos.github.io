@@ -1,7 +1,7 @@
 import TopSection from './TopSection'
 import PortfolioSection from './PortfolioSection'
 import { AboutSection } from './AboutSection'
-import ContactSection from './ContactSection'
+import { ContactSection } from './ContactSection'
 import { styles } from './styles'
 
 export const SinglePage = () => (
