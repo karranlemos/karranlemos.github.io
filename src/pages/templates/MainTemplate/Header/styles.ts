@@ -1,10 +1,11 @@
 import { colors } from '../../../../commons/colors'
+import { IStyle } from '../../../../commons/interfaces'
 
 const NAVBAR_HEIGHT_TOP = 100
 const NAVBAR_HEIGHT_PINNED = 80
 const PAGES_WIDTH = 1200
 
-const styles = {
+export const styles: IStyle = {
   mainMenu: {
     position: 'fixed',
     zIndex: '1000',
@@ -112,10 +113,4 @@ const styles = {
 
     outlineWidth: 0,
   },
-
-  menuButtonAnchorHover: {
-    // backgroundColor: colors.darkGray,
-  },
 }
-
-export default styles

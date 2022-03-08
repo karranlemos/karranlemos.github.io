@@ -23,10 +23,9 @@ export default i18n
     },
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.yml',
-      parse: (data) => yaml.load(data),
+      parse: (data) => yaml.load(data) as { [key: string]: any },
     },
     react: {
-      wait: true,
       useSuspense: false,
     }
   })

@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { CSSProperties, useMemo } from "react";
 import { useTranslation } from "react-i18next"
 import {
   BR as IconBR,
@@ -6,12 +6,16 @@ import {
 } from "country-flag-icons/react/1x1";
 
 import { styles } from "./styles";
-import parentStyles from '../styles'
+import { styles as parentStyles } from '../styles'
 import * as storedLanguageProvider from "../../../../../providers/localStorage/storedLanguageProvider";
+
+interface IOwnProps {
+  externalButtonStyle?: CSSProperties | null
+}
 
 export const LanguageButton = ({
   externalButtonStyle = null,
-}) => {
+}: IOwnProps) => {
   const { i18n } = useTranslation()
 
   const finalButtonStyle = {

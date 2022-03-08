@@ -1,6 +1,7 @@
+import { CSSProperties } from 'react'
 import { colors } from '../commons/colors'
 
-const reactStyles = {
+const reactStyles: CSSProperties = {
   color: colors.fullWhite
 }
 

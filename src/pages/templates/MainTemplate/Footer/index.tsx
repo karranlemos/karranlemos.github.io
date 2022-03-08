@@ -1,9 +1,8 @@
-import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import styles from './styles'
+import { styles } from './styles'
 
-export default function Footer() {
+export const Footer = () => {
   const { t } = useTranslation()
 
   return (

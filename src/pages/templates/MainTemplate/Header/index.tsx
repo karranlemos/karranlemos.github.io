@@ -1,17 +1,22 @@
-import { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import { useState, useEffect, CSSProperties } from 'react'
 
-import styles from './styles'
-import MobileMenuButton from '../../../../components/MobileMenuButton'
+import { styles } from './styles'
+import { MobileMenuButton } from '../../../../components/MobileMenuButton'
 import { scrollBehaviorAction } from '../../../../store/ducks/windowReducer/actions'
 import { LanguageButton } from './LanguageButton'
-import { useAppDispatch } from '../../../../store/hooks'
+import { useAppDispatch, useAppSelector } from '../../../../store/hooks'
+import { IButtonData } from '../interfaces'
 
-export default function Header({
-  homeItem = null,
-  pagesItems = [],
-}) {
-  const mobileMode = useSelector(state => state.window.mobileMode)
+interface IOwnProps {
+  homeItem: IButtonData
+  pagesItems: IButtonData[]
+}
+
+export const Header = ({
+  homeItem,
+  pagesItems,
+}: IOwnProps) => {
+  const mobileMode = useAppSelector(state => state.window.mobileMode)
 
   const [pinned, setPinned] = useState(false)
 
@@ -48,7 +53,13 @@ export default function Header({
 }
 
 
-const DesktopMenu = ({ homeItem, pagesItems, pinned }) => {
+interface IDesktopMenu {
+  homeItem: IButtonData
+  pagesItems: IButtonData[]
+  pinned: boolean
+}
+
+const DesktopMenu = ({ homeItem, pagesItems, pinned }: IDesktopMenu) => {
   const finalMainMenuStyle = { ...styles.mainMenu }
   if (pinned)
     Object.assign(finalMainMenuStyle, styles.mainMenuPinned)
@@ -65,7 +76,13 @@ const DesktopMenu = ({ homeItem, pagesItems, pinned }) => {
   )
 }
 
-const MobileMenu = ({ homeItem, pagesItems, pinned }) => {
+interface IMobileMenu {
+  homeItem: IButtonData
+  pagesItems: IButtonData[]
+  pinned: boolean
+}
+
+const MobileMenu = ({ homeItem, pagesItems, pinned }: IMobileMenu) => {
   const dispatch = useAppDispatch()
 
   const [menuOpen, setMenuOpen] = useState(false)
@@ -82,8 +99,10 @@ const MobileMenu = ({ homeItem, pagesItems, pinned }) => {
   }, [menuOpen, dispatch])
 
   useEffect(() => {
-    return () => dispatch(scrollBehaviorAction('smooth'))
-  }, [dispatch])
+    return () => {
+      dispatch(scrollBehaviorAction('smooth'))
+    }
+  }, [])
 
   const finalMainMenuStyle = { ...styles.mainMenu }
   if (pinned || menuOpen)
@@ -93,9 +112,7 @@ const MobileMenu = ({ homeItem, pagesItems, pinned }) => {
   if (menuOpen)
     Object.assign(finalSideButtonsStyle, styles.pagesItemsMobileOpen)
 
-  const onClickMenuButtonHandler = () => {
-    setMenuOpen(!menuOpen)
-  }
+  const onClickMenuButtonHandler = () => setMenuOpen(!menuOpen)
 
   return (
     <header>
@@ -122,12 +139,17 @@ const MobileMenu = ({ homeItem, pagesItems, pinned }) => {
   )
 }
 
+interface IHomeButton {
+  text: string
+  link: string
+  onClick?: () => void
+}
 
 const HomeButton = ({
   text,
   link,
-  onClick=()=>{},
-}) => {
+  onClick = () => null,
+}: IHomeButton) => {
   if (!text || !link)
     return <div></div>
 
@@ -140,13 +162,21 @@ const HomeButton = ({
   )
 }
 
+interface ISideButtons {
+  sideButtons: IButtonData[]
+  style?: CSSProperties | null
+  menuButtonStyle?: CSSProperties | null
+  externalStyleHover?: CSSProperties | null
+  onClick?: () => void
+}
+
 const SideButtons = ({
   sideButtons,
   style: externalStyle = null,
   menuButtonStyle = null,
   externalStyleHover = null,
-  onClick = () => { },
-}) => {
+  onClick = () => null,
+}: ISideButtons) => {
   const finalPagesItemsStyle = {
     ...styles.pagesItems,
     ...externalStyle
@@ -171,6 +201,15 @@ const SideButtons = ({
   )
 }
 
+interface IMenuLinkButton {
+  text: string
+  link: string
+  externalButtonStyle?: CSSProperties | null
+  externalAnchorStyle?: CSSProperties | null
+  externalStyleHover?: CSSProperties | null
+  onClick?: () => void
+}
+
 const MenuLinkButton = ({
   text,
   link,
@@ -178,7 +217,7 @@ const MenuLinkButton = ({
   externalAnchorStyle = null,
   externalStyleHover = null,
   onClick = () => { },
-}) => {
+}: IMenuLinkButton) => {
   const [hover, setHover] = useState(false)
 
   const finalButtonStyle = {

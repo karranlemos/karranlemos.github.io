@@ -1,4 +1,10 @@
-const getStyles = ({ size }) => ({
+import { IStyle } from "../../commons/interfaces"
+
+type TypeGetStyles = (options: {
+  size: number
+}) => IStyle
+
+export const getStyles: TypeGetStyles = ({ size }) => ({
   menuButton: {
     display: 'flex',
     justifyContent: 'center',
@@ -12,5 +18,3 @@ const getStyles = ({ size }) => ({
     objectFit: 'cover',
   }
 })
-
-export default getStyles

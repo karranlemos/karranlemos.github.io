@@ -6,7 +6,7 @@ import {
 
 const MAX_MOBILE_WIDTH = 700
 
-const windowWatcherConfig = () => {
+export const windowWatcherConfig = () => {
   const resizeCallback = () => {
     const currentState = store.getState()
 
@@ -17,7 +17,7 @@ const windowWatcherConfig = () => {
 
     const newMobileMode = (window.innerWidth <= MAX_MOBILE_WIDTH)
 
-    if (currentState.window.windowSize.mobileMode === newMobileMode)
+    if (currentState.window.mobileMode === newMobileMode)
       return
     
     store.dispatch(mobileModeChangedAction(newMobileMode))
@@ -26,5 +26,3 @@ const windowWatcherConfig = () => {
   window.addEventListener('resize', resizeCallback)
   resizeCallback()
 }
-
-export default windowWatcherConfig

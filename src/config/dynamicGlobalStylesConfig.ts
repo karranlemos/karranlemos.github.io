@@ -1,6 +1,6 @@
 import { store } from '../store'
 
-const dynamicGlobalStylesConfig = () => {
+export const dynamicGlobalStylesConfig = () => {
   const callback = () => {
     const currentState = store.getState()
     const scrollBehavior = currentState.window.scrollBehavior
@@ -12,5 +12,3 @@ const dynamicGlobalStylesConfig = () => {
   store.subscribe(callback)
   callback()
 }
-
-export default dynamicGlobalStylesConfig

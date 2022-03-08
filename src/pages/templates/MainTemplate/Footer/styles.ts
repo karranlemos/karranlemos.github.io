@@ -1,6 +1,7 @@
 import { colors } from '../../../../commons/colors'
+import { IStyle } from '../../../../commons/interfaces'
 
-const styles = {
+export const styles: IStyle = {
   footer: {
     display: 'flex',
     alignItems: 'center',
@@ -14,5 +15,3 @@ const styles = {
     textAlign: 'center',
   }
 }
-
-export default styles

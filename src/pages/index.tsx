@@ -1,4 +1,4 @@
-import MainTemplate from './templates/MainTemplate'
+import { MainTemplate } from './templates/MainTemplate'
 import { SinglePage } from './SinglePage'
 import { useTranslation } from 'react-i18next';
 

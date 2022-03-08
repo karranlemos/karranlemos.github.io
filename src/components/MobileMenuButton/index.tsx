@@ -1,12 +1,19 @@
-import getStyles from './styles'
+import { getStyles } from './styles'
 
 import MenuButtonImage from '../../resources/images/icons/Hamburger-white.svg'
+import { CSSProperties } from 'react'
 
-export default function MobileMenuButton({
+interface IOwnProps {
+  size: number
+  style?: CSSProperties | null
+  onClick?: () => void
+}
+
+export const MobileMenuButton = ({
   size=20,
-  style: externalStyle=null,
-  onClick=()=>{},
-}) {
+  style: externalStyle = null,
+  onClick = () => null,
+}: IOwnProps) => {
   const styles = getStyles({ size })
 
   const finalContainerStyle = {
@@ -20,8 +27,8 @@ export default function MobileMenuButton({
       onClick={onClick}
     >
       <img
+        alt='Menu'
         src={MenuButtonImage}
-        alt="Menu"
         style={styles.menuButtonImage}
       />
     </div>
