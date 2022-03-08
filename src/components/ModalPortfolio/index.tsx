@@ -1,15 +1,13 @@
-import { CSSProperties, ReactNode, useState } from 'react'
+import { ReactNode } from 'react'
 
 import { Modal } from '../Modal'
-import { styles, styleCallbacks } from './styles'
-import { colors } from '../../commons/colors'
-
-import { EyeCrossedGray } from '../../resources/images/icons/EyeCrossedGray'
-import { EyeGray } from '../../resources/images/icons/EyeGray'
-import { MultiplicationSign } from '../../resources/images/icons/MultiplicationSign'
-import { useTranslation } from 'react-i18next'
-import { BackgroundPositionType, ILink, ILinks } from '../../commons/interfaces/portfolio'
+import { styles } from './styles'
+import { BackgroundPositionType, ILinks } from '../../commons/interfaces/portfolio'
 import { useWindowSize } from '../../commons/hooks/useWindowSize'
+import { CloseButton } from './CloseButton'
+import { RelatedSiteButton } from './RelatedButtons/RelatedSiteButton'
+import { RelatedCodeButton } from './RelatedButtons/RelatedCodeButton'
+import { ThumbnailImage } from './ThumbnailImage'
 
 interface IOwnProps {
   open: boolean
@@ -50,13 +48,9 @@ export const ModalPortfolio = ({
         alignImageModal={alignImageModal}
       />
       <div style={styles.contentPanel}>
-        <header
-          style={styles.header}
-        >
+        <header style={styles.header}>
           <div style={styles.headerTitle}>{title}</div>
-          <CloseButton
-            onClick={onClose}
-          />
+          <CloseButton onClick={onClose} />
         </header>
         <ThumbnailImage
           image={image}
@@ -75,117 +69,5 @@ export const ModalPortfolio = ({
         </footer>
       </div>
     </Modal>
-  )
-}
-
-const CloseButton = ({
-  onClick=()=>{}
-}) => {
-  const [hover, setHover] = useState(false)
-
-  const finalCloseButtonStyle = { ...styles.closeButton }
-  if (hover)
-    Object.assign(finalCloseButtonStyle, styles.closeButtonHover)
-
-  const onMouseEnterHandler = () => setHover(true)
-  const onMouseLeaveHandler = () => setHover(false)
-
-  return (
-    <div
-      style={finalCloseButtonStyle}
-      onClick={onClick}
-      onMouseEnter={onMouseEnterHandler}
-      onMouseLeave={onMouseLeaveHandler}
-    >
-      <MultiplicationSign
-        size={18}
-      />
-    </div>
-  )
-}
-
-const ThumbnailImage = ({
-  image,
-  show = true,
-  style = null,
-  alignImageModal = 'left',
-}: {
-  image: string
-  show?: boolean
-  style?: CSSProperties | null
-  alignImageModal?: BackgroundPositionType
-}) => {
-  if (!show)
-    return null
-
-  const finalThumbnailStyle = {
-    ...styleCallbacks.getImageThumbnail(image, alignImageModal),
-    ...style
-  }
-
-  return <div style={finalThumbnailStyle} />
-}
-
-const RelatedCodeButton = ({
-  codeData = null
-}: {
-  codeData?: ILink | null
-}) => {
-  const { t } = useTranslation()
-  
-  if (!codeData)
-    return null
-
-  return (
-    <RelatedIconButton
-      link={codeData.link}
-      text={t('general.sourceCode')}
-      privateLink={codeData.privateLink}
-    />
-  )
-}
-
-const RelatedSiteButton = ({
-  siteData
-}: {
-  siteData?: ILink | null
-}) => {
-  const { t } = useTranslation()
-
-  if (!siteData)
-    return null
-
-  return (
-    <RelatedIconButton
-      link={siteData.link}
-      text={t('general.site')}
-      privateLink={siteData.privateLink}
-    />
-  )
-}
-
-const RelatedIconButton = ({
-  link = null,
-  text,
-  privateLink
-}: {
-  link?: string | null
-  text: string
-  privateLink: boolean
-}) => {
-  const icon = privateLink
-    ? <EyeCrossedGray fill={colors.darkGray} />
-    : <EyeGray />
-
-  return (
-    <a
-      href={link ?? undefined}
-      style={styleCallbacks.getRelatedIconButton(privateLink)}
-      rel="noreferrer"
-      target="_blank"
-    >
-      {icon}
-      <div>{text}</div>
-    </a>
   )
 }
