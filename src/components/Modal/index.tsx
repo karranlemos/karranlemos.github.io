@@ -1,14 +1,21 @@
-import React, { useRef } from 'react'
+import React, { CSSProperties, ReactNode, useRef } from 'react'
 
 import styles from './styles'
 
-export default function Modal({
+interface IOwnProps {
+  open: boolean
+  children: ReactNode
+  style?: CSSProperties | null
+  onOverlayClick?: () => void
+}
+
+export const Modal = ({
   open,
   children,
-  style=null,
-  onOverlayClick: onExternalOverlayClick=()=>{}
-}) {
-  const overlayRef = useRef(null)
+  style = null,
+  onOverlayClick: onExternalOverlayClick = () => null
+}: IOwnProps) => {
+  const overlayRef = useRef<HTMLDivElement>(null)
 
   const finalModalStyle = { ...styles.modal }
   if (open)
@@ -19,11 +26,7 @@ export default function Modal({
     ...style,
   }
 
-  const setOverlayRef = (newOverlayRef) => {
-    overlayRef.current = newOverlayRef
-  }
-
-  const onOverlayClick = (e) => {
+  const onOverlayClick: React.MouseEventHandler<HTMLDivElement> = (e) => {
     if (e.target !== overlayRef.current)
       return
 
@@ -32,7 +35,7 @@ export default function Modal({
 
   return (
     <div
-      ref={setOverlayRef}
+      ref={overlayRef}
       style={finalModalStyle}
       onClick={onOverlayClick}
     >

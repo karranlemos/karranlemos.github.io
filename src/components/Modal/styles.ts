@@ -1,8 +1,9 @@
 import { colors, getRgbaColor } from '../../commons/colors'
+import { IStyle } from '../../commons/interfaces'
 
 const blackOverlay = getRgbaColor(colors.black, 0.9)
 
-const styles = {
+const styles: IStyle = {
   modal: {
     display: 'none',
     justifyContent: 'center',

@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { CSSProperties, ReactNode, useState } from 'react'
 
-import Modal from '../Modal'
-import styles from './styles'
+import { Modal } from '../Modal'
+import { styles, styleCallbacks, BackgroundPositionType } from './styles'
 import { colors } from '../../commons/colors'
 
 import { EyeCrossedGray } from '../../resources/images/icons/EyeCrossedGray'
@@ -10,7 +10,26 @@ import { MultiplicationSign } from '../../resources/images/icons/MultiplicationS
 import { useTranslation } from 'react-i18next'
 import { useAppSelector } from '../../store/hooks'
 
-export default function ModalPortfolio({
+interface ILink {
+  privateLink: boolean
+  link?: string
+}
+
+interface IOwnProps {
+  open: boolean
+  title: string
+  image: string
+  children: ReactNode
+  links?: null | {
+    code: ILink
+    site: ILink
+  }
+  alignImageModal?: BackgroundPositionType | null
+  alignImageModalMobile?: BackgroundPositionType | null
+  onClose?: () => void
+}
+
+export const ModalPortfolio = ({
   open,
   title,
   image,
@@ -18,8 +37,8 @@ export default function ModalPortfolio({
   links = null,
   alignImageModal = null,
   alignImageModalMobile = null,
-  onClose = () => { },
-}) {
+  onClose = () => null,
+}: IOwnProps) => {
   const mobileMode = useAppSelector(state => state.window.mobileMode)
 
   const finalContentStyle = { ...styles.modalContent }
@@ -75,13 +94,8 @@ const CloseButton = ({
   if (hover)
     Object.assign(finalCloseButtonStyle, styles.closeButtonHover)
 
-  const onMouseEnterHandler = () => {
-    setHover(true)
-  }
-
-  const onMouseLeaveHandler = () => {
-    setHover(false)
-  }
+  const onMouseEnterHandler = () => setHover(true)
+  const onMouseLeaveHandler = () => setHover(false)
 
   return (
     <div
@@ -102,19 +116,28 @@ const ThumbnailImage = ({
   show = true,
   style = null,
   alignImageModal = 'left',
+}: {
+  image: string
+  show?: boolean
+  style?: CSSProperties | null
+  alignImageModal?: BackgroundPositionType
 }) => {
   if (!show)
     return null
 
   const finalThumbnailStyle = {
-    ...styles.getImageThumbnail(image, alignImageModal),
+    ...styleCallbacks.getImageThumbnail(image, alignImageModal),
     ...style
   }
 
   return <div style={finalThumbnailStyle} />
 }
 
-const RelatedCodeButton = ({ codeData }) => {
+const RelatedCodeButton = ({
+  codeData = null
+}: {
+  codeData?: ILink | null
+}) => {
   const { t } = useTranslation()
   
   if (!codeData)
@@ -122,14 +145,18 @@ const RelatedCodeButton = ({ codeData }) => {
 
   return (
     <RelatedIconButton
-      link={codeData?.link}
+      link={codeData.link}
       text={t('general.sourceCode')}
       privateLink={codeData.privateLink}
     />
   )
 }
 
-const RelatedSiteButton = ({ siteData }) => {
+const RelatedSiteButton = ({
+  siteData
+}: {
+  siteData?: ILink | null
+}) => {
   const { t } = useTranslation()
 
   if (!siteData)
@@ -137,22 +164,30 @@ const RelatedSiteButton = ({ siteData }) => {
 
   return (
     <RelatedIconButton
-      link={siteData?.link}
+      link={siteData.link}
       text={t('general.site')}
       privateLink={siteData.privateLink}
     />
   )
 }
 
-const RelatedIconButton = ({ link, text, privateLink }) => {
+const RelatedIconButton = ({
+  link = null,
+  text,
+  privateLink
+}: {
+  link?: string | null
+  text: string
+  privateLink: boolean
+}) => {
   const icon = privateLink
     ? <EyeCrossedGray fill={colors.darkGray} />
     : <EyeGray />
 
   return (
     <a
-      href={link}
-      style={styles.getRelatedIconButton(privateLink)}
+      href={link ?? undefined}
+      style={styleCallbacks.getRelatedIconButton(privateLink)}
       rel="noreferrer"
       target="_blank"
     >

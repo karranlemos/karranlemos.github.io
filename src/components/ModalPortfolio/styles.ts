@@ -1,7 +1,8 @@
+import { CSSProperties } from 'react'
 import { colors } from '../../commons/colors'
-import { forbidSelection } from '../../commons/reusableStyles'
+import { IStyle } from '../../commons/interfaces'
 
-const styles = {
+export const styles: IStyle = {
   modalContent: {
     display: 'flex',
     alignItems: 'stretch',
@@ -9,20 +10,6 @@ const styles = {
 
   modalContentMobile: {
     maxHeight: '100vh',
-  },
-
-  getImageThumbnail: (backgroundImage, alignImageModal = null) => {
-    if (alignImageModal === null)
-      alignImageModal = 'left'
-
-    if (!utils.validateBackgroundPosition(alignImageModal))
-      throw new Error(`'${alignImageModal}' is not a valid value.`)
-
-    return {
-      position: 'relative',
-      width: 300,
-      background: `url(${backgroundImage}) no-repeat ${alignImageModal} / cover`,
-    }
   },
 
   mobileThumbnailImage: {
@@ -63,7 +50,6 @@ const styles = {
 
   closeButtonHover: {
     backgroundColor: colors.lightestBlack,
-    // outline: `2px solid ${colors.white}`,
   },
 
   content: {
@@ -79,8 +65,10 @@ const styles = {
     alignItems: 'center',
     backgroundColor: colors.lighterBlack,
   },
+}
 
-  getRelatedIconButton: (privateLink) => {
+export const styleCallbacks = {
+  getRelatedIconButton: (privateLink: boolean) => {
     const finalRelatedIconButton = {
       display: 'flex',
       alignItems: 'center',
@@ -109,33 +97,36 @@ const styles = {
       })
 
     return finalRelatedIconButton
-  }
+  },
+
+  getImageThumbnail: (
+    backgroundImage: string,
+    alignImageModal: BackgroundPositionType = null
+  ): CSSProperties => {
+    if (alignImageModal === null)
+      alignImageModal = 'left'
+
+    return {
+      position: 'relative',
+      width: 300,
+      background: `url(${backgroundImage}) no-repeat ${alignImageModal} / cover`,
+    }
+  },
 }
 
-const utils = {
-  validateBackgroundPosition(backgroundPosition) {
-    const possibleValues = [
-      'left',
-      'right',
-      'top',
-      'bottom',
-      'center',
-      'left top',
-      'left center',
-      'left bottom',
-      'right top',
-      'right center',
-      'right bottom',
-      'center top',
-      'center center',
-      'center bottom',
-    ]
-
-    if (possibleValues.includes(backgroundPosition))
-      return true
-    else
-      return false
-  }
-}
-
-export default styles
+export type BackgroundPositionType = 
+  null
+  | 'left'
+  | 'right'
+  | 'top'
+  | 'bottom'
+  | 'center'
+  | 'left top'
+  | 'left center'
+  | 'left bottom'
+  | 'right top'
+  | 'right center'
+  | 'right bottom'
+  | 'center top'
+  | 'center center'
+  | 'center bottom'
