@@ -3,11 +3,12 @@ import { ReactNode } from 'react'
 import { Modal } from '../Modal'
 import { styles } from './styles'
 import { BackgroundPositionType, ILinks } from '../../commons/interfaces/portfolio'
-import { useWindowSize } from '../../commons/hooks/useWindowSize'
 import { CloseButton } from './CloseButton'
 import { RelatedSiteButton } from './RelatedButtons/RelatedSiteButton'
 import { RelatedCodeButton } from './RelatedButtons/RelatedCodeButton'
 import { ThumbnailImage } from './ThumbnailImage'
+import { RootState } from '../../store'
+import { useSelector } from 'react-redux'
 
 interface IOwnProps {
   open: boolean
@@ -30,7 +31,7 @@ export const ModalPortfolio = ({
   alignImageModalMobile = null,
   onClose = () => null,
 }: IOwnProps) => {
-  const { isMobileMode } = useWindowSize()
+  const isMobileMode = useSelector((state: RootState) => state.window.isMobileMode)
 
   const finalContentStyle = { ...styles.modalContent }
   if (isMobileMode)

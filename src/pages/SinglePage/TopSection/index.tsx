@@ -7,7 +7,8 @@ import LinkedinLogo from '../../../resources/images/general/LinkedinLogo.png'
 import ResumeIcon from '../../../resources/images/general/resume.svg'
 import { useTranslation } from 'react-i18next'
 import { CSSProperties } from 'react'
-import { useWindowSize } from '../../../commons/hooks/useWindowSize'
+import { RootState } from '../../../store'
+import { useSelector } from 'react-redux'
 
 interface IOwnProps {
   style?: CSSProperties | null
@@ -17,12 +18,13 @@ export const TopSection = ({
   style: externalStyle = null
 }: IOwnProps) => {
   const { t } = useTranslation()
-  const windowSize = useWindowSize()
+  const windowWidth = useSelector((state: RootState) => state.window.width)
+  const windowHeight = useSelector((state: RootState) => state.window.height)
   const linkIconsInfo = useLinkIconsInfo()
 
   const styles = getStyles({
-    windowHeight: windowSize.height,
-    windowWidth: windowSize.width,
+    windowHeight: windowHeight ?? undefined,
+    windowWidth: windowWidth ?? undefined,
   })
 
   const finalStyle = {

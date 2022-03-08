@@ -4,8 +4,9 @@ import { styles } from './styles'
 import { MobileMenuButton } from '../../../../components/MobileMenuButton'
 import { LanguageButton } from './LanguageButton'
 import { IButtonData } from '../interfaces'
-import { useWindowSize } from '../../../../commons/hooks/useWindowSize'
 import { setPageScrollBehavior } from '../../../../commons/utils/dom'
+import { RootState } from '../../../../store'
+import { useSelector } from 'react-redux'
 
 interface IOwnProps {
   homeItem: IButtonData
@@ -16,7 +17,7 @@ export const Header = ({
   homeItem,
   pagesItems,
 }: IOwnProps) => {
-  const { isMobileMode } = useWindowSize()
+  const isMobileMode = useSelector((state: RootState) => state.window.isMobileMode)
 
   const [pinned, setPinned] = useState(false)
 
