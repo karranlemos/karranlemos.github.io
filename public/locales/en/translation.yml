@@ -67,11 +67,11 @@ pages:
           - >
             Used technologies: HTML, CSS, JavaScript, WordPress, PHP and MySQL.
       portfolio:
-        title: Projects
+        title: Karran Lemos' Projects
         body:
           - This very website!
-          - It was created for storing my projects and my contact information.
-          - 'Used technologies: React, Redux, HTML, CSS and i18n.'
+          - It was created for displaying my projects and my contact information.
+          - 'Used technologies: React, HTML, CSS and i18n.'
       marciasSalon:
         title: Márcia's Salon
         body:

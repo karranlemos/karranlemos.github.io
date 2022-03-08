@@ -67,11 +67,11 @@ pages:
           - >
             Tecnologias utilizadas: HTML, CSS, JavaScript, WordPress, PHP e MySQL.
       portfolio:
-        title: Project
+        title: Projetos de Karran Lemos
         body:
-          - Este mesmo site!
-          - Site criado para guardar meus projetos e minhas informações de contato.
-          - 'Tecnologias utilizadas: React, Redux, HTML, CSS e i18n.'
+          - Este site em que você está!
+          - Site criado para mostrar meus projetos e minhas informações de contato.
+          - 'Tecnologias utilizadas: React, HTML, CSS e i18n.'
       marciasSalon:
         title: Salão da Márcia
         body:
