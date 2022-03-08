@@ -1,11 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-import { config } from './config'
-import App from './App';
-import './globalStyles';
-
-config()
+import App from './App'
+import './globalStyles'
+import './config'
 
 ReactDOM.render(
   <React.StrictMode>

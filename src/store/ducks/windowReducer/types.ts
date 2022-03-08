@@ -1,3 +1,0 @@
-export const types = {
-  SCROLL_BEHAVIOR_CHANGED: 'SCROLL_BEHAVIOR_CHANGED',
-}

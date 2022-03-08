@@ -2,11 +2,10 @@ import { useState, useEffect, CSSProperties } from 'react'
 
 import { styles } from './styles'
 import { MobileMenuButton } from '../../../../components/MobileMenuButton'
-import { scrollBehaviorAction } from '../../../../store/ducks/windowReducer/actions'
 import { LanguageButton } from './LanguageButton'
-import { useAppDispatch } from '../../../../store/hooks'
 import { IButtonData } from '../interfaces'
 import { useWindowSize } from '../../../../commons/hooks/useWindowSize'
+import { setPageScrollBehavior } from '../../../../commons/utils/dom'
 
 interface IOwnProps {
   homeItem: IButtonData
@@ -84,24 +83,23 @@ interface IMobileMenu {
 }
 
 const MobileMenu = ({ homeItem, pagesItems, pinned }: IMobileMenu) => {
-  const dispatch = useAppDispatch()
 
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     if (menuOpen) {
-      dispatch(scrollBehaviorAction('auto'))
+      setPageScrollBehavior('auto')
       return
     }
 
     setTimeout(() => {
-      dispatch(scrollBehaviorAction('smooth'))
+      setPageScrollBehavior('smooth')
     }, 500)
-  }, [menuOpen, dispatch])
+  }, [menuOpen])
 
   useEffect(() => {
     return () => {
-      dispatch(scrollBehaviorAction('smooth'))
+      setPageScrollBehavior('smooth')
     }
   }, [])
 
