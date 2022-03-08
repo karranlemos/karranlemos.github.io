@@ -248,9 +248,7 @@ const MenuLinkButton = ({
       onMouseLeave={handleOnMouseLeave}
       onClick={onClick}
     >
-      <div
-        style={finalButtonStyle}
-      >{text}</div>
+      <div style={finalButtonStyle}>{text}</div>
     </a>
   )
 }

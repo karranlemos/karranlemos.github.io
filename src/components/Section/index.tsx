@@ -14,13 +14,13 @@ interface ISectionAnchorProps {
   id: string | null
 }
 
-export default function Section({
+export const Section = ({
   children=null,
   style: externalStyle={},
   title=null,
   sectionAnchorId=null,
   containerStyle=null
-}: IOwnProps) {
+}: IOwnProps) => {
 
   const finalStyle = {
     ...styles.section,

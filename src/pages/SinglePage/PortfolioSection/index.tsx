@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Section from '../../../components/Section'
+import { Section } from '../../../components/Section'
 import { styles } from './styles'
 import { Portfolio } from '../../../components/Portfolio'
 import { PortfolioItems } from './portfolioItems'

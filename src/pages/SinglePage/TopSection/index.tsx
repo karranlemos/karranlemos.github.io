@@ -1,4 +1,4 @@
-import Section from '../../../components/Section'
+import { Section } from '../../../components/Section'
 import getStyles from './styles'
 import { RelatedLinkIcons } from '../../../components/RelatedLinkIcons'
 

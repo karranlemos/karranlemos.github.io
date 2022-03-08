@@ -7,9 +7,7 @@ export const Footer = () => {
 
   return (
     <footer style={styles.footer}>
-      <div
-        style={styles.footerText}
-      >
+      <div style={styles.footerText}>
         ©2022 Karran Lemos. {t('general.allRightsReserved')}
       </div>
     </footer>
