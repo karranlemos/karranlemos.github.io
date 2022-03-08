@@ -1,4 +1,5 @@
-import { CSSProperties, useState } from 'react'
+import { CSSProperties } from 'react'
+import { RelatedLinkIcon } from './RelatedLinkIcon'
 
 import { getStyles } from './styles'
 
@@ -10,13 +11,6 @@ interface IRelatedLinkIcons {
   }[]
   size?: number
   style?: CSSProperties | null
-}
-
-interface IRelatedLinkIcon {
-  link: string
-  image: string
-  title: string
-  size?: number
 }
 
 export const RelatedLinkIcons = ({
@@ -45,43 +39,5 @@ export const RelatedLinkIcons = ({
         ))
       }
     </div>
-  )
-}
-
-const RelatedLinkIcon = ({
-  image,
-  link,
-  title,
-  size = 40
-}: IRelatedLinkIcon) => {
-  const styles = getStyles({ imageIconsWidth: size })
-
-  const [imageHover, setImageHover] = useState(false)
-
-  const onMouseEnterHandler = () => setImageHover(true)
-  const onMouseLeaveHandler = () => setImageHover(false)
-
-  const finalImageStyle = { ...styles.imageIcons }
-  if (imageHover)
-    Object.assign(finalImageStyle, styles.imageIconsHover)
-
-  return (
-    <a
-      href={link}
-      title={title}
-      style={styles.imageIconsAnchor}
-
-      rel='noreferrer'
-      target='_blank'
-
-      onMouseEnter={onMouseEnterHandler}
-      onMouseLeave={onMouseLeaveHandler}
-    >
-      <img
-        src={image}
-        alt={title}
-        style={finalImageStyle}
-      />
-    </a>
   )
 }
