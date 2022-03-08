@@ -6,8 +6,8 @@ import GithubLogo from '../../../resources/images/general/GithubLogo.png'
 import LinkedinLogo from '../../../resources/images/general/LinkedinLogo.png'
 import ResumeIcon from '../../../resources/images/general/resume.svg'
 import { useTranslation } from 'react-i18next'
-import { useAppSelector } from '../../../store/hooks'
 import { CSSProperties } from 'react'
+import { useWindowSize } from '../../../commons/hooks/useWindowSize'
 
 interface IOwnProps {
   style?: CSSProperties | null
@@ -17,12 +17,12 @@ export const TopSection = ({
   style: externalStyle = null
 }: IOwnProps) => {
   const { t } = useTranslation()
-  const windowSize = useAppSelector(state => state.window.windowSize)
+  const windowSize = useWindowSize()
   const linkIconsInfo = useLinkIconsInfo()
 
   const styles = getStyles({
-    windowHeight: windowSize.height ?? 0,
-    windowWidth: windowSize.width ?? 0,
+    windowHeight: windowSize.height,
+    windowWidth: windowSize.width,
   })
 
   const finalStyle = {

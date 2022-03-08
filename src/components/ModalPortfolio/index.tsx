@@ -8,8 +8,8 @@ import { EyeCrossedGray } from '../../resources/images/icons/EyeCrossedGray'
 import { EyeGray } from '../../resources/images/icons/EyeGray'
 import { MultiplicationSign } from '../../resources/images/icons/MultiplicationSign'
 import { useTranslation } from 'react-i18next'
-import { useAppSelector } from '../../store/hooks'
 import { BackgroundPositionType, ILink, ILinks } from '../../commons/interfaces/portfolio'
+import { useWindowSize } from '../../commons/hooks/useWindowSize'
 
 interface IOwnProps {
   open: boolean
@@ -32,10 +32,10 @@ export const ModalPortfolio = ({
   alignImageModalMobile = null,
   onClose = () => null,
 }: IOwnProps) => {
-  const mobileMode = useAppSelector(state => state.window.mobileMode)
+  const { isMobileMode } = useWindowSize()
 
   const finalContentStyle = { ...styles.modalContent }
-  if (mobileMode)
+  if (isMobileMode)
     Object.assign(finalContentStyle, styles.modalContentMobile)
 
   return (
@@ -46,7 +46,7 @@ export const ModalPortfolio = ({
     >
       <ThumbnailImage
         image={image}
-        show={!mobileMode}
+        show={!isMobileMode}
         alignImageModal={alignImageModal}
       />
       <div style={styles.contentPanel}>
@@ -60,7 +60,7 @@ export const ModalPortfolio = ({
         </header>
         <ThumbnailImage
           image={image}
-          show={mobileMode}
+          show={isMobileMode}
           style={styles.mobileThumbnailImage}
           alignImageModal={alignImageModalMobile}
         />

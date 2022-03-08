@@ -4,8 +4,9 @@ import { styles } from './styles'
 import { MobileMenuButton } from '../../../../components/MobileMenuButton'
 import { scrollBehaviorAction } from '../../../../store/ducks/windowReducer/actions'
 import { LanguageButton } from './LanguageButton'
-import { useAppDispatch, useAppSelector } from '../../../../store/hooks'
+import { useAppDispatch } from '../../../../store/hooks'
 import { IButtonData } from '../interfaces'
+import { useWindowSize } from '../../../../commons/hooks/useWindowSize'
 
 interface IOwnProps {
   homeItem: IButtonData
@@ -16,7 +17,7 @@ export const Header = ({
   homeItem,
   pagesItems,
 }: IOwnProps) => {
-  const mobileMode = useAppSelector(state => state.window.mobileMode)
+  const { isMobileMode } = useWindowSize()
 
   const [pinned, setPinned] = useState(false)
 
@@ -34,7 +35,7 @@ export const Header = ({
     window.addEventListener('scroll', checkNavbarFixed)
   }, [])
 
-  if (mobileMode)
+  if (isMobileMode)
     return (
       <MobileMenu
         homeItem={homeItem}
