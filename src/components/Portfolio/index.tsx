@@ -1,51 +1,52 @@
-import React, { useState } from 'react'
+import { FC, useState } from 'react'
 
 import { ModalPortfolio } from '../ModalPortfolio'
-import styles from './styles'
+import { styles, stylesCallbacks } from './styles'
+import { BackgroundPositionType, ILinks } from '../../commons/interfaces/portfolio'
 
-export default function Portfolio({ children }) {
-  return (
-    <div style={styles.portfolio}>
-      {children}
-    </div>
-  )
+interface IPortfolioItem {
+  image: string
+  title: string
+  links: ILinks
+  alignImageModal?: BackgroundPositionType | null
+  alignImageModalMobile?: BackgroundPositionType | null
+  onClick?: () => void
 }
 
-export function PortfolioItem({
+export const Portfolio: FC = ({ children }) => (
+  <div style={styles.portfolio}>
+    {children}
+  </div>
+)
+
+export const PortfolioItem: FC<IPortfolioItem> = ({
   image,
   title,
   links,
   children,
   alignImageModal = null,
   alignImageModalMobile = null,
-  onClick: externalOnClick=()=>{},
-}) {
+  onClick: externalOnClick = () => null,
+}) => {
   const [open, setOpen] = useState(false)
   const [hover, setHover] = useState(false)
 
-  const finalItemStyle = styles.getItem(image)
+  const finalItemStyle = stylesCallbacks.getItem(image)
   
   const finalOverlayStyle = { ...styles.overlay }
   if (hover)
     Object.assign(finalOverlayStyle, styles.overlayHover)
 
-  const onMouseEnterhandler = () => {
-    setHover(true)
-  }
+  const onMouseEnterhandler = () => setHover(true)
 
-  const onMouseLeavehandler = () => {
-    setHover(false)
-  }
+  const onMouseLeavehandler = () => setHover(false)
 
   const onClick = () => {
     setOpen(true)
-
     externalOnClick()
   }
 
-  const onClose = () => {
-    setOpen(false)
-  }
+  const onClose = () => setOpen(false)
 
   return (
     <>
@@ -58,6 +59,7 @@ export function PortfolioItem({
       >
         <div style={finalOverlayStyle} />
       </div>
+      
       <ModalPortfolio
         open={open}
         title={title}

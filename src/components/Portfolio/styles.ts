@@ -1,10 +1,12 @@
+import { CSSProperties } from 'react'
 import { colors, getRgbaColor, } from '../../commons/colors'
+import { IStyle } from '../../commons/interfaces'
 
 import eyeYellow from '../../resources/images/icons/eye-yellow.svg'
 
 const blackOverlayColor = getRgbaColor(colors.black, 0.8)
 
-const styles = {
+export const styles: IStyle = {
   portfolio: {
     display: 'grid',
     justifyContent: 'center',
@@ -13,8 +15,10 @@ const styles = {
     paddingTop: 10,
     paddingBottom: 10,
   },
+}
 
-  getItem: (backgroundImage) => ({
+export const stylesCallbacks = {
+  getItem: (backgroundImage: string): CSSProperties => ({
     position: 'relative',
         
     flex: '0 0 250px',
@@ -45,5 +49,3 @@ const styles = {
     opacity: 1,
   },
 }
-
-export default styles

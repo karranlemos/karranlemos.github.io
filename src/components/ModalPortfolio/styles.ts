@@ -1,6 +1,7 @@
 import { CSSProperties } from 'react'
 import { colors } from '../../commons/colors'
 import { IStyle } from '../../commons/interfaces'
+import { BackgroundPositionType } from '../../commons/interfaces/portfolio'
 
 export const styles: IStyle = {
   modalContent: {
@@ -113,20 +114,3 @@ export const styleCallbacks = {
     }
   },
 }
-
-export type BackgroundPositionType = 
-  null
-  | 'left'
-  | 'right'
-  | 'top'
-  | 'bottom'
-  | 'center'
-  | 'left top'
-  | 'left center'
-  | 'left bottom'
-  | 'right top'
-  | 'right center'
-  | 'right bottom'
-  | 'center top'
-  | 'center center'
-  | 'center bottom'

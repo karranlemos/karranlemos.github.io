@@ -1,14 +1,14 @@
 import React from 'react';
 
 import Section from '../../../components/Section'
-import styles from './styles'
-import Portfolio from '../../../components/Portfolio'
+import { styles } from './styles'
+import { Portfolio } from '../../../components/Portfolio'
 import { PortfolioItems } from './portfolioItems'
 import { useTranslation } from 'react-i18next';
 
-export default function PortfolioSection({
+export const PortfolioSection = ({
   style: externalStyle={}
-}) {
+}) => {
   const { t } = useTranslation()
 
   const finalStyle = {

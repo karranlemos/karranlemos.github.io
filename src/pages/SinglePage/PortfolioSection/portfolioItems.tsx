@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { PortfolioItem } from '../../../components/Portfolio'
 
 import confusablesImage from '../../../resources/images/portfolio/confusables.png'
@@ -17,11 +15,17 @@ import { useTranslation } from 'react-i18next'
 export const PortfolioItems = () => {
   const { t } = useTranslation()
 
-  const getTranslatedParagraphs = (translationKey) => (
-    t(translationKey)?.map?.((paragraph, index) => (
-      <p key={index}>{paragraph}</p>
-    )) ?? null
-  )
+  const getTranslatedParagraphs = (translationKey: string) => {
+    const translatedParagraphs = t(translationKey) as string[] | string
+    if (typeof translatedParagraphs === 'string')
+      throw new Error('translatedParagraphs must be string[].')
+
+    return (
+      translatedParagraphs.map((paragraph, index) => (
+        <p key={index}>{paragraph}</p>
+      ))
+    )
+  }
 
   return (
     <>

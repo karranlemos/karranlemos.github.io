@@ -1,7 +1,7 @@
 import { CSSProperties, ReactNode, useState } from 'react'
 
 import { Modal } from '../Modal'
-import { styles, styleCallbacks, BackgroundPositionType } from './styles'
+import { styles, styleCallbacks } from './styles'
 import { colors } from '../../commons/colors'
 
 import { EyeCrossedGray } from '../../resources/images/icons/EyeCrossedGray'
@@ -9,21 +9,14 @@ import { EyeGray } from '../../resources/images/icons/EyeGray'
 import { MultiplicationSign } from '../../resources/images/icons/MultiplicationSign'
 import { useTranslation } from 'react-i18next'
 import { useAppSelector } from '../../store/hooks'
-
-interface ILink {
-  privateLink: boolean
-  link?: string
-}
+import { BackgroundPositionType, ILink, ILinks } from '../../commons/interfaces/portfolio'
 
 interface IOwnProps {
   open: boolean
   title: string
   image: string
   children: ReactNode
-  links?: null | {
-    code: ILink
-    site: ILink
-  }
+  links?: ILinks | null
   alignImageModal?: BackgroundPositionType | null
   alignImageModalMobile?: BackgroundPositionType | null
   onClose?: () => void
