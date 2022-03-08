@@ -1,4 +1,4 @@
-import colors, { getRgbaColor, } from '../../commons/colors'
+import { colors, getRgbaColor, } from '../../commons/colors'
 
 import eyeYellow from '../../resources/images/icons/eye-yellow.svg'
 

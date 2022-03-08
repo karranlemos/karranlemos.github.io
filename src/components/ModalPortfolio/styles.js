@@ -1,4 +1,4 @@
-import colors from '../../commons/colors'
+import { colors } from '../../commons/colors'
 import { commonException } from '../../commons/exceptions'
 import { forbidSelection } from '../../commons/reusableStyles'
 

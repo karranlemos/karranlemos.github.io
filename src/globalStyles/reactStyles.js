@@ -1,4 +1,4 @@
-import colors from '../commons/colors'
+import { colors } from '../commons/colors'
 
 const reactStyles = {
   color: colors.fullWhite

@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import Modal from '../Modal'
 import styles from './styles'
-import colors from '../../commons/colors'
+import { colors } from '../../commons/colors'
 
 import { EyeCrossedGray } from '../../resources/images/icons/EyeCrossedGray'
 import { EyeGray } from '../../resources/images/icons/EyeGray'

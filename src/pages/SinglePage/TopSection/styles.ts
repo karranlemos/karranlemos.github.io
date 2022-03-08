@@ -1,15 +1,17 @@
-/**
- * Styles for Section.
- */
-
-import colors, { getRgbaColor } from '../../../commons/colors'
+import { colors, getRgbaColor } from '../../../commons/colors'
+import { IStyle } from '../../../commons/interfaces'
 
 import BackgroundImage from '../../../resources/images/backgrounds/home-section-bg.jpg'
 
+type TypeGetStyles = (options?: {
+  windowWidth?: number
+  windowHeight?: number
+}) => IStyle
+
 const blackOverlayColor = getRgbaColor(colors.black, 0.9)
 
-const getStyles = ({windowWidth = 0, windowHeight = 0}) => {
-  const maxVwWindowWidth = (vwValue, floorFontSize) => {
+const getStyles: TypeGetStyles = ({windowWidth = 0, windowHeight = 0} = {}) => {
+  const maxVwWindowWidth = (vwValue: number, floorFontSize: number) => {
     const vwFontSize = vwValue * windowWidth / 100
     return Math.max(vwFontSize, floorFontSize)
   }
@@ -18,7 +20,12 @@ const getStyles = ({windowWidth = 0, windowHeight = 0}) => {
     section: {
       position: 'relative',
       backgroundColor: colors.lighterBlack,
-      background: `linear-gradient(to bottom, ${blackOverlayColor}, ${blackOverlayColor}), url(${BackgroundImage}) no-repeat center`,
+      background: `linear-gradient(
+        to bottom,
+        ${blackOverlayColor},
+        ${blackOverlayColor}),
+        url(${BackgroundImage})
+        no-repeat center`,
       backgroundSize: 'cover',
       width: '100%',
       height: '100%',

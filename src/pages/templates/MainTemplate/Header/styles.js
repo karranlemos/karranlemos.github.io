@@ -1,4 +1,4 @@
-import colors from '../../../../commons/colors'
+import { colors } from '../../../../commons/colors'
 
 const NAVBAR_HEIGHT_TOP = 100
 const NAVBAR_HEIGHT_PINNED = 80

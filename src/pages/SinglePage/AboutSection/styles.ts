@@ -1,4 +1,4 @@
-import colors from '../../../commons/colors'
+import { colors } from '../../../commons/colors'
 import { IStyle } from '../../../commons/interfaces';
 
 export const styles: IStyle = {

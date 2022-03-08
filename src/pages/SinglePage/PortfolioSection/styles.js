@@ -1,8 +1,4 @@
-/**
- * Styles for Section.
- */
-
-import colors from '../../../commons/colors'
+import { colors } from '../../../commons/colors'
 
 const styles = {
   section: {

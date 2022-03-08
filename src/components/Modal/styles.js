@@ -1,4 +1,4 @@
-import colors, { getRgbaColor } from '../../commons/colors'
+import { colors, getRgbaColor } from '../../commons/colors'
 
 const blackOverlay = getRgbaColor(colors.black, 0.9)
 
