@@ -1,5 +1,4 @@
 import { colors } from '../../commons/colors'
-import { commonException } from '../../commons/exceptions'
 import { forbidSelection } from '../../commons/reusableStyles'
 
 const styles = {
@@ -17,10 +16,7 @@ const styles = {
       alignImageModal = 'left'
 
     if (!utils.validateBackgroundPosition(alignImageModal))
-      throw commonException(
-        'invalid-align-image-modal',
-        `'${alignImageModal}' is not a valid value.`
-      )
+      throw new Error(`'${alignImageModal}' is not a valid value.`)
 
     return {
       position: 'relative',
@@ -103,7 +99,14 @@ const styles = {
     }
 
     if (privateLink)
-      Object.assign(finalRelatedIconButton, forbidSelection)
+      Object.assign(finalRelatedIconButton, {
+        WebkitTouchCallout: 'none',
+        WebkitUserSelect: 'none',
+        KhtmlUserSelect: 'none',
+        MozUserSelect: 'none',
+        msUserSelect: 'none',
+        userSelect: 'none',
+      })
 
     return finalRelatedIconButton
   }

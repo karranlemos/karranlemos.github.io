@@ -1,5 +1,3 @@
-import { commonException } from './exceptions'
-
 export const colors = {
   black:  '#0d0d0d',
   lightBlack:  '#151515',
@@ -18,9 +16,9 @@ export const colors = {
 
 export const getRgbaColor = (color: string, percentage: number = 1) => {
   if (getTypeRGB(color) === 'none')
-    throw commonException('invalid-rgb-color')
+    throw new Error('invalid-rgb-color')
   if (percentage < 0 || percentage > 1)
-    throw commonException('percentage-not-within-range')
+    throw new Error('percentage-not-within-range')
 
   const fullHexColor = convertToFullRGB(color)
   const hexBytePercentage = toHexNumber(255*percentage).padStart(2, '0')
@@ -33,7 +31,7 @@ const convertToFullRGB = (rgb: string) => {
     case 'full':
       return rgb
     case 'none':
-      throw commonException('invalid-rgb-color')
+      throw new Error('invalid-rgb-color')
     default:
       break
   }
@@ -54,7 +52,7 @@ const toHexNumber = (n: number) => {
   const HEX_CHARACTERS = '0123456789abcdef'
   
   if (n < 0)
-    throw commonException('number-lesser-than-zero')
+    throw new Error('number-lesser-than-zero')
 
   if (n === 0)
     return '0'
