@@ -103,6 +103,7 @@ const useColumnsInfo = () => {
         'JavaScript',
         'TypeScript',
         'React Native',
+        'Redux',
       ],
     },
     {
@@ -122,10 +123,9 @@ const useColumnsInfo = () => {
     {
       title: othersTitle,
       items: [
+        'Git',
         'Linux',
         'Docker',
-        'Redux',
-        'Git',
         'Scrum',
       ],
     },
