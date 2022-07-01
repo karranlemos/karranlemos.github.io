@@ -14,10 +14,10 @@ pages:
   about:
     title: Sobre
     contentStartArray:
+      - Desenvolvedor Full Stack responsável pela criação e manutenção de diversos sistemas web.
       - >
-        Meu nome é Karran Lemos. Eu sou um desenvolvedor fullstack, atualmente trabalhando
-        com React e .NET Core, tendo trabalhado anteriormente com Node.js e React Native.
-      - 'As tecnologias e metodologias que conheço incluem:'
+        Buscando sempre utilizar as melhores tecnologias e convenções mais eficientes, pude criar
+        aplicações estáveis, eficientes e de fácil expansão e manutenção.
     contentEnd: <0>Veja meu currículo</0> para mais informações.
     misc: Misc.
   portfolio:
