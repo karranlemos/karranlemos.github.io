@@ -19,7 +19,7 @@ pages:
         com React e .NET Core, tendo trabalhado anteriormente com Node.js e React Native.
       - 'As tecnologias e metodologias que conheço incluem:'
     contentEnd: <0>Veja meu currículo</0> para mais informações.
-    otherTechnologies: Outras
+    misc: Misc.
   portfolio:
     title: Projetos
     merelyIllustrativeImage: '*Imagem meramente ilustrativa.'
