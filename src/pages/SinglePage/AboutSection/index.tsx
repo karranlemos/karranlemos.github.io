@@ -1,4 +1,4 @@
-import { CSSProperties, useMemo, useState } from 'react';
+import { CSSProperties, useMemo } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
 import { Section } from '../../../components/Section'
@@ -9,7 +9,6 @@ import { styles } from './styles'
 
 import GithubLogo from '../../../resources/images/general/GithubLogo.png'
 import LinkedinLogo from '../../../resources/images/general/LinkedinLogo.png'
-import { useEffect } from 'react';
 
 interface IOwnProps {
   style: CSSProperties
@@ -84,49 +83,46 @@ const linkIconsInfo = [
 ]
 
 const useColumnsInfo = () => {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
 
-  const [othersTitle, setOthersTitle] = useState(() => t('pages.about.otherTechnologies'))
-
-  useEffect(() => {
-    setOthersTitle(() => t('pages.about.otherTechnologies'))
-  }, [i18n.language])
+  const misc = useMemo(() => {
+    return t('pages.about.misc')
+  }, [t])
 
   return [
     {
-      title: 'Frontend',
+      title: 'Languages',
       items: [
+        'TypeScript',
+        'JavaScript',
+        'C#',
+        'SQL',
         'HTML',
         'CSS',
         'Sass',
-        'React',
-        'JavaScript',
-        'TypeScript',
-        'React Native',
-        'Redux',
+        'Python',
       ],
     },
     {
-      title:'Backend',
+      title:'Frameworks',
       items: [
         '.NET',
-        'Node.js',
+        'React',
         'Express.js',
-        'TypeScript',
-        'PostgreSQL',
-        'SQL Server',
-        'WordPress',
-        'Python',
-        'PHP',
+        'React Native',
       ],
     },
     {
-      title: othersTitle,
+      title: misc,
       items: [
         'Git',
-        'Linux',
         'Docker',
+        'Material UI',
+        'Swagger',
+        'Redux',
+        'Linux',
         'Scrum',
+        'Kanban',
       ],
     },
   ]
