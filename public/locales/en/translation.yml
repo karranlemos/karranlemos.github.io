@@ -19,6 +19,8 @@ pages:
         Seeking to always use the best technologies and most efficient conventions, I managed to develop
         stable, efficient and easily maintainable and expansive applications.
     contentEnd: <0>Check my CV</0> for more details.
+    languages: Languages
+    frameworks: Frameworks
     misc: Misc.
   portfolio:
     title: Projects

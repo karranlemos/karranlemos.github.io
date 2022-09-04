@@ -85,13 +85,9 @@ const linkIconsInfo = [
 const useColumnsInfo = () => {
   const { t } = useTranslation()
 
-  const misc = useMemo(() => {
-    return t('pages.about.misc')
-  }, [t])
-
   return [
     {
-      title: 'Languages',
+      title: t('pages.about.languages'),
       items: [
         'TypeScript',
         'JavaScript',
@@ -104,7 +100,7 @@ const useColumnsInfo = () => {
       ],
     },
     {
-      title:'Frameworks',
+      title: t('pages.about.frameworks'),
       items: [
         '.NET',
         'React',
@@ -113,7 +109,7 @@ const useColumnsInfo = () => {
       ],
     },
     {
-      title: misc,
+      title: t('pages.about.misc'),
       items: [
         'Git',
         'Docker',
