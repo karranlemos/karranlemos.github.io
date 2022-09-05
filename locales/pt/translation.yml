@@ -19,6 +19,8 @@ pages:
         Buscando sempre utilizar as melhores tecnologias e convenções mais eficientes, pude criar
         aplicações estáveis, eficientes e de fácil expansão e manutenção.
     contentEnd: <0>Veja meu currículo</0> para mais informações.
+    languages: Linguagens
+    frameworks: Frameworks
     misc: Misc.
   portfolio:
     title: Projetos
