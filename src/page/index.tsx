@@ -1,5 +1,11 @@
+import { EntrySection } from './EntrySection';
 import { HeaderBar } from './HeaderBar';
 
 export const Page = () => {
-  return <HeaderBar />;
+  return (
+    <div>
+      <HeaderBar />
+      <EntrySection />
+    </div>
+  );
 };

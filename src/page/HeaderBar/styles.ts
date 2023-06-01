@@ -5,6 +5,7 @@ export const StyledToolbar = styled(Toolbar)`
   justify-content: space-between;
   align-items: stretch;
 `;
+StyledToolbar.defaultProps = { disableGutters: true };
 
 export const ButtonContainer = styled('div')`
   display: flex;

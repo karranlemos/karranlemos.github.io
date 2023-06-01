@@ -11,9 +11,9 @@ export const HeaderBar = () => {
   const { t } = useTranslation();
 
   return (
-    <AppBar position="static">
+    <AppBar>
       <Container>
-        <StyledToolbar disableGutters>
+        <StyledToolbar>
           <HomeButton>Karran Lemos</HomeButton>
           <ButtonContainer>
             <StyledButton>{t('menu.labels.projects')}</StyledButton>
