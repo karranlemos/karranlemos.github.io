@@ -1,5 +1,9 @@
-import { SectionContainer } from './styles';
+import { Background, SectionContainer } from './styles';
 
 export const EntrySection = () => {
-  return <SectionContainer />;
+  return (
+    <SectionContainer>
+      <Background />
+    </SectionContainer>
+  );
 };
