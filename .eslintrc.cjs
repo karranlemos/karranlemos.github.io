@@ -13,7 +13,8 @@ module.exports = {
     'prettier/prettier': [
       'error',
       {
-        'endOfLine': 'auto'
+        'endOfLine': 'auto',
+        'singleQuote': true,
       }
     ],
     'react-refresh/only-export-components': 'warn',
