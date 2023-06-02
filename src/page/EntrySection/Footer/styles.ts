@@ -1,4 +1,4 @@
-import { IconButton, styled } from '@mui/material';
+import { styled } from '@mui/material';
 
 export const Container = styled('div')`
   position: absolute;
@@ -7,10 +7,4 @@ export const Container = styled('div')`
   right: 0;
   display: flex;
   justify-content: center;
-`;
-
-export const StyledIconButton = styled(IconButton)`
-  & .MuiSvgIcon-root {
-    font-size: 60px;
-  }
 `;

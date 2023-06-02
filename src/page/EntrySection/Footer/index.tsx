@@ -1,29 +1,23 @@
-import { Link } from '@mui/material';
-import { Container, StyledIconButton } from './styles';
+import { Container } from './styles';
 import {
   GitHub as GitHubIcon,
   LinkedIn as LinkedInIcon,
-  Description as DescriptionIcon,
+  ContactPage as ContactPageIcon,
 } from '@mui/icons-material';
+import { FooterLink, FooterLinkProps } from './FooterLink';
 
 export const Footer = () => {
+  const buttonsInfo: FooterLinkProps[] = [
+    { icon: <GitHubIcon />, link: 'https://github.com/karranlemos' },
+    { icon: <LinkedInIcon />, link: 'https://www.linkedin.com/in/karranlemos' },
+    { icon: <ContactPageIcon />, link: 'pdfs/CV Karran Lemos PT.pdf' },
+  ];
+
   return (
     <Container>
-      <Link href="https://github.com/karranlemos/" target="_blank">
-        <StyledIconButton>
-          <GitHubIcon />
-        </StyledIconButton>
-      </Link>
-      <Link href="https://www.linkedin.com/in/karranlemos/" target="_blank">
-        <StyledIconButton>
-          <LinkedInIcon />
-        </StyledIconButton>
-      </Link>
-      <Link href="pdfs/CV Karran Lemos PT.pdf" target="_blank">
-        <StyledIconButton>
-          <DescriptionIcon />
-        </StyledIconButton>
-      </Link>
+      {buttonsInfo.map((props) => (
+        <FooterLink {...props} />
+      ))}
     </Container>
   );
 };
