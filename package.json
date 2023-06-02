@@ -15,6 +15,7 @@
     "@fontsource/roboto": "^5.0.2",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.3",
+    "country-flag-icons": "^1.5.7",
     "i18next": "^22.5.0",
     "i18next-http-backend": "^2.2.1",
     "js-yaml": "^4.1.0",

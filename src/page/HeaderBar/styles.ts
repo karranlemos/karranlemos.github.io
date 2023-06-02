@@ -20,3 +20,11 @@ StyledButton.defaultProps = { color: 'inherit' };
 export const HomeButton = styled(StyledButton)`
   font-weight: bold;
 `;
+
+export const LanguageButton = styled(Button)`
+  min-width: 48px;
+
+  svg {
+    width: 28px;
+  }
+`;
