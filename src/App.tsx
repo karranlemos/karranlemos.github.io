@@ -1,6 +1,6 @@
 import { ThemeProvider, createTheme } from '@mui/material';
-import { GlobalCss } from './components/core/GlobalCss';
-import './components/core/i18n';
+import { GlobalCss } from './core/GlobalCss';
+import './core/i18n';
 import { Page } from './page';
 
 export const App = () => {
