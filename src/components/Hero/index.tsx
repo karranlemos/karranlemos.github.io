@@ -5,7 +5,7 @@ export function Hero() {
     <S.Section id="home">
       <S.Content>
         <S.Greeting>Hello, world. I'm</S.Greeting>
-        <S.Name>John Doe</S.Name>
+        <S.Name>Karran Lemos</S.Name>
         <S.Subtitle>
           I turn <S.Highlight>coffee</S.Highlight> into{' '}
           <S.Highlight>code</S.Highlight> — full-stack developer crafting
@@ -27,7 +27,7 @@ export function Hero() {
         </S.TerminalBar>
         <S.TerminalBody>
           <S.Line><S.Prompt>~</S.Prompt> <S.Cmd>whoami</S.Cmd></S.Line>
-          <S.Line>john_doe</S.Line>
+          <S.Line>karran_lemos</S.Line>
           <S.Line><S.Prompt>~</S.Prompt> <S.Cmd>cat skills.txt</S.Cmd></S.Line>
           <S.Line>TypeScript · React · Node.js · Go</S.Line>
           <S.Line>PostgreSQL · Docker · AWS · Linux</S.Line>

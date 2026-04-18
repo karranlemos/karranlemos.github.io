@@ -22,6 +22,7 @@ export const Section = styled.section`
   margin: 0 auto;
 
   @media (max-width: 860px) {
+    min-height: unset;
     flex-direction: column;
     text-align: center;
     gap: 2.5rem;

@@ -1,5 +1,5 @@
 import * as S from './styles';
 
 export function Footer() {
-  return <S.FooterEl>John Doe 2026 &copy;</S.FooterEl>;
+  return <S.FooterEl>Karran Lemos 2026 &copy;</S.FooterEl>;
 }

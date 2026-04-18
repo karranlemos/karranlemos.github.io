@@ -21,7 +21,7 @@ export function Navbar() {
   return (
     <S.Nav $scrolled={scrolled}>
       <S.NavInner>
-        <S.Logo href="#home">{'<JD />'}</S.Logo>
+        <S.Logo href="#home">{'<KL />'}</S.Logo>
 
         <S.Hamburger onClick={() => setMenuOpen(o => !o)} aria-label="Toggle menu">
           <span />
