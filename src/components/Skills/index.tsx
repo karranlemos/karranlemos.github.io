@@ -1,34 +1,37 @@
+import { useTranslation } from 'react-i18next';
 import * as S from './styles';
 
 const SKILLS = [
   {
     icon: '💻',
-    title: 'Languages',
+    titleKey: 'skills.cat.languages',
     items: ['TypeScript', 'Python', 'Go', 'Rust', 'SQL'],
   },
   {
     icon: '⚙️',
-    title: 'Frameworks & Libraries',
+    titleKey: 'skills.cat.frameworks',
     items: ['React', 'Next.js', 'Node.js / Express', 'FastAPI', 'GraphQL'],
   },
   {
     icon: '🛠️',
-    title: 'Tools & Misc',
+    titleKey: 'skills.cat.tools',
     items: ['Docker / Kubernetes', 'AWS / GCP', 'PostgreSQL / Redis', 'Git & CI/CD', 'Linux'],
   },
 ];
 
 export function Skills() {
+  const { t } = useTranslation();
+
   return (
     <S.Section id="skills">
-      <S.SectionLabel>What I bring to the table</S.SectionLabel>
-      <S.SectionTitle>Skills & Abilities</S.SectionTitle>
+      <S.SectionLabel>{t('skills.label')}</S.SectionLabel>
+      <S.SectionTitle>{t('skills.title')}</S.SectionTitle>
 
       <S.Grid>
         {SKILLS.map(skill => (
-          <S.Card key={skill.title}>
+          <S.Card key={skill.titleKey}>
             <S.CardIcon>{skill.icon}</S.CardIcon>
-            <S.CardTitle>{skill.title}</S.CardTitle>
+            <S.CardTitle>{t(skill.titleKey)}</S.CardTitle>
             <S.List>
               {skill.items.map(item => (
                 <S.Item key={item}>{item}</S.Item>

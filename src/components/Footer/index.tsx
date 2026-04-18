@@ -1,5 +1,7 @@
+import { useTranslation } from 'react-i18next';
 import * as S from './styles';
 
 export function Footer() {
-  return <S.FooterEl>Karran Lemos 2026 &copy;</S.FooterEl>;
+  const { t } = useTranslation();
+  return <S.FooterEl>Karran Lemos {t('footer.copy')}</S.FooterEl>;
 }

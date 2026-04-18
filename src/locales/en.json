@@ -1,0 +1,71 @@
+{
+  "nav": {
+    "home": "Home",
+    "skills": "Skills",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello, world. I'm",
+    "coffee": "coffee",
+    "code": "code",
+    "subtitle": "— full-stack developer crafting fast, scalable, and elegant software.",
+    "viewResume": "View Resume",
+    "getInTouch": "Get in touch",
+    "terminal": {
+      "open": "Open to new opportunities ✓"
+    }
+  },
+  "skills": {
+    "label": "What I bring to the table",
+    "title": "Skills & Abilities",
+    "cat": {
+      "languages": "Languages",
+      "frameworks": "Frameworks & Libraries",
+      "tools": "Tools & Misc"
+    }
+  },
+  "experience": {
+    "label": "Where I've worked",
+    "title": "Experience",
+    "jobs": [
+      {
+        "company": "Acme Corp",
+        "role": "Senior Full-Stack Engineer",
+        "period": "Jan 2023 – Present",
+        "bullets": [
+          "Led migration of monolith to microservices, cutting deploy time by 60%.",
+          "Built real-time dashboard with React & WebSockets serving 50k daily users."
+        ]
+      },
+      {
+        "company": "StartupXYZ",
+        "role": "Software Engineer",
+        "period": "Jun 2020 – Dec 2022",
+        "bullets": [
+          "Developed core REST API with Node.js, reducing latency by 40%.",
+          "Implemented CI/CD pipelines with GitHub Actions and Docker."
+        ]
+      },
+      {
+        "company": "WebAgency Co.",
+        "role": "Frontend Developer",
+        "period": "Mar 2018 – May 2020",
+        "bullets": [
+          "Delivered 15+ client projects using React, improving conversion rates.",
+          "Introduced component library that sped up UI dev by 35%."
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "label": "Let's connect",
+    "title": "Get In Touch",
+    "subtitle": "I'm always open to new opportunities, collaborations, or just a good tech chat. Feel free to reach out!",
+    "linkedin": "LinkedIn",
+    "resume": "Resume"
+  },
+  "footer": {
+    "copy": "2026 ©"
+  }
+}

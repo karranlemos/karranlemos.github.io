@@ -68,6 +68,28 @@ export const NavLink = styled.a`
   }
 `;
 
+export const NavRight = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+`;
+
+export const LangToggle = styled.button`
+  font-family: ${theme.fonts.mono};
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: ${theme.colors.textMuted};
+  border: 1px solid ${theme.colors.border};
+  border-radius: ${theme.radius.md};
+  padding: 0.2rem 0.55rem;
+  transition: color 0.2s, border-color 0.2s;
+
+  &:hover {
+    color: ${theme.colors.accent};
+    border-color: ${theme.colors.accent};
+  }
+`;
+
 export const Hamburger = styled.button`
   display: none;
   flex-direction: column;

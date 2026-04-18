@@ -1,21 +1,24 @@
+import { useTranslation } from 'react-i18next';
 import * as S from './styles';
 
 export function Hero() {
+  const { t } = useTranslation();
+
   return (
     <S.Section id="home">
       <S.Content>
-        <S.Greeting>Hello, world. I'm</S.Greeting>
+        <S.Greeting>{t('hero.greeting')}</S.Greeting>
         <S.Name>Karran Lemos</S.Name>
         <S.Subtitle>
-          I turn <S.Highlight>coffee</S.Highlight> into{' '}
-          <S.Highlight>code</S.Highlight> — full-stack developer crafting
-          fast, scalable, and elegant software.
+          I turn <S.Highlight>{t('hero.coffee')}</S.Highlight> into{' '}
+          <S.Highlight>{t('hero.code')}</S.Highlight>{' '}
+          {t('hero.subtitle')}
         </S.Subtitle>
         <S.Actions>
           <S.ResumeButton onClick={() => console.log('Resume clicked')}>
-            View Resume
+            {t('hero.viewResume')}
           </S.ResumeButton>
-          <S.SecondaryButton href="#contact">Get in touch</S.SecondaryButton>
+          <S.SecondaryButton href="#contact">{t('hero.getInTouch')}</S.SecondaryButton>
         </S.Actions>
       </S.Content>
 
@@ -32,7 +35,7 @@ export function Hero() {
           <S.Line>TypeScript · React · Node.js · Go</S.Line>
           <S.Line>PostgreSQL · Docker · AWS · Linux</S.Line>
           <S.Line><S.Prompt>~</S.Prompt> <S.Cmd>echo $STATUS</S.Cmd></S.Line>
-          <S.Line><S.Green>Open to new opportunities ✓</S.Green></S.Line>
+          <S.Line><S.Green>{t('hero.terminal.open')}</S.Green></S.Line>
           <S.Cursor>█</S.Cursor>
         </S.TerminalBody>
       </S.TerminalBox>

@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import * as S from './styles';
 
 function LinkedInIcon() {
@@ -21,23 +22,22 @@ function ResumeIcon() {
 }
 
 export function Contact() {
+  const { t } = useTranslation();
+
   return (
     <S.Section id="contact">
-      <S.SectionLabel>Let's connect</S.SectionLabel>
-      <S.SectionTitle>Get In Touch</S.SectionTitle>
-      <S.Subtitle>
-        I'm always open to new opportunities, collaborations, or just a good
-        tech chat. Feel free to reach out!
-      </S.Subtitle>
+      <S.SectionLabel>{t('contact.label')}</S.SectionLabel>
+      <S.SectionTitle>{t('contact.title')}</S.SectionTitle>
+      <S.Subtitle>{t('contact.subtitle')}</S.Subtitle>
 
       <S.Buttons>
         <S.IconButton onClick={() => console.log('LinkedIn clicked')}>
           <LinkedInIcon />
-          LinkedIn
+          {t('contact.linkedin')}
         </S.IconButton>
         <S.IconButton onClick={() => console.log('Resume clicked')}>
           <ResumeIcon />
-          Resume
+          {t('contact.resume')}
         </S.IconButton>
       </S.Buttons>
     </S.Section>

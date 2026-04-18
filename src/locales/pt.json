@@ -1,0 +1,71 @@
+{
+  "nav": {
+    "home": "Início",
+    "skills": "Habilidades",
+    "experience": "Experiência",
+    "contact": "Contato"
+  },
+  "hero": {
+    "greeting": "Olá, mundo. Eu sou",
+    "coffee": "café",
+    "code": "código",
+    "subtitle": "— desenvolvedor full-stack criando software rápido, escalável e elegante.",
+    "viewResume": "Ver Currículo",
+    "getInTouch": "Entre em contato",
+    "terminal": {
+      "open": "Aberto a novas oportunidades ✓"
+    }
+  },
+  "skills": {
+    "label": "O que eu ofereço",
+    "title": "Habilidades",
+    "cat": {
+      "languages": "Linguagens",
+      "frameworks": "Frameworks & Bibliotecas",
+      "tools": "Ferramentas & Outros"
+    }
+  },
+  "experience": {
+    "label": "Onde trabalhei",
+    "title": "Experiência",
+    "jobs": [
+      {
+        "company": "Acme Corp",
+        "role": "Engenheiro Full-Stack Sênior",
+        "period": "Jan 2023 – Presente",
+        "bullets": [
+          "Liderou migração de monolito para microsserviços, reduzindo o tempo de deploy em 60%.",
+          "Construiu dashboard em tempo real com React & WebSockets atendendo 50k usuários diários."
+        ]
+      },
+      {
+        "company": "StartupXYZ",
+        "role": "Engenheiro de Software",
+        "period": "Jun 2020 – Dez 2022",
+        "bullets": [
+          "Desenvolveu API REST principal com Node.js, reduzindo latência em 40%.",
+          "Implementou pipelines de CI/CD com GitHub Actions e Docker."
+        ]
+      },
+      {
+        "company": "WebAgency Co.",
+        "role": "Desenvolvedor Frontend",
+        "period": "Mar 2018 – Mai 2020",
+        "bullets": [
+          "Entregou mais de 15 projetos para clientes usando React, melhorando taxas de conversão.",
+          "Introduziu biblioteca de componentes que acelerou o desenvolvimento de UI em 35%."
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "label": "Vamos conversar",
+    "title": "Entre em Contato",
+    "subtitle": "Estou sempre aberto a novas oportunidades, colaborações ou uma boa conversa sobre tecnologia. Fique à vontade para entrar em contato!",
+    "linkedin": "LinkedIn",
+    "resume": "Currículo"
+  },
+  "footer": {
+    "copy": "2026 ©"
+  }
+}
