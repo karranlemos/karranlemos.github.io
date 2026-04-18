@@ -48,6 +48,7 @@ export const Card = styled.div`
 export const CardIcon = styled.div`
   font-size: 1.75rem;
   margin-bottom: 0.75rem;
+  user-select: none;
 `;
 
 export const CardTitle = styled.h3`
