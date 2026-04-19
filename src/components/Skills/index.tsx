@@ -5,17 +5,17 @@ const SKILLS = [
   {
     icon: '💻',
     titleKey: 'skills.cat.languages',
-    items: ['TypeScript', 'Python', 'Go', 'Rust', 'SQL'],
+    items: ['TypeScript / JavaScript', 'C#', 'SQL', 'NoSQL', 'HTML / CSS', 'Java', 'Kotlin'],
   },
   {
     icon: '⚙️',
     titleKey: 'skills.cat.frameworks',
-    items: ['React', 'Next.js', 'Node.js / Express', 'FastAPI', 'GraphQL'],
+    items: ['React', '.NET', 'React Native'],
   },
   {
     icon: '🛠️',
     titleKey: 'skills.cat.tools',
-    items: ['Docker / Kubernetes', 'AWS / GCP', 'PostgreSQL / Redis', 'Git & CI/CD', 'Linux'],
+    items: ['Git', 'Docker', 'skills.cat.aiTooling', 'Razor', 'Node.JS', 'Keycloak', 'Swagger', 'Scrum'],
   },
 ];
 
@@ -34,7 +34,7 @@ export function Skills() {
             <S.CardTitle>{t(skill.titleKey)}</S.CardTitle>
             <S.List>
               {skill.items.map(item => (
-                <S.Item key={item}>{item}</S.Item>
+                <S.Item key={item}>{t(item)}</S.Item>
               ))}
             </S.List>
           </S.Card>

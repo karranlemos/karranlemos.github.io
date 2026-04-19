@@ -21,7 +21,8 @@
     "cat": {
       "languages": "Linguagens",
       "frameworks": "Frameworks & Bibliotecas",
-      "tools": "Ferramentas & Outros"
+      "tools": "Ferramentas & Outros",
+      "aiTooling": "Claude / ferramentas de IA"
     }
   },
   "experience": {
