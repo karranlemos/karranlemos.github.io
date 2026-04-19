@@ -3,7 +3,8 @@ import * as S from './styles';
 import { FakeWindow } from './FakeWindow';
 
 export function Hero() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const resumeUrl = `/pdfs/Resume - Karran Lemos (${i18n.language === 'pt' ? 'pt' : 'en'}).pdf`;
 
   return (
     <S.Section id="home">
@@ -14,7 +15,7 @@ export function Hero() {
           <Trans i18nKey="hero.subtitle" components={{ strong: <S.Highlight /> }} />
         </S.Subtitle>
         <S.Actions>
-          <S.ResumeButton onClick={() => console.log('Resume clicked')}>
+          <S.ResumeButton as="a" href={resumeUrl} target="_blank" rel="noopener noreferrer">
             {t('hero.viewResume')}
           </S.ResumeButton>
           <S.SecondaryButton href="#contact">{t('hero.getInTouch')}</S.SecondaryButton>
