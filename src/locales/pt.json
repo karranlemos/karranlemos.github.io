@@ -12,7 +12,10 @@
     "getInTouch": "Entre em contato",
     "terminal": {
       "role": "Desenvolvedor Full-Stack Sênior",
-      "open": "Construindo coisas que importam ✓"
+      "line1": "Construindo coisas que importam ✓",
+      "line3": "Criando valor através do código ✓",
+      "line2": "Transformando sonhos em realidade ✓",
+      "line4": "Inovando com maestria ✓"
     }
   },
   "skills": {

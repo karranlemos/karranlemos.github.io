@@ -19,7 +19,7 @@ export const Box = styled.div`
   overflow: hidden;
   box-shadow: ${theme.shadow};
   animation: ${fadeUp} 0.7s 0.15s ease both;
-  height: 240px;
+  height: 320px;
 
   @media (max-width: 860px) {
     flex: 0 0 auto;

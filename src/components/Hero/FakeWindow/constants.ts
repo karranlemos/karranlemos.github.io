@@ -31,7 +31,22 @@ export const lines: VisibleLine[] = [
 	},
 	{
 		type: "output",
-		text: "hero.terminal.open",
+		text: "hero.terminal.line1",
+		isGreen: true,
+	},
+	{
+		type: "output",
+		text: "hero.terminal.line2",
+		isGreen: true,
+	},
+	{
+		type: "output",
+		text: "hero.terminal.line3",
+		isGreen: true,
+	},
+	{
+		type: "output",
+		text: "hero.terminal.line4",
 		isGreen: true,
 	},
 ];

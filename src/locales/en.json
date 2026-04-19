@@ -12,7 +12,10 @@
     "getInTouch": "Get in touch",
     "terminal": {
       "role": "Senior Full-Stack Developer",
-      "open": "Building things that matter ✓"
+      "line1": "Building things that matter ✓",
+      "line3": "Creating value through code ✓",
+      "line2": "Turning dreams into reality ✓",
+      "line4": "Innovating with expertise ✓"
     }
   },
   "skills": {
