@@ -31,6 +31,7 @@
   "experience": {
     "label": "Por onde passei",
     "title": "Destaques",
+    "resumeHint": "Para uma visão completa da minha trajetória profissional, confira meu currículo.",
     "jobs": [
       {
         "title": "Apps de controle de smartwatches",

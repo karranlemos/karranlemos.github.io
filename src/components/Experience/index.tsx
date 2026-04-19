@@ -26,6 +26,7 @@ export function Experience() {
             </S.Card>
           ))}
         </S.Grid>
+        <S.ResumeHint>{t('experience.resumeHint')}</S.ResumeHint>
       </S.Inner>
     </S.Section>
   );

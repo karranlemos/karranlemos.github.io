@@ -31,6 +31,7 @@
   "experience": {
     "label": "Where have I been",
     "title": "Highlights",
+    "resumeHint": "For a full overview of my professional journey, check out my resume.",
     "jobs": [
       {
         "title": "Smartwatch management apps",

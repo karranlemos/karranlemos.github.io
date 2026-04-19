@@ -36,6 +36,13 @@ export const Grid = styled.div`
   }
 `;
 
+export const ResumeHint = styled.p`
+  margin-top: 1.5rem;
+  font-size: 0.88rem;
+  color: ${theme.colors.textMuted};
+  text-align: center;
+`;
+
 export const Card = styled.div`
   background: ${theme.colors.bgCard};
   border: 1px solid ${theme.colors.border};
