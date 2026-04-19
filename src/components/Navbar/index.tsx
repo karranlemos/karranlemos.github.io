@@ -32,11 +32,9 @@ export function Navbar() {
           <S.NavRight>
             <S.NavLinks open={menuOpen}>
               {NAV_LINKS.map(link => (
-                <li key={link.href}>
-                  <S.NavLink href={link.href} onClick={() => setMenuOpen(false)}>
-                    {t(link.key)}
-                  </S.NavLink>
-                </li>
+                <S.NavLink key={link.href} href={link.href} onClick={() => setMenuOpen(false)}>
+                  {t(link.key)}
+                </S.NavLink>
               ))}
             </S.NavLinks>
 

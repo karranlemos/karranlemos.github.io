@@ -45,13 +45,7 @@ export const Logo = styled.a`
 
 export const NavLinks = styled.ul<{ open: boolean }>`
   display: flex;
-  gap: 2rem;
   align-items: center;
-
-  li {
-    display: flex;
-    align-items: center;
-  }
 
   @media (max-width: 600px) {
     display: ${({ open }) => (open ? 'flex' : 'none')};
@@ -61,13 +55,17 @@ export const NavLinks = styled.ul<{ open: boolean }>`
     left: 0;
     right: 0;
     /* background: ${theme.colors.bgSecondary}; */
-    padding: 1.5rem;
-    gap: 1.2rem;
+    padding: 0.5rem 0;
     animation: ${fadeIn} 0.3s ease both;
   }
 `;
 
 export const NavLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  padding: 0 1rem;
   color: ${theme.colors.textMuted};
   font-size: 0.9rem;
   font-weight: 500;
@@ -78,6 +76,9 @@ export const NavLink = styled.a`
   }
 
   @media (max-width: 600px) {
+    width: 100%;
+    height: auto;
+    padding: 0.85rem 1.5rem;
     font-size: 1rem;
   }
 `;
