@@ -41,12 +41,16 @@ export const Card = styled.div`
   border: 1px solid ${theme.colors.border};
   border-radius: ${theme.radius.lg};
   overflow: hidden;
-  aspect-ratio: 10 / 8;
+  aspect-ratio: 10 / 6;
   transition: border-color 0.2s, transform 0.2s;
 
   &:hover {
     border-color: ${theme.colors.accent};
     transform: translateY(-4px);
+  }
+
+  @media (max-width: 850px) {
+    aspect-ratio: 10 / 8;
   }
 
   @media (max-width: 700px) {
