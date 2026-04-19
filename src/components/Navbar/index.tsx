@@ -25,7 +25,7 @@ export function Navbar() {
   return (
     <>
       <S.Overlay open={menuOpen} onClick={() => setMenuOpen(false)} />
-      <S.Nav scrolled={scrolled}>
+      <S.Nav scrolled={scrolled} menuOpen={menuOpen}>
         <S.NavInner>
           <S.Logo href="#home">{'<KL />'}</S.Logo>
 
@@ -42,7 +42,7 @@ export function Navbar() {
               {i18n.language === 'en' ? 'EN' : 'PT'}
             </S.LangToggle>
 
-            <S.Hamburger onClick={() => setMenuOpen(o => !o)} aria-label="Toggle menu">
+            <S.Hamburger onClick={() => setMenuOpen(x => !x)} aria-label="Toggle menu">
               <span />
               <span />
               <span />

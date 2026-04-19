@@ -6,13 +6,13 @@ const fadeIn = keyframes`
   to { opacity: 1; }
 `;
 
-export const Nav = styled.nav<{ scrolled: boolean }>`
+export const Nav = styled.nav<{ scrolled: boolean; menuOpen: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  transition: background-color 0.3s, box-shadow 0.3s;
+  transition: background-color 0.3s, box-shadow 0.3s, backdrop-filter 0.3s;
   ${({ scrolled }) =>
     scrolled &&
     css`
@@ -20,6 +20,19 @@ export const Nav = styled.nav<{ scrolled: boolean }>`
       backdrop-filter: blur(10px);
       box-shadow: 0 1px 0 ${theme.colors.border};
     `}
+
+  @media (max-width: 600px) {
+    ${({ menuOpen }) => {
+      if (!menuOpen)
+        return null;
+
+      return css`
+        background: transparent;
+        backdrop-filter: none;
+        box-shadow: none;
+      `;
+    }}
+  }
 `;
 
 export const NavInner = styled.div`
@@ -54,7 +67,6 @@ export const NavLinks = styled.ul<{ open: boolean }>`
     top: 64px;
     left: 0;
     right: 0;
-    /* background: ${theme.colors.bgSecondary}; */
     padding: 0.5rem 0;
     animation: ${fadeIn} 0.3s ease both;
   }
@@ -109,12 +121,14 @@ export const Overlay = styled.div<{ open: boolean }>`
   display: none;
 
   @media (max-width: 600px) {
-    display: ${({ open }) => (open ? 'block' : 'none')};
+    display: block;
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(12px);
-    animation: ${fadeIn} 0.2s ease;
+    opacity: ${({ open }) => (open ? 1 : 0)};
+    pointer-events: ${({ open }) => (open ? 'auto' : 'none')};
+    transition: opacity 0.2s ease;
     z-index: 99;
   }
 `;
