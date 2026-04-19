@@ -1,15 +1,20 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { theme } from '../../styles/theme';
 
-export const Nav = styled.nav<{ $scrolled: boolean }>`
+const fadeIn = keyframes`
+  from { opacity: 0; }
+  to { opacity: 1; }
+`;
+
+export const Nav = styled.nav<{ scrolled: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  transition: background 0.3s, box-shadow 0.3s;
-  ${({ $scrolled }) =>
-    $scrolled &&
+  transition: background-color 0.3s, box-shadow 0.3s;
+  ${({ scrolled }) =>
+    scrolled &&
     css`
       background: rgba(13, 17, 23, 0.92);
       backdrop-filter: blur(10px);
@@ -38,7 +43,7 @@ export const Logo = styled.a`
   }
 `;
 
-export const NavLinks = styled.ul<{ $open: boolean }>`
+export const NavLinks = styled.ul<{ open: boolean }>`
   display: flex;
   gap: 2rem;
   align-items: center;
@@ -49,16 +54,16 @@ export const NavLinks = styled.ul<{ $open: boolean }>`
   }
 
   @media (max-width: 600px) {
-    display: ${({ $open }) => ($open ? 'flex' : 'none')};
+    display: ${({ open }) => (open ? 'flex' : 'none')};
     flex-direction: column;
     position: absolute;
     top: 64px;
     left: 0;
     right: 0;
-    background: ${theme.colors.bgSecondary};
+    /* background: ${theme.colors.bgSecondary}; */
     padding: 1.5rem;
     gap: 1.2rem;
-    border-bottom: 1px solid ${theme.colors.border};
+    animation: ${fadeIn} 0.3s ease both;
   }
 `;
 
@@ -70,6 +75,10 @@ export const NavLink = styled.a`
 
   &:hover {
     color: ${theme.colors.text};
+  }
+
+  @media (max-width: 600px) {
+    font-size: 1rem;
   }
 `;
 
@@ -95,6 +104,20 @@ export const LangToggle = styled.button`
   }
 `;
 
+export const Overlay = styled.div<{ open: boolean }>`
+  display: none;
+
+  @media (max-width: 600px) {
+    display: ${({ open }) => (open ? 'block' : 'none')};
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(12px);
+    animation: ${fadeIn} 0.2s ease;
+    z-index: 99;
+  }
+`;
+
 export const Hamburger = styled.button`
   display: none;
   flex-direction: column;
@@ -111,5 +134,6 @@ export const Hamburger = styled.button`
 
   @media (max-width: 600px) {
     display: flex;
+    margin-left: 8px;
   }
 `;

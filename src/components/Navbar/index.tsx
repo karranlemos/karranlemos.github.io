@@ -23,32 +23,35 @@ export function Navbar() {
   const toggleLang = () => i18n.changeLanguage(i18n.language === 'en' ? 'pt' : 'en');
 
   return (
-    <S.Nav $scrolled={scrolled}>
-      <S.NavInner>
-        <S.Logo href="#home">{'<KL />'}</S.Logo>
+    <>
+      <S.Overlay open={menuOpen} onClick={() => setMenuOpen(false)} />
+      <S.Nav scrolled={scrolled}>
+        <S.NavInner>
+          <S.Logo href="#home">{'<KL />'}</S.Logo>
 
-        <S.NavRight>
-          <S.Hamburger onClick={() => setMenuOpen(o => !o)} aria-label="Toggle menu">
-            <span />
-            <span />
-            <span />
-          </S.Hamburger>
+          <S.NavRight>
+            <S.NavLinks open={menuOpen}>
+              {NAV_LINKS.map(link => (
+                <li key={link.href}>
+                  <S.NavLink href={link.href} onClick={() => setMenuOpen(false)}>
+                    {t(link.key)}
+                  </S.NavLink>
+                </li>
+              ))}
+            </S.NavLinks>
 
-          <S.NavLinks $open={menuOpen}>
-            {NAV_LINKS.map(link => (
-              <li key={link.href}>
-                <S.NavLink href={link.href} onClick={() => setMenuOpen(false)}>
-                  {t(link.key)}
-                </S.NavLink>
-              </li>
-            ))}
-          </S.NavLinks>
+            <S.LangToggle onClick={toggleLang}>
+              {i18n.language === 'en' ? 'EN' : 'PT'}
+            </S.LangToggle>
 
-          <S.LangToggle onClick={toggleLang}>
-            {i18n.language === 'en' ? 'EN' : 'PT'}
-          </S.LangToggle>
-        </S.NavRight>
-      </S.NavInner>
-    </S.Nav>
+            <S.Hamburger onClick={() => setMenuOpen(o => !o)} aria-label="Toggle menu">
+              <span />
+              <span />
+              <span />
+            </S.Hamburger>
+          </S.NavRight>
+        </S.NavInner>
+      </S.Nav>
+    </>
   );
 }
