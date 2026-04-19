@@ -95,6 +95,7 @@ export const Title = styled.h3`
   font-weight: 700;
   color: ${theme.colors.text};
   text-align: center;
+  text-wrap: balance;
   display: flex;
   align-items: flex-end;
   justify-content: center;
