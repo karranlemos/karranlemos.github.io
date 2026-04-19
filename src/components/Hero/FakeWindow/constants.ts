@@ -27,7 +27,7 @@ export const lines: VisibleLine[] = [
 	},
 	{
 		type: "input",
-		text: "echo $STATUS",
+		text: "devfetch --all",
 	},
 	{
 		type: "output",
