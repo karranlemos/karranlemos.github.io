@@ -1,5 +1,6 @@
 import { useTranslation, Trans } from 'react-i18next';
 import * as S from './styles';
+import { FakeWindow } from './FakeWindow';
 
 export function Hero() {
   const { t } = useTranslation();
@@ -20,22 +21,7 @@ export function Hero() {
         </S.Actions>
       </S.Content>
 
-      <S.TerminalBox>
-        <S.TerminalBar>
-          <S.Dot color="#ff5f57" />
-          <S.Dot color="#febc2e" />
-          <S.Dot color="#28c840" />
-        </S.TerminalBar>
-        <S.TerminalBody>
-          <S.Line><S.Prompt>~</S.Prompt> <S.Cmd>whoami</S.Cmd></S.Line>
-          <S.Line>karran_lemos</S.Line>
-          <S.Line><S.Prompt>~</S.Prompt> <S.Cmd>cat role.txt</S.Cmd></S.Line>
-          <S.Line>{t('hero.terminal.role')}</S.Line>
-          <S.Line><S.Prompt>~</S.Prompt> <S.Cmd>echo $STATUS</S.Cmd></S.Line>
-          <S.Line><S.Green>{t('hero.terminal.open')}</S.Green></S.Line>
-          <S.Cursor>█</S.Cursor>
-        </S.TerminalBody>
-      </S.TerminalBox>
+      <FakeWindow />
     </S.Section>
   );
 }
