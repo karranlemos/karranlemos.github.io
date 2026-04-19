@@ -31,7 +31,7 @@ export const Grid = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 
-  @media (max-width: 900px) {
+  @media (max-width: 700px) {
     grid-template-columns: 1fr;
   }
 `;
@@ -41,11 +41,16 @@ export const Card = styled.div`
   border: 1px solid ${theme.colors.border};
   border-radius: ${theme.radius.lg};
   overflow: hidden;
+  aspect-ratio: 10 / 8;
   transition: border-color 0.2s, transform 0.2s;
 
   &:hover {
     border-color: ${theme.colors.accent};
     transform: translateY(-4px);
+  }
+
+  @media (max-width: 700px) {
+    aspect-ratio: 10 / 5;
   }
 `;
 
@@ -64,20 +69,27 @@ export const CardImage = styled.div`
 
 export const CardBody = styled.div`
   padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
-export const Company = styled.h3`
+export const Title = styled.h3`
   font-size: 1.05rem;
   font-weight: 700;
   color: ${theme.colors.text};
   margin-bottom: 0.2rem;
+  text-align: center;
 `;
 
-export const Role = styled.p`
+export const Subtitle = styled.p`
   font-size: 0.85rem;
   color: ${theme.colors.accent};
   font-weight: 600;
-  margin-bottom: 0.3rem;
+  margin-bottom: 1rem;
+  text-align: center;
 `;
 
 export const Period = styled.p`

@@ -29,35 +29,20 @@
     }
   },
   "experience": {
-    "label": "Where I've worked",
-    "title": "Experience",
+    "label": "Where have I been",
+    "title": "Highlights",
     "jobs": [
       {
-        "company": "Acme Corp",
-        "role": "Senior Full-Stack Engineer",
-        "period": "Jan 2023 – Present",
-        "bullets": [
-          "Led migration of monolith to microservices, cutting deploy time by 60%.",
-          "Built real-time dashboard with React & WebSockets serving 50k daily users."
-        ]
+        "title": "Smartwatch management apps",
+        "subtitle": "Empowering more than 200k active users"
       },
       {
-        "company": "StartupXYZ",
-        "role": "Software Engineer",
-        "period": "Jun 2020 – Dec 2022",
-        "bullets": [
-          "Developed core REST API with Node.js, reducing latency by 40%.",
-          "Implemented CI/CD pipelines with GitHub Actions and Docker."
-        ]
+        "title": "Vehicle tracking software",
+        "subtitle": "Tracking and managing vehicles nationwide"
       },
       {
-        "company": "WebAgency Co.",
-        "role": "Frontend Developer",
-        "period": "Mar 2018 – May 2020",
-        "bullets": [
-          "Delivered 15+ client projects using React, improving conversion rates.",
-          "Introduced component library that sped up UI dev by 35%."
-        ]
+        "title": "Company administration dashbaord",
+        "subtitle": "Simplifying complex logistics"
       }
     ]
   },

@@ -2,10 +2,8 @@ import { useTranslation } from 'react-i18next';
 import * as S from './styles';
 
 interface Job {
-  company: string;
-  role: string;
-  period: string;
-  bullets: string[];
+  title: string;
+  subtitle: string;
 }
 
 export function Experience() {
@@ -22,14 +20,8 @@ export function Experience() {
           {jobs.map((exp, idx) => (
             <S.Card key={idx}>
               <S.CardBody>
-                <S.Company>{exp.company}</S.Company>
-                <S.Role>{exp.role}</S.Role>
-                <S.Period>{exp.period}</S.Period>
-                <S.List>
-                  {exp.bullets.map((b, i) => (
-                    <S.Item key={i}>{b}</S.Item>
-                  ))}
-                </S.List>
+                <S.Title>{exp.title}</S.Title>
+                <S.Subtitle>{exp.subtitle}</S.Subtitle>
               </S.CardBody>
             </S.Card>
           ))}
