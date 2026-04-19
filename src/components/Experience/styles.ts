@@ -74,22 +74,31 @@ export const CardBody = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 4px;
 `;
 
 export const Title = styled.h3`
   font-size: 1.05rem;
+  line-height: 1.4;
+  height: calc(1.05rem * 1.4 * 2);
   font-weight: 700;
   color: ${theme.colors.text};
-  margin-bottom: 0.2rem;
   text-align: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 `;
 
 export const Subtitle = styled.p`
   font-size: 0.85rem;
+  line-height: 1.4;
+  height: calc(0.85rem * 1.4 * 2);
   color: ${theme.colors.accent};
   font-weight: 600;
-  margin-bottom: 1rem;
   text-align: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 `;
 
 export const Period = styled.p`
