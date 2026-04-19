@@ -6,6 +6,11 @@ const fadeUp = keyframes`
   to   { opacity: 1; transform: translateY(0); }
 `;
 
+const fadeIn = keyframes`
+  from { opacity: 0; }
+  to   { opacity: 1; }
+`;
+
 const blink = keyframes`
   0%, 100% { opacity: 1; }
   50%       { opacity: 0; }
@@ -63,6 +68,7 @@ export const Cmd = styled.span`
 
 export const Output = styled.span<OutputProps>`
   color: ${({ isGreen }) => isGreen ? "#3fb950" : theme.colors.textMuted};
+  animation: ${fadeIn} 0.3s 0.1s ease both;
 `;
 
 export const Cursor = styled.span`
