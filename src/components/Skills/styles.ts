@@ -45,17 +45,26 @@ export const Card = styled.div`
   }
 `;
 
-export const CardIcon = styled.div`
+export const CardHeader = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+`;
+
+export const CardIcon = styled.div<CardIconProps>`
   font-size: 1.75rem;
-  margin-bottom: 0.75rem;
+  line-height: 1;
   user-select: none;
+  flex-shrink: 0;
+
+  transform: translateY(${({ index }) => index === 0 ? -4 : -1}px);
 `;
 
 export const CardTitle = styled.h3`
   font-size: 1.05rem;
   font-weight: 700;
   color: ${theme.colors.text};
-  margin-bottom: 1rem;
 `;
 
 export const List = styled.ul`
@@ -78,3 +87,7 @@ export const Item = styled.li`
     flex-shrink: 0;
   }
 `;
+
+interface CardIconProps {
+  index: number;
+}

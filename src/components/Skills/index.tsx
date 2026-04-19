@@ -28,10 +28,12 @@ export function Skills() {
       <S.SectionTitle>{t('skills.title')}</S.SectionTitle>
 
       <S.Grid>
-        {SKILLS.map(skill => (
+        {SKILLS.map((skill, index) => (
           <S.Card key={skill.titleKey}>
-            <S.CardIcon>{skill.icon}</S.CardIcon>
-            <S.CardTitle>{t(skill.titleKey)}</S.CardTitle>
+            <S.CardHeader>
+              <S.CardIcon index={index}>{skill.icon}</S.CardIcon>
+              <S.CardTitle>{t(skill.titleKey)}</S.CardTitle>
+            </S.CardHeader>
             <S.List>
               {skill.items.map(item => (
                 <S.Item key={item}>{t(item)}</S.Item>
