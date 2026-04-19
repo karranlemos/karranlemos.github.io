@@ -66,8 +66,9 @@ export const Output = styled.span<OutputProps>`
 `;
 
 export const Cursor = styled.span`
-  color: ${theme.colors.accent};
-  animation: ${blink} 1.1s step-end infinite;
+  color: ${theme.colors.textMuted};
+  /* animation: ${blink} 1.s step-end infinite; */
+  padding-left: 2px;
 `;
 
 export interface OutputProps {

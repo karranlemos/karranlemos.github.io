@@ -13,9 +13,8 @@ export function FakeWindow() {
 
   useEffect(() => {
     const START_DELAY = 1000;
-    const INPUT_CHAR_DELAY = 50;
-    const INPUT_ENTER_DELAY = 200;
-    const OUTPUT_PRINT_DELAY = 200;
+    const INPUT_CHAR_DELAY = 100;
+    const INPUT_ENTER_DELAY = 700;
     const OUTPUT_ENTER_DELAY = 700;
 
     let lineIndex = -1;
@@ -55,6 +54,7 @@ export function FakeWindow() {
         firstLine = false;
         
         setData([...oldData, newItem]);
+
         const finalText = t(lines[lineIndex].text);
         for (const char of finalText) {
           await sleep(INPUT_CHAR_DELAY);
@@ -80,9 +80,6 @@ export function FakeWindow() {
 
         setData([...oldData, newItem]);
         
-        await sleep(OUTPUT_PRINT_DELAY);
-        if (!mounted) return;
-        
         newItem.text = t(line.text);
         setData([...oldData, newItem]);
         
@@ -105,10 +102,11 @@ export function FakeWindow() {
     }
   }, [i18n.language])
 
-  const renderInput = (item: VisibleLine) => (
+  const renderInput = (item: VisibleLine, isLast: boolean) => (
     <S.Line>
       <S.Prompt>&gt; </S.Prompt>
       <S.Cmd>{item.text}</S.Cmd>
+      {isLast && <S.Cursor>█</S.Cursor>}
     </S.Line>
   )
 
@@ -128,8 +126,8 @@ export function FakeWindow() {
         <S.Dot color="#28c840" />
       </S.Bar>
       <S.Body>
-        {data.map(item => item.type === "input"
-          ? renderInput(item)
+        {data.map((item, i) => item.type === "input"
+          ? renderInput(item, i === data.length - 1)
           : renderOutput(item)
         )}
       </S.Body>
