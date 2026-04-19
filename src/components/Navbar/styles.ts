@@ -43,6 +43,11 @@ export const NavLinks = styled.ul<{ $open: boolean }>`
   gap: 2rem;
   align-items: center;
 
+  li {
+    display: flex;
+    align-items: center;
+  }
+
   @media (max-width: 600px) {
     display: ${({ $open }) => ($open ? 'flex' : 'none')};
     flex-direction: column;

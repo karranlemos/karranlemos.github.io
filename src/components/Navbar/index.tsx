@@ -28,10 +28,6 @@ export function Navbar() {
         <S.Logo href="#home">{'<KL />'}</S.Logo>
 
         <S.NavRight>
-          <S.LangToggle onClick={toggleLang}>
-            {i18n.language === 'en' ? 'EN' : 'PT'}
-          </S.LangToggle>
-
           <S.Hamburger onClick={() => setMenuOpen(o => !o)} aria-label="Toggle menu">
             <span />
             <span />
@@ -47,6 +43,10 @@ export function Navbar() {
               </li>
             ))}
           </S.NavLinks>
+
+          <S.LangToggle onClick={toggleLang}>
+            {i18n.language === 'en' ? 'EN' : 'PT'}
+          </S.LangToggle>
         </S.NavRight>
       </S.NavInner>
     </S.Nav>
