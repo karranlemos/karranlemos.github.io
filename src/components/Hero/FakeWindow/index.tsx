@@ -13,8 +13,8 @@ export function FakeWindow() {
 
   useEffect(() => {
     const START_DELAY = 1000;
-    const INPUT_CHAR_DELAY = 100;
-    const INPUT_ENTER_DELAY = 700;
+    const INPUT_CHAR_DELAY = 70;
+    const INPUT_ENTER_DELAY = 500;
     const OUTPUT_ENTER_DELAY = 700;
 
     let lineIndex = -1;
