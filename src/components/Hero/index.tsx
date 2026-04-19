@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import * as S from './styles';
 
 export function Hero() {
@@ -10,9 +10,7 @@ export function Hero() {
         <S.Greeting>{t('hero.greeting')}</S.Greeting>
         <S.Name>Karran Lemos</S.Name>
         <S.Subtitle>
-          I turn <S.Highlight>{t('hero.coffee')}</S.Highlight> into{' '}
-          <S.Highlight>{t('hero.code')}</S.Highlight>{' '}
-          {t('hero.subtitle')}
+          <Trans i18nKey="hero.subtitle" components={{ strong: <S.Highlight /> }} />
         </S.Subtitle>
         <S.Actions>
           <S.ResumeButton onClick={() => console.log('Resume clicked')}>

@@ -7,9 +7,7 @@
   },
   "hero": {
     "greeting": "Hello, world. I'm",
-    "coffee": "coffee",
-    "code": "code",
-    "subtitle": "— full-stack developer crafting fast, scalable, and elegant software.",
+    "subtitle": "I turn <strong>coffee</strong> into <strong>code</strong> — Senior Full-Stack Developer crafting fast, scalable, and elegant software.",
     "viewResume": "View Resume",
     "getInTouch": "Get in touch",
     "terminal": {

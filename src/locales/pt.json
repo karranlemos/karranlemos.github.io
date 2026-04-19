@@ -7,9 +7,7 @@
   },
   "hero": {
     "greeting": "Olá, mundo. Eu sou",
-    "coffee": "café",
-    "code": "código",
-    "subtitle": "— desenvolvedor full-stack criando software rápido, escalável e elegante.",
+    "subtitle": "Transformo <strong>café</strong> em <strong>código</strong> — Desenvolvedor Full-Stack Sênior criando software rápido, escalável e elegante.",
     "viewResume": "Ver Currículo",
     "getInTouch": "Entre em contato",
     "terminal": {
