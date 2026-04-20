@@ -54,6 +54,7 @@ export const Body = styled.div`
   font-size: 0.85rem;
   line-height: 2;
   color: ${theme.colors.textMuted};
+  text-align: left;
 `;
 
 export const Line = styled.div``;
