@@ -106,7 +106,7 @@ export function FakeWindow() {
     <S.Line>
       <S.Prompt>&gt; </S.Prompt>
       <S.Cmd>{item.text}</S.Cmd>
-      {isLast && <S.Cursor>█</S.Cursor>}
+      {isLast && <S.Cursor />}
     </S.Line>
   )
 

@@ -72,10 +72,15 @@ export const Output = styled.span<OutputProps>`
   animation: ${fadeIn} 0.3s 0.1s ease both;
 `;
 
-export const Cursor = styled.span`
-  color: ${theme.colors.textMuted};
+export const Cursor = styled.div`
+  display: inline-block;
+  vertical-align: text-top;
+  margin-left: 0.2rem;
+  background-color: ${theme.colors.textMuted};
   /* animation: ${blink} 1.s step-end infinite; */
-  padding-left: 2px;
+  width: 0.6rem;
+  height: 1rem;
+  transform: translateY(-1px);
 `;
 
 export interface OutputProps {
