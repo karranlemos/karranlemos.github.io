@@ -10,7 +10,7 @@ const SKILLS = [
   {
     icon: '⚙️',
     titleKey: 'skills.cat.frameworks',
-    items: ['React', '.NET', 'React Native'],
+    items: ['React', '.NET', 'React Native', 'Express.js'],
   },
   {
     icon: '🛠️',
