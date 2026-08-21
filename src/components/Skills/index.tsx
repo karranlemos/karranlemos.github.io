@@ -5,17 +5,41 @@ const SKILLS = [
   {
     icon: '💻',
     titleKey: 'skills.cat.languages',
-    items: ['TypeScript / JavaScript', 'C#', 'SQL', 'NoSQL', 'HTML / CSS', 'Java', 'Kotlin'],
+    items: [
+      'TypeScript / JavaScript',
+      'C#',
+      'Java',
+      'Kotlin',
+      'Python',
+      'SQL',
+      'NoSQL',
+      'HTML / CSS',
+    ],
   },
   {
     icon: '⚙️',
     titleKey: 'skills.cat.frameworks',
-    items: ['React', '.NET', 'React Native', 'Express.js'],
+    items: [
+      'React',
+      '.NET',
+      'React Native',
+      'Express.js',
+    ],
   },
   {
     icon: '🛠️',
     titleKey: 'skills.cat.tools',
-    items: ['Git', 'Docker', 'skills.cat.aiTooling', 'Razor', 'Node.JS', 'Keycloak', 'Swagger', 'Scrum'],
+    items: [
+      'Git',
+      'Docker',
+      'skills.cat.aiTooling',
+      'Razor',
+      'XUnit',
+      'CI/CD',
+      'Scrum',
+      'Azure',
+      'AWS',
+    ],
   },
 ];
 

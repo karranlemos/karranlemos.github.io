@@ -34,16 +34,16 @@
     "resumeHint": "Para uma visão completa da minha trajetória profissional, confira meu currículo.",
     "jobs": [
       {
-        "title": "Apps de controle de smartwatches",
-        "subtitle": "Servindo mais de 200k usuários ativos"
+        "title": "Desenvolvimento de novo aplicativo",
+        "subtitle": "Baixado 100 mil vezes com 4,7 estrelas"
+      },
+      {
+        "title": "Modernização de sistemas existentes",
+        "subtitle": "Avaliações de apps mobile cresceram em 30%"
       },
       {
         "title": "Software de rastreamento veicular",
         "subtitle": "Rastreio e gerência de veículos em todo o país"
-      },
-      {
-        "title": "Sistema de segurança pessoal",
-        "subtitle": "Mantendo clientes importantes em segurança"
       }
     ]
   },

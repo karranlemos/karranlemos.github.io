@@ -34,16 +34,16 @@
     "resumeHint": "For a full overview of my professional journey, check out my resume.",
     "jobs": [
       {
-        "title": "Smartwatch management apps",
-        "subtitle": "Empowering more than 200k active users"
+        "title": "Development of brand new app",
+        "subtitle": "Downloaded 100k times with a 4.7 star rating"
+      },
+      {
+        "title": "Modernization of existing systems",
+        "subtitle": "Mobile app ratings increased by 30%"
       },
       {
         "title": "Vehicle tracking software",
         "subtitle": "Tracking and managing vehicles nationwide"
-      },
-      {
-        "title": "Personal safety system",
-        "subtitle": "Keeping important clients safe"
       }
     ]
   },
